@@ -920,7 +920,7 @@
             <p data-i18n="guideFilesText">فایل cpik.css و فونت‌های WOFF و WOFF2 آن را کنار هم در پوشه‌ی assets/cpik بگذارید و این خط را در head صفحه اضافه کنید.</p>
             <pre><code>&lt;link rel="stylesheet" href="./assets/cpik/cpik.css"&gt;</code></pre>
             <p data-i18n="guideCdnText">یا بدون کپی فایل‌ها، آن را از jsDelivr بارگذاری کنید:</p>
-            <pre><code data-cdn-link>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cpik/dist/cpik.css"&gt;</code></pre>
+            <pre><code data-cdn-link>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik/dist/cpik.css"&gt;</code></pre>
           </div>
 
           <div class="guide-step">
@@ -1098,7 +1098,7 @@
 
     /* The CDN example pins the version this page was built from. */
     document.querySelectorAll('[data-cdn-link]').forEach(element => {
-      element.textContent = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cpik${
+      element.textContent = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik${
         version ? `@${version}` : ''}/dist/cpik.css">`;
     });
 

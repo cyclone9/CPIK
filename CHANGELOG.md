@@ -6,6 +6,11 @@
 
 ## منتشرنشده
 
+## 0.1.1 - 2026-10-24
+
+- بسته‌ی npm با نام `@cyclone9/cpik` منتشر می‌شود، چون npm نام `cpik` را به دلیل شباهت به بسته‌های دیگر نپذیرفت. نشانی jsDelivr: `https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.1/dist/cpik.css`.
+- توضیح استفاده در بالای `cpik.css` حالا نمونه‌ی `cpik-cpik` را نشان می‌دهد.
+
 ## 0.1.0 - 2026-10-24
 
 - هر آیکون با یک کلاس استفاده می‌شود: `<i class="cpik-bank-melli"></i>` به‌جای `class="cpik cpik-bank-melli"`.

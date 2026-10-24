@@ -4,7 +4,7 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cpik-lockup-on-dark.svg"><img src="assets/cpik-lockup-on-light.svg" alt="CPIK" width="300"></picture></p>
 
-Version 0.1.0. See [CHANGELOG.md](CHANGELOG.md).
+Version 0.1.1. See [CHANGELOG.md](CHANGELOG.md).
 
 **Iranian brands. One icon kit.**
 
@@ -35,13 +35,13 @@ Every icon is a single class, `cpik-` followed by the icon's name. The copy butt
 Without downloading anything, link the stylesheet from jsDelivr. Pin the version, because a class can still change before 1.0.0:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cpik@0.1.0/dist/cpik.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.1/dist/cpik.css">
 ```
 
-With a build tool, install the package and import `cpik/cpik.css`:
+With a build tool, install the package and import `@cyclone9/cpik/cpik.css`:
 
 ```sh
-npm install cpik
+npm install @cyclone9/cpik
 ```
 
 ## Size and colour
