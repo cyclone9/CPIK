@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.1";
+window.CPIK_VERSION = "0.1.2";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",

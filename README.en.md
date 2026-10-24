@@ -4,7 +4,7 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cpik-lockup-on-dark.svg"><img src="assets/cpik-lockup-on-light.svg" alt="CPIK" width="300"></picture></p>
 
-Version 0.1.1. See [CHANGELOG.md](CHANGELOG.md).
+Version 0.1.2. See [CHANGELOG.md](CHANGELOG.md).
 
 **Iranian brands. One icon kit.**
 
@@ -25,7 +25,7 @@ Browse and search every icon on the preview page: https://cyclone9.github.io/CPI
 4. Give an element the icon's class:
 
 ```html
-<i class="cpik-bank-melli" aria-hidden="true"></i>
+<i class="cpik-cpik" aria-hidden="true"></i>
 ```
 
 Every icon is a single class, `cpik-` followed by the icon's name. The copy button on each card of the preview page gives you the exact HTML.
@@ -35,7 +35,7 @@ Every icon is a single class, `cpik-` followed by the icon's name. The copy butt
 Without downloading anything, link the stylesheet from jsDelivr. Pin the version, because a class can still change before 1.0.0:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.1/dist/cpik.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.2/dist/cpik.css">
 ```
 
 With a build tool, install the package and import `@cyclone9/cpik/cpik.css`:
