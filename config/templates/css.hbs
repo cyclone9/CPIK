@@ -1,0 +1,31 @@
+/*!
+ * {{ name }} - CyClone Power Icon Kit
+ * MIT licence for the kit. Every logo in it is a trademark of its owner.
+ * Usage: <i class="{{ prefix }}-bank-melli" aria-hidden="true"></i>
+ */
+@font-face {
+    font-family: "{{ name }}";
+    src: {{{ fontSrc }}};
+    font-display: block;
+}
+
+[class^="{{ prefix }}-"]::before,
+[class*=" {{ prefix }}-"]::before {
+    display: inline-block;
+    font-family: "{{ name }}" !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    speak: never;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+{{# each codepoints }}
+
+.{{ ../prefix }}-{{ @key }}::before {
+    content: "\\{{ codepoint this }}";
+}
+{{/ each }}

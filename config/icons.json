@@ -1,0 +1,31 @@
+{
+  "name": "cpik",
+  "inputDir": "./.build/icons",
+  "outputDir": "./dist",
+  "fontTypes": [
+    "woff2",
+    "woff"
+  ],
+  "assetTypes": [
+    "css",
+    "html",
+    "json"
+  ],
+  "prefix": "cpik",
+  "normalize": true,
+  "fontHeight": 1000,
+  "formatOptions": {
+    "svg": {
+      "preserveAspectRatio": true,
+      "centerHorizontally": true,
+      "centerVertically": true
+    },
+    "json": {
+      "indent": 2
+    }
+  },
+  "templates": {
+    "css": "./config/templates/css.hbs",
+    "html": "./config/templates/html.hbs"
+  }
+}

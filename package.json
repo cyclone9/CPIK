@@ -1,0 +1,64 @@
+{
+  "name": "cpik",
+  "version": "0.1.0",
+  "description": "CPIK - CyClone Power Icon Kit. Icons of Iranian banks, platforms, services and brands as an icon font used through CSS.",
+  "license": "MIT",
+  "author": {
+    "name": "CyClone",
+    "url": "https://cyclone9.ir/"
+  },
+  "homepage": "https://cyclone9.ir/cpik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyclone9/CPIK.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cyclone9/CPIK/issues"
+  },
+  "keywords": [
+    "cpik",
+    "cyclone",
+    "icons",
+    "icon-font",
+    "css",
+    "iran",
+    "iranian",
+    "persian",
+    "banks",
+    "brands",
+    "logos"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "files": [
+    "dist/cpik.css",
+    "dist/cpik.woff2",
+    "dist/cpik.woff",
+    "dist/cpik.json",
+    "LICENSE"
+  ],
+  "style": "dist/cpik.css",
+  "jsdelivr": "dist/cpik.css",
+  "unpkg": "dist/cpik.css",
+  "exports": {
+    ".": "./dist/cpik.css",
+    "./cpik.css": "./dist/cpik.css",
+    "./cpik.json": "./dist/cpik.json",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "prepare": "node ./scripts/patch-fantasticon.js",
+    "icons": "node ./scripts/prepare-icons.js",
+    "codepoints": "node ./scripts/generate-codepoints.js",
+    "build": "node ./scripts/build.js",
+    "build:force": "node ./scripts/build.js --force",
+    "preview": "node ./scripts/serve.js",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@xmldom/xmldom": "0.9.12",
+    "fantasticon": "4.1.0",
+    "paper": "0.12.18"
+  }
+}

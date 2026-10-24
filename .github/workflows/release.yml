@@ -1,0 +1,73 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Check the version
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          test "$(node -p "require('./package.json').version")" = "$version"
+      - run: npm ci
+      - run: npm run build
+      - name: Check that the committed dist/ matches the sources
+        run: |
+          if ! git diff --quiet -- dist || [ -n "$(git ls-files --others --exclude-standard dist)" ]; then
+            git status --short -- dist
+            echo "::error::dist/ is out of date. Run npm run build and commit dist/."
+            exit 1
+          fi
+      # The release notes are this version's entry in CHANGELOG.md.
+      - name: Release notes from CHANGELOG.md
+        run: |
+          awk -v h="## ${GITHUB_REF_NAME#v}" '
+            /^<\/?div/ { next }
+            on && /^## / { exit }
+            on { print }
+            $0 == h || index($0, h " ") == 1 { on = 1 }
+          ' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
+          grep -q '[^[:space:]]' "$RUNNER_TEMP/notes.md"
+      - name: Package the kit
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          mkdir -p "$RUNNER_TEMP/cpik"
+          cp dist/cpik.css dist/cpik.woff2 dist/cpik.woff dist/cpik.json LICENSE "$RUNNER_TEMP/cpik/"
+          (cd "$RUNNER_TEMP" && zip -r "cpik-$version.zip" cpik)
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          gh release create "$GITHUB_REF_NAME" "$RUNNER_TEMP/cpik-$version.zip" \
+            --title "CPIK $version" --notes-file "$RUNNER_TEMP/notes.md"
+
+  # Publishes the same version to npm (and so to jsDelivr and unpkg) with npm trusted
+  # publishing: no token is stored. Turned on by the repository variable NPM_PUBLISH=true,
+  # after the package's trusted publisher is set to this workflow on npmjs.com.
+  npm:
+    needs: release
+    if: vars.NPM_PUBLISH == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
+      - run: npm ci
+      - run: npm publish --access public

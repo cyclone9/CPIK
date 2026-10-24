@@ -1,0 +1,242 @@
+/*!
+ * cpik - CyClone Power Icon Kit
+ * MIT licence for the kit. Every logo in it is a trademark of its owner.
+ * Usage: <i class="cpik-bank-melli" aria-hidden="true"></i>
+ */
+@font-face {
+    font-family: "cpik";
+    src: url("./cpik.woff2?592a34d008dbce3a358cb3c13e4d3331") format("woff2"),
+url("./cpik.woff?592a34d008dbce3a358cb3c13e4d3331") format("woff");
+    font-display: block;
+}
+
+[class^="cpik-"]::before,
+[class*=" cpik-"]::before {
+    display: inline-block;
+    font-family: "cpik" !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    speak: never;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cpik-bank-blue::before {
+    content: "\e000";
+}
+
+.cpik-bank-dey::before {
+    content: "\e001";
+}
+
+.cpik-bank-eghtesadnovin::before {
+    content: "\e002";
+}
+
+.cpik-bank-gardeshgari::before {
+    content: "\e003";
+}
+
+.cpik-bank-iranzamin::before {
+    content: "\e004";
+}
+
+.cpik-bank-karafarin::before {
+    content: "\e005";
+}
+
+.cpik-bank-keshavarzi::before {
+    content: "\e006";
+}
+
+.cpik-bank-khavarmianeh::before {
+    content: "\e007";
+}
+
+.cpik-bank-markazi::before {
+    content: "\e008";
+}
+
+.cpik-bank-maskan::before {
+    content: "\e009";
+}
+
+.cpik-bank-mellat::before {
+    content: "\e00a";
+}
+
+.cpik-bank-melli::before {
+    content: "\e00b";
+}
+
+.cpik-bank-parsian::before {
+    content: "\e00c";
+}
+
+.cpik-bank-pasargad::before {
+    content: "\e00d";
+}
+
+.cpik-bank-post::before {
+    content: "\e00e";
+}
+
+.cpik-bank-resalat::before {
+    content: "\e00f";
+}
+
+.cpik-bank-saderat::before {
+    content: "\e010";
+}
+
+.cpik-bank-saman::before {
+    content: "\e011";
+}
+
+.cpik-bank-sarmayeh::before {
+    content: "\e012";
+}
+
+.cpik-bank-sepah::before {
+    content: "\e013";
+}
+
+.cpik-bank-shahr::before {
+    content: "\e014";
+}
+
+.cpik-bank-sina::before {
+    content: "\e015";
+}
+
+.cpik-bank-tejarat::before {
+    content: "\e016";
+}
+
+.cpik-channel-1::before {
+    content: "\e017";
+}
+
+.cpik-channel-2::before {
+    content: "\e018";
+}
+
+.cpik-channel-3::before {
+    content: "\e019";
+}
+
+.cpik-cpik::before {
+    content: "\e01a";
+}
+
+.cpik-crypto-abantether::before {
+    content: "\e01b";
+}
+
+.cpik-crypto-nobitex::before {
+    content: "\e01c";
+}
+
+.cpik-e-namad::before {
+    content: "\e01d";
+}
+
+.cpik-finance-digipay::before {
+    content: "\e01e";
+}
+
+.cpik-irancell::before {
+    content: "\e01f";
+}
+
+.cpik-map-iran::before {
+    content: "\e020";
+}
+
+.cpik-map-tehran::before {
+    content: "\e021";
+}
+
+.cpik-mobile-communications-of-iran::before {
+    content: "\e022";
+}
+
+.cpik-news-zoomg::before {
+    content: "\e023";
+}
+
+.cpik-news-zoomit::before {
+    content: "\e024";
+}
+
+.cpik-platform-30nama::before {
+    content: "\e025";
+}
+
+.cpik-platform-aparat::before {
+    content: "\e026";
+}
+
+.cpik-platform-bolboljan::before {
+    content: "\e027";
+}
+
+.cpik-platform-digimoviez::before {
+    content: "\e028";
+}
+
+.cpik-platform-filimo::before {
+    content: "\e029";
+}
+
+.cpik-platform-filmnet::before {
+    content: "\e02a";
+}
+
+.cpik-platform-namava::before {
+    content: "\e02b";
+}
+
+.cpik-platform-sheyda::before {
+    content: "\e02c";
+}
+
+.cpik-platform-tamashakhoone::before {
+    content: "\e02d";
+}
+
+.cpik-platform-telewebion::before {
+    content: "\e02e";
+}
+
+.cpik-post::before {
+    content: "\e02f";
+}
+
+.cpik-rightel::before {
+    content: "\e030";
+}
+
+.cpik-shop-digikala::before {
+    content: "\e031";
+}
+
+.cpik-shop-lioncomputer::before {
+    content: "\e032";
+}
+
+.cpik-shop-torob::before {
+    content: "\e033";
+}
+
+.cpik-socialmedia-virgool::before {
+    content: "\e034";
+}
+
+.cpik-tipax::before {
+    content: "\e035";
+}

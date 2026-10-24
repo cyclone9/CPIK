@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPIK - CyClone Power Icon Kit</title>
+  <meta name="description" content="CPIK is an icon kit of Iranian banks, platforms, services and brands. Link one stylesheet and each icon is a class name away.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <script>
+    (() => {
+      const root = document.documentElement;
+      let theme = 'dark';
+      let language = 'fa';
+
+      try {
+        const savedTheme = localStorage.getItem('cpik-preview-theme');
+        const savedLanguage = localStorage.getItem('cpik-preview-language');
+
+        if (savedTheme === 'dark' || savedTheme === 'light') {
+          theme = savedTheme;
+        }
+
+        if (savedLanguage === 'fa' || savedLanguage === 'en') {
+          language = savedLanguage;
+        }
+      } catch { }
+
+      root.dataset.theme = theme;
+      root.lang = language;
+      root.dir = language === 'fa' ? 'rtl' : 'ltr';
+    })();
+  </script>
+  <link rel="stylesheet" href="cpik.css">
+  <style>
+    @font-face {
+      font-family: "Vazirmatn";
+      src: url("assets/fonts/Vazirmatn-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Vazirmatn";
+      src: url("assets/fonts/Vazirmatn-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Vazirmatn";
+      src: url("assets/fonts/Vazirmatn-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    /*
+     * CPIK palette (CPBS, approved 2026-10-23). Ink and Paper carry the
+     * page, Lazuli is the single accent, Grid gray is for keylines only.
+     * Muted text uses Grid gray mixed toward the text colour so small
+     * captions stay above 4.5:1.
+     */
+    :root {
+      --cpik-ink: #15171C;
+      --cpik-paper: #F4F2EC;
+      --cpik-lazuli: #4A5CF0;
+      --cpik-grid: #777C86;
+
+      --bg: var(--cpik-ink);
+      --fg: var(--cpik-paper);
+      --surface: #1D2027;
+      --surface-hover: #252933;
+      --muted: #A3A5AA;
+      --line: #2E323B;
+      --keyline: var(--cpik-grid);
+      --accent: var(--cpik-lazuli);
+      --on-accent: var(--cpik-paper);
+      --accent-text: #8E9AF7;
+      --header-bg: var(--cpik-ink);
+      --header-fg: var(--cpik-paper);
+      --header-line: #2E323B;
+      --control-line: #3A3F49;
+      --control-hover: #252933;
+      --code-bg: #0F1115;
+      --code-fg: var(--cpik-paper);
+      --code-muted: #A3A5AA;
+      --code-line: #3A3F49;
+      --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A3A5AA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+      --gutter: clamp(1rem, 3vw, 2.5rem);
+      --gap: clamp(0.75rem, 1.5vw, 1.25rem);
+      --block: clamp(2rem, 4vw, 3.5rem);
+      --measure: 42rem;
+      --radius: 0.75rem;
+      --fs: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+      --fs-s: clamp(0.8125rem, 0.78rem + 0.15vw, 0.9375rem);
+      --fs-h1: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
+      --fs-h2: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+      --fs-h3: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+    }
+
+    [data-theme="light"] {
+      --bg: var(--cpik-paper);
+      --fg: var(--cpik-ink);
+      --surface: #FFFFFF;
+      --surface-hover: #FBFAF7;
+      --muted: #5E636C;
+      --line: #D9D6CE;
+      --accent-text: var(--cpik-lazuli);
+      --header-bg: var(--cpik-paper);
+      --header-fg: var(--cpik-ink);
+      --header-line: #D9D6CE;
+      --control-line: #D9D6CE;
+      --control-hover: #EAE7DF;
+      --code-bg: var(--cpik-paper);
+      --code-fg: var(--cpik-ink);
+      --code-muted: #5E636C;
+      --code-line: #D9D6CE;
+      --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235E636C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--fg);
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      font-size: var(--fs);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.35;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    p, pre, figure {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent-text);
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover {
+      color: var(--fg);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    bdi {
+      unicode-bidi: isolate;
+    }
+
+    code, pre {
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      direction: ltr;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .ui-icon {
+      width: 1.15rem;
+      height: 1.15rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex: none;
+    }
+
+    /* Header: follows the theme; the lockup takes its frame and letters from the text colour. */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--header-bg);
+      color: var(--header-fg);
+      border-bottom: 1px solid var(--header-line);
+    }
+
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem 1.5rem;
+      min-height: 4.25rem;
+      flex-wrap: wrap;
+      padding-block: 0.6rem;
+    }
+
+    .brand {
+      display: flex;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand svg {
+      display: block;
+      height: 32px;
+      width: auto;
+    }
+
+    /* Narrow screens show the symbol alone. */
+    .brand .brand-symbol {
+      display: none;
+    }
+
+    .brand .tile {
+      fill: var(--cpik-lazuli);
+    }
+
+    .site-nav {
+      display: flex;
+      gap: 1.25rem;
+      font-size: var(--fs-s);
+      font-weight: 500;
+      margin-inline-start: auto;
+    }
+
+    .site-nav a {
+      color: var(--header-fg);
+      text-decoration: none;
+      padding-block: 0.25rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current] {
+      border-bottom-color: var(--cpik-lazuli);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .action-button {
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.5rem;
+      height: 2.5rem;
+      padding-inline: 0.5rem;
+      border: 1px solid var(--control-line);
+      border-radius: 0.5rem;
+      background: transparent;
+      color: var(--header-fg);
+      font: inherit;
+      font-size: var(--fs-s);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--control-hover);
+    }
+
+    .theme-toggle .sun,
+    [data-theme="light"] .theme-toggle .moon {
+      display: none;
+    }
+
+    [data-theme="light"] .theme-toggle .sun {
+      display: block;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      height: 2.5rem;
+      padding-inline: 1rem;
+      border-radius: 0.5rem;
+      background: var(--cpik-lazuli);
+      color: var(--cpik-paper);
+      font-size: var(--fs-s);
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .cta:hover {
+      color: var(--cpik-paper);
+      background: #3B4DE0;
+    }
+
+    /* Hero */
+    .hero {
+      padding-block: var(--block) calc(var(--block) * 0.6);
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: var(--fs-s);
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: var(--fs-h1);
+      margin-top: 0.35rem;
+    }
+
+    .hero p.lead {
+      max-width: var(--measure);
+      margin-top: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Toolbar */
+    .toolbar {
+      position: sticky;
+      top: 4.25rem;
+      z-index: 5;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding-block: 0.75rem;
+    }
+
+    .toolbar .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .search-field {
+      position: relative;
+      flex: 1 1 18rem;
+    }
+
+    .search-field .ui-icon {
+      position: absolute;
+      inset-inline-start: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    input[type="search"],
+    select {
+      width: 100%;
+      height: 2.75rem;
+      border: 1px solid var(--line);
+      border-radius: 0.6rem;
+      background: var(--surface);
+      color: var(--fg);
+      font: inherit;
+      font-size: var(--fs-s);
+    }
+
+    input[type="search"] {
+      padding-inline: 2.6rem 2.6rem;
+    }
+
+    input[type="search"]::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    input[type="search"]::placeholder {
+      color: var(--muted);
+    }
+
+    input[type="search"]:hover,
+    select:hover {
+      border-color: var(--keyline);
+    }
+
+    .search-clear {
+      position: absolute;
+      inset-inline-end: 0.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border: 0;
+      border-radius: 0.4rem;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .search-clear:hover {
+      color: var(--fg);
+      background: var(--surface-hover);
+    }
+
+    .search-clear[hidden] {
+      display: none;
+    }
+
+    /* The filter draws its own chevron at the inline end, so text and arrow sit together in RTL and LTR. */
+    select {
+      flex: 0 0 auto;
+      width: auto;
+      min-width: 12rem;
+      padding-inline: 0.9rem 2.5rem;
+      appearance: none;
+      background-image: var(--chevron);
+      background-repeat: no-repeat;
+      background-size: 1rem;
+      background-position: right 0.85rem center;
+      cursor: pointer;
+    }
+
+    [dir="rtl"] select {
+      background-position: left 0.85rem center;
+    }
+
+    select option {
+      background: var(--surface);
+      color: var(--fg);
+    }
+
+    .results {
+      color: var(--muted);
+      font-size: var(--fs-s);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    /* Gallery */
+    .gallery-section {
+      padding-block: var(--gap) var(--block);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      gap: var(--gap);
+    }
+
+    .preview {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+
+    .preview:hover {
+      border-color: var(--keyline);
+    }
+
+    .preview[hidden] {
+      display: none;
+    }
+
+    .preview .inner {
+      display: grid;
+      place-items: center;
+      height: 7rem;
+      font-size: 3rem;
+      color: var(--fg);
+    }
+
+    .caption {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      min-width: 0;
+      gap: 0.15rem;
+      padding: 0.6rem 0.75rem 0.7rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .brand-name {
+      display: block;
+      flex: 1 1 auto;
+      min-width: 0;
+      font-weight: 700;
+      font-size: var(--fs-s);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .class-name {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    [dir="rtl"] .class-name {
+      text-align: right;
+    }
+
+    .copy-button {
+      position: relative;
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 2.1rem;
+      height: 2.1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.45rem;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      color: var(--fg);
+      border-color: var(--keyline);
+    }
+
+    .copy-button .copy-check,
+    .copy-button[data-state="copied"] .copy-symbol {
+      display: none;
+    }
+
+    .copy-button[data-state="copied"] {
+      color: var(--on-accent);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .copy-button[data-state="copied"] .copy-check {
+      display: block;
+    }
+
+    .copy-button[data-state="error"] {
+      border-color: #E5484D;
+      color: #E5484D;
+    }
+
+    .copy-button[aria-disabled="true"] {
+      cursor: progress;
+    }
+
+    .empty {
+      padding: var(--block) 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Guide */
+    /* The guide cards, the two notices and the footer line share one gap (--gap). */
+    .guide {
+      padding-block: var(--block) var(--gap);
+      border-top: 1px solid var(--line);
+    }
+
+    .guide h2 {
+      font-size: var(--fs-h2);
+    }
+
+    .guide > .wrap > p:not(.notice) {
+      max-width: var(--measure);
+      margin-top: 0.5rem;
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+      gap: var(--gap);
+      margin-top: calc(var(--gap) * 1.5);
+    }
+
+    .guide-step {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      min-width: 0;
+      padding: 1.1rem 1.25rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .guide-step h3 {
+      font-size: var(--fs-h3);
+    }
+
+    .guide-step h3 .num {
+      color: var(--accent-text);
+      margin-inline-end: 0.35rem;
+    }
+
+    .guide-step p {
+      color: var(--muted);
+      font-size: var(--fs-s);
+    }
+
+    .code-block {
+      position: relative;
+      margin-top: auto;
+    }
+
+    .code-block pre {
+      overflow-x: auto;
+      padding: 0.9rem 3.25rem 0.9rem 1rem;
+      border-radius: 0.6rem;
+      background: var(--code-bg);
+      color: var(--code-fg);
+      border: 1px solid var(--code-line);
+      font-size: 0.8125rem;
+      line-height: 1.7;
+      text-align: left;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .code-block .copy-button {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      color: var(--code-muted);
+      border-color: var(--code-line);
+      background: var(--code-bg);
+    }
+
+    .code-block .copy-button:hover {
+      color: var(--code-fg);
+    }
+
+    .guide-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: auto;
+      padding: 1rem;
+      border-radius: 0.6rem;
+      border: 1px dashed var(--keyline);
+    }
+
+    .guide-preview i:nth-child(1) {
+      font-size: 16px;
+    }
+
+    .guide-preview i:nth-child(2) {
+      font-size: 32px;
+    }
+
+    .guide-preview i:nth-child(3) {
+      font-size: 64px;
+      color: var(--accent-text);
+    }
+
+    /* Notice: a boxed note with an icon, used for the guide note and the licence. */
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-inline-start: 3px solid var(--accent);
+      border-radius: 0.6rem;
+      color: var(--muted);
+      font-size: var(--fs-s);
+      line-height: 1.75;
+    }
+
+    .notice .ui-icon {
+      margin-top: 0.2rem;
+      color: var(--accent-text);
+    }
+
+    .guide .notice {
+      margin-top: var(--gap);
+    }
+
+    .licence {
+      padding-bottom: var(--gap);
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding-block: 1.5rem 2rem;
+      color: var(--muted);
+      font-size: var(--fs-s);
+    }
+
+    .site-footer .wrap {
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .back-to-top {
+      position: fixed;
+      inset-inline-end: 1rem;
+      bottom: 1rem;
+      z-index: 20;
+      display: grid;
+      place-items: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border: 0;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--on-accent);
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.25);
+    }
+
+    .back-to-top[hidden] {
+      display: none;
+    }
+
+    @media (max-width: 40rem) {
+      .site-footer {
+        padding-bottom: 5rem;
+      }
+
+      .brand .brand-lockup {
+        display: none;
+      }
+
+      .brand .brand-symbol {
+        display: block;
+      }
+
+      .site-nav {
+        order: 3;
+        width: 100%;
+        margin-inline-start: 0;
+      }
+
+      .header-actions {
+        margin-inline-start: auto;
+      }
+
+      .toolbar {
+        position: static;
+      }
+
+      select {
+        flex: 1 1 auto;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+      }
+
+      .cta {
+        padding-inline: 0.75rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .preview {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#icons" aria-label="CPIK">
+        <svg class="brand-symbol" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M7 2H17A5 5 0 0 1 22 7H20A3 3 0 0 0 17 4H7A3 3 0 0 0 4 7V17A3 3 0 0 0 7 20H17A3 3 0 0 0 20 17H22A5 5 0 0 1 17 22H7A5 5 0 0 1 2 17V7A5 5 0 0 1 7 2Z" />
+          <path class="tile" d="M12 8H16A2 2 0 0 1 18 10V14A2 2 0 0 1 16 16H12A2 2 0 0 1 10 14V10A2 2 0 0 1 12 8Z" />
+        </svg>
+        <svg class="brand-lockup" viewBox="0 0 100 24" width="133" height="32" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M7 2H17A5 5 0 0 1 22 7H20A3 3 0 0 0 17 4H7A3 3 0 0 0 4 7V17A3 3 0 0 0 7 20H17A3 3 0 0 0 20 17H22A5 5 0 0 1 17 22H7A5 5 0 0 1 2 17V7A5 5 0 0 1 7 2Z" />
+          <path class="tile" d="M12 8H16A2 2 0 0 1 18 10V14A2 2 0 0 1 16 16H12A2 2 0 0 1 10 14V10A2 2 0 0 1 12 8Z" />
+          <path transform="translate(32 0)" fill="currentColor" d="M6 2H12A6 6 0 0 1 18 8H14A2 2 0 0 0 12 6H6A2 2 0 0 0 4 8V16A2 2 0 0 0 6 18H12A2 2 0 0 0 14 16H18A6 6 0 0 1 12 22H6A6 6 0 0 1 0 16V8A6 6 0 0 1 6 2Z" />
+          <path transform="translate(54 0)" fill="currentColor" fill-rule="evenodd" d="M0 2H10A6 6 0 0 1 10 14H4V22H0Z M4 6V10H10A2 2 0 0 0 10 6Z" />
+          <path transform="translate(75 0)" fill="currentColor" d="M0 2H4V22H0Z" />
+          <path transform="translate(84 0)" fill="currentColor" d="M0 2H4V22H0Z M10 2H16L4 14V8Z M4 10L16 22H10L4 16Z" />
+        </svg>
+      </a>
+
+      <nav class="site-nav" aria-label="CPIK">
+        <a href="#icons" aria-current="location" data-i18n="navIcons">آیکون‌ها</a>
+        <a href="#guide" data-i18n="navGuide">راهنما</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="language-toggle" class="action-button" type="button" dir="ltr">EN</button>
+
+        <button id="theme-toggle" class="action-button theme-toggle" type="button">
+          <svg class="ui-icon moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z" />
+          </svg>
+          <svg class="ui-icon sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+          </svg>
+        </button>
+
+        <a class="cta" href="https://github.com/cyclone9/CPIK/releases/latest" data-i18n="download">دریافت کیت</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow"><bdi dir="ltr">CPIK</bdi> · <span data-i18n="shortName">کیت آیکون</span> <bdi dir="ltr" data-version-output></bdi></p>
+        <h1 data-i18n="tagline">برندهای ایرانی، در یک کیت آیکون.</h1>
+        <p class="lead" data-i18n="description">کیت CPIK آیکون بانک‌ها، پلتفرم‌ها، سرویس‌ها و برندهای ایرانی را یک‌جا می‌دهد. یک فایل استایل را لینک کنید تا هر آیکون با یک نام کلاس در دسترس باشد؛ در هر اندازه‌ای واضح می‌ماند و مثل متن کنارش با CSS رنگ می‌گیرد. لوگوها متعلق به صاحبانشان است.</p>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <div class="wrap">
+        <div class="search-field">
+          <label class="sr-only" for="icon-search" data-i18n="searchLabel">جستجوی آیکون</label>
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" />
+          </svg>
+          <input id="icon-search" type="search" data-i18n-placeholder="searchPlaceholder"
+            placeholder="جستجو با نام یا کلیدواژه" autocomplete="off" spellcheck="false" aria-controls="icon-gallery">
+          <button id="search-clear" class="search-clear" type="button" aria-controls="icon-gallery" hidden>
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="m6 6 12 12M6 18 18 6" />
+            </svg>
+          </button>
+        </div>
+
+        <label class="sr-only" for="icon-filter" data-i18n="filterLabel">دسته</label>
+        <select id="icon-filter" aria-controls="icon-gallery"></select>
+
+        <p id="search-results" class="results" role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+    </div>
+
+    <section id="icons" class="gallery-section" aria-labelledby="icons-title">
+      <h2 id="icons-title" class="sr-only" data-i18n="navIcons">آیکون‌ها</h2>
+      <div class="wrap">
+        <div id="icon-gallery" class="gallery">
+          <div class="preview" data-name="tipax">
+            <span class="inner"><i class="cpik-tipax" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">tipax</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-tipax">cpik-tipax</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="socialmedia-virgool">
+            <span class="inner"><i class="cpik-socialmedia-virgool" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">socialmedia-virgool</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-socialmedia-virgool">cpik-socialmedia-virgool</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="shop-torob">
+            <span class="inner"><i class="cpik-shop-torob" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">shop-torob</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-shop-torob">cpik-shop-torob</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="shop-lioncomputer">
+            <span class="inner"><i class="cpik-shop-lioncomputer" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">shop-lioncomputer</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-shop-lioncomputer">cpik-shop-lioncomputer</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="shop-digikala">
+            <span class="inner"><i class="cpik-shop-digikala" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">shop-digikala</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-shop-digikala">cpik-shop-digikala</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="rightel">
+            <span class="inner"><i class="cpik-rightel" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">rightel</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-rightel">cpik-rightel</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="post">
+            <span class="inner"><i class="cpik-post" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">post</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-post">cpik-post</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-telewebion">
+            <span class="inner"><i class="cpik-platform-telewebion" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-telewebion</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-telewebion">cpik-platform-telewebion</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-tamashakhoone">
+            <span class="inner"><i class="cpik-platform-tamashakhoone" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-tamashakhoone</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-tamashakhoone">cpik-platform-tamashakhoone</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-sheyda">
+            <span class="inner"><i class="cpik-platform-sheyda" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-sheyda</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-sheyda">cpik-platform-sheyda</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-namava">
+            <span class="inner"><i class="cpik-platform-namava" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-namava</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-namava">cpik-platform-namava</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-filmnet">
+            <span class="inner"><i class="cpik-platform-filmnet" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-filmnet</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-filmnet">cpik-platform-filmnet</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-filimo">
+            <span class="inner"><i class="cpik-platform-filimo" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-filimo</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-filimo">cpik-platform-filimo</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-digimoviez">
+            <span class="inner"><i class="cpik-platform-digimoviez" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-digimoviez</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-digimoviez">cpik-platform-digimoviez</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-bolboljan">
+            <span class="inner"><i class="cpik-platform-bolboljan" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-bolboljan</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-bolboljan">cpik-platform-bolboljan</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-aparat">
+            <span class="inner"><i class="cpik-platform-aparat" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-aparat</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-aparat">cpik-platform-aparat</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="platform-30nama">
+            <span class="inner"><i class="cpik-platform-30nama" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">platform-30nama</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-platform-30nama">cpik-platform-30nama</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="news-zoomit">
+            <span class="inner"><i class="cpik-news-zoomit" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">news-zoomit</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-news-zoomit">cpik-news-zoomit</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="news-zoomg">
+            <span class="inner"><i class="cpik-news-zoomg" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">news-zoomg</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-news-zoomg">cpik-news-zoomg</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="mobile-communications-of-iran">
+            <span class="inner"><i class="cpik-mobile-communications-of-iran" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">mobile-communications-of-iran</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-mobile-communications-of-iran">cpik-mobile-communications-of-iran</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="map-tehran">
+            <span class="inner"><i class="cpik-map-tehran" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">map-tehran</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-map-tehran">cpik-map-tehran</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="map-iran">
+            <span class="inner"><i class="cpik-map-iran" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">map-iran</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-map-iran">cpik-map-iran</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="irancell">
+            <span class="inner"><i class="cpik-irancell" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">irancell</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-irancell">cpik-irancell</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="finance-digipay">
+            <span class="inner"><i class="cpik-finance-digipay" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">finance-digipay</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-finance-digipay">cpik-finance-digipay</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="e-namad">
+            <span class="inner"><i class="cpik-e-namad" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">e-namad</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-e-namad">cpik-e-namad</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="crypto-nobitex">
+            <span class="inner"><i class="cpik-crypto-nobitex" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">crypto-nobitex</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-crypto-nobitex">cpik-crypto-nobitex</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="crypto-abantether">
+            <span class="inner"><i class="cpik-crypto-abantether" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">crypto-abantether</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-crypto-abantether">cpik-crypto-abantether</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="cpik">
+            <span class="inner"><i class="cpik-cpik" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">cpik</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-cpik">cpik-cpik</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="channel-3">
+            <span class="inner"><i class="cpik-channel-3" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">channel-3</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-channel-3">cpik-channel-3</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="channel-2">
+            <span class="inner"><i class="cpik-channel-2" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">channel-2</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-channel-2">cpik-channel-2</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="channel-1">
+            <span class="inner"><i class="cpik-channel-1" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">channel-1</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-channel-1">cpik-channel-1</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-tejarat">
+            <span class="inner"><i class="cpik-bank-tejarat" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-tejarat</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-tejarat">cpik-bank-tejarat</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-sina">
+            <span class="inner"><i class="cpik-bank-sina" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-sina</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-sina">cpik-bank-sina</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-shahr">
+            <span class="inner"><i class="cpik-bank-shahr" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-shahr</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-shahr">cpik-bank-shahr</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-sepah">
+            <span class="inner"><i class="cpik-bank-sepah" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-sepah</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-sepah">cpik-bank-sepah</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-sarmayeh">
+            <span class="inner"><i class="cpik-bank-sarmayeh" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-sarmayeh</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-sarmayeh">cpik-bank-sarmayeh</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-saman">
+            <span class="inner"><i class="cpik-bank-saman" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-saman</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-saman">cpik-bank-saman</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-saderat">
+            <span class="inner"><i class="cpik-bank-saderat" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-saderat</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-saderat">cpik-bank-saderat</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-resalat">
+            <span class="inner"><i class="cpik-bank-resalat" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-resalat</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-resalat">cpik-bank-resalat</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-post">
+            <span class="inner"><i class="cpik-bank-post" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-post</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-post">cpik-bank-post</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-pasargad">
+            <span class="inner"><i class="cpik-bank-pasargad" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-pasargad</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-pasargad">cpik-bank-pasargad</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-parsian">
+            <span class="inner"><i class="cpik-bank-parsian" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-parsian</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-parsian">cpik-bank-parsian</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-melli">
+            <span class="inner"><i class="cpik-bank-melli" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-melli</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-melli">cpik-bank-melli</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-mellat">
+            <span class="inner"><i class="cpik-bank-mellat" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-mellat</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-mellat">cpik-bank-mellat</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-maskan">
+            <span class="inner"><i class="cpik-bank-maskan" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-maskan</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-maskan">cpik-bank-maskan</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-markazi">
+            <span class="inner"><i class="cpik-bank-markazi" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-markazi</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-markazi">cpik-bank-markazi</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-khavarmianeh">
+            <span class="inner"><i class="cpik-bank-khavarmianeh" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-khavarmianeh</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-khavarmianeh">cpik-bank-khavarmianeh</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-keshavarzi">
+            <span class="inner"><i class="cpik-bank-keshavarzi" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-keshavarzi</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-keshavarzi">cpik-bank-keshavarzi</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-karafarin">
+            <span class="inner"><i class="cpik-bank-karafarin" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-karafarin</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-karafarin">cpik-bank-karafarin</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-iranzamin">
+            <span class="inner"><i class="cpik-bank-iranzamin" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-iranzamin</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-iranzamin">cpik-bank-iranzamin</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-gardeshgari">
+            <span class="inner"><i class="cpik-bank-gardeshgari" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-gardeshgari</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-gardeshgari">cpik-bank-gardeshgari</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-eghtesadnovin">
+            <span class="inner"><i class="cpik-bank-eghtesadnovin" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-eghtesadnovin</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-eghtesadnovin">cpik-bank-eghtesadnovin</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-dey">
+            <span class="inner"><i class="cpik-bank-dey" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-dey</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-dey">cpik-bank-dey</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-blue">
+            <span class="inner"><i class="cpik-bank-blue" aria-hidden="true"></i></span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-blue</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-blue">cpik-bank-blue</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+        </div>
+
+        <p id="empty-message" class="empty" data-i18n="empty" hidden>آیکونی پیدا نشد.</p>
+      </div>
+    </section>
+
+    <section id="guide" class="guide" aria-labelledby="guide-title">
+      <div class="wrap">
+        <h2 id="guide-title" data-i18n="guideTitle">راهنمای استفاده</h2>
+        <p data-i18n="guideIntro">فایل استایل را اضافه کنید، آیکون را انتخاب کنید و کد HTML آن را در صفحه بگذارید.</p>
+
+        <div class="steps">
+          <div class="guide-step">
+            <h3><span class="num">۱</span><span data-i18n="guideFilesTitle">افزودن استایل</span></h3>
+            <p data-i18n="guideFilesText">فایل cpik.css و فونت‌های WOFF و WOFF2 آن را کنار هم در پوشه‌ی assets/cpik بگذارید و این خط را در head صفحه اضافه کنید.</p>
+            <pre><code>&lt;link rel="stylesheet" href="./assets/cpik/cpik.css"&gt;</code></pre>
+            <p data-i18n="guideCdnText">یا بدون کپی فایل‌ها، آن را از jsDelivr بارگذاری کنید:</p>
+            <pre><code data-cdn-link>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cpik/dist/cpik.css"&gt;</code></pre>
+          </div>
+
+          <div class="guide-step">
+            <h3><span class="num">۲</span><span data-i18n="guideIconTitle">افزودن آیکون</span></h3>
+            <p data-i18n="guideIconText">هر آیکون فقط یک کلاس دارد. دکمه‌ی کپی هر کارت را بزنید و کد را هر جا خواستید بگذارید.</p>
+            <pre><code>&lt;i class="cpik-bank-melli" aria-hidden="true"&gt;&lt;/i&gt;</code></pre>
+          </div>
+
+          <div class="guide-step">
+            <h3><span class="num">۳</span><span data-i18n="guideStyleTitle">اندازه و رنگ</span></h3>
+            <p data-i18n="guideStyleText">آیکون مثل متن است: اندازه را با font-size و رنگ را با color تنظیم کنید.</p>
+            <pre><code>.cpik-cpik {
+  font-size: 48px;
+  color: #4A5CF0;
+}</code></pre>
+          </div>
+
+          <div class="guide-step">
+            <h3><span class="num">۴</span><span data-i18n="guidePreviewTitle">پیش‌نمایش</span></h3>
+            <p data-i18n="guidePreviewText">همان آیکون در ۱۶، ۳۲ و ۶۴ پیکسل.</p>
+            <div class="guide-preview" dir="ltr">
+              <i class="cpik-cpik" aria-hidden="true"></i>
+              <i class="cpik-cpik" aria-hidden="true"></i>
+              <i class="cpik-cpik" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <p class="notice">
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 11v5M12 8h.01" />
+          </svg>
+          <span data-i18n="guideNote">فایل cpik.js فقط برای همین صفحه است و آیکون‌ها به JavaScript نیاز ندارند. اگر دکمه‌ای فقط آیکون دارد، به خود دکمه یک نام دسترس‌پذیر مثل aria-label بدهید.</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="licence" aria-label="MIT">
+      <div class="wrap">
+        <p class="notice">
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          <span data-i18n="licence">کیت با مجوز MIT منتشر شده است. لوگوها متعلق به صاحبانشان است و استفاده از آن‌ها به معنای همکاری با آن برندها نیست.</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer">
+    <div class="wrap">
+      <p lang="en" dir="ltr">
+        &copy; <span id="copyright-years">2026</span>
+        <a href="https://cyclone9.ir/cpik">CyClone</a>
+        · <bdi dir="ltr">CPIK - CyClone Power Icon Kit</bdi>
+        <bdi dir="ltr" data-version-output></bdi>
+      </p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" type="button" hidden>
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5m-6 6 6-6 6 6" />
+    </svg>
+  </button>
+
+  <script src="./cpik.js"></script>
+
+  <script>
+    const root = document.documentElement;
+    const searchInput = document.getElementById('icon-search');
+    const searchClear = document.getElementById('search-clear');
+    const categoryFilter = document.getElementById('icon-filter');
+    const results = document.getElementById('search-results');
+    const emptyMessage = document.getElementById('empty-message');
+    const themeToggle = document.getElementById('theme-toggle');
+    const languageToggle = document.getElementById('language-toggle');
+    const backToTop = document.getElementById('back-to-top');
+    const metadata = window.CPIK_DATA || {};
+    const categories = window.CPIK_CATEGORIES || [];
+    const version = window.CPIK_VERSION;
+    let language = root.lang === 'en' ? 'en' : 'fa';
+
+    const translations = {
+      en: {
+        navIcons: 'Icons',
+        navGuide: 'Guide',
+        download: 'Get the kit',
+        shortName: 'Icon Kit',
+        tagline: 'Iranian brands. One icon kit.',
+        description: 'CPIK is an icon kit of Iranian banks, platforms, services and brands. Link one stylesheet and each icon is a class name away, sharp at any size and coloured with CSS like the text beside it. The logos belong to their owners.',
+        searchLabel: 'Search icons',
+        searchPlaceholder: 'Search by name or keyword',
+        filterLabel: 'Category',
+        all: 'All icons',
+        other: 'Other',
+        empty: 'No icons found. Try another name, keyword or category.',
+        guideTitle: 'How to use CPIK',
+        guideIntro: 'Add the stylesheet, choose an icon, and paste its HTML into your page.',
+        guideFilesTitle: 'Add the stylesheet',
+        guideFilesText: "Put cpik.css and its WOFF and WOFF2 font files together in assets/cpik, then add this line to your page's head.",
+        guideCdnText: 'Or load it from jsDelivr without copying any files:',
+        guideIconTitle: 'Insert an icon',
+        guideIconText: 'Every icon is a single class. Use the copy button on a card and paste the HTML where you want the icon.',
+        guideStyleTitle: 'Size and colour',
+        guideStyleText: 'An icon behaves like text: set its size with font-size and its colour with color.',
+        guidePreviewTitle: 'Preview',
+        guidePreviewText: 'The same icon at 16, 32 and 64 pixels.',
+        guideNote: 'cpik.js is only used by this page; the icons need no JavaScript. If a button shows only an icon, give the button itself an accessible name such as aria-label.',
+        licence: 'The kit is released under the MIT licence. The logos belong to their owners, and using one does not imply a partnership with the brand.',
+        darkMode: 'Switch to dark theme',
+        lightMode: 'Switch to light theme',
+        languageSwitch: 'تغییر زبان به فارسی',
+        clearSearch: 'Clear search',
+        backToTop: 'Back to top',
+        copy: 'Copy HTML',
+        copying: 'Copying HTML',
+        copied: 'HTML copied',
+        copyFailed: 'Copy failed. Try again or check clipboard permissions.',
+        copyCode: 'Copy code',
+        codeCopied: 'Code copied',
+        results: (visible, total) => `${visible} of ${total} icons`
+      },
+      fa: {
+        navIcons: 'آیکون‌ها',
+        navGuide: 'راهنما',
+        download: 'دریافت کیت',
+        shortName: 'کیت آیکون',
+        tagline: 'برندهای ایرانی، در یک کیت آیکون.',
+        description: 'کیت CPIK آیکون بانک‌ها، پلتفرم‌ها، سرویس‌ها و برندهای ایرانی را یک‌جا می‌دهد. یک فایل استایل را لینک کنید تا هر آیکون با یک نام کلاس در دسترس باشد؛ در هر اندازه‌ای واضح می‌ماند و مثل متن کنارش با CSS رنگ می‌گیرد. لوگوها متعلق به صاحبانشان است.',
+        searchLabel: 'جستجوی آیکون',
+        searchPlaceholder: 'جستجو با نام یا کلیدواژه',
+        filterLabel: 'دسته',
+        all: 'همه‌ی آیکون‌ها',
+        other: 'سایر',
+        empty: 'آیکونی پیدا نشد. نام، کلیدواژه یا دسته‌ی دیگری را امتحان کنید.',
+        guideTitle: 'راهنمای استفاده',
+        guideIntro: 'فایل استایل را اضافه کنید، آیکون را انتخاب کنید و کد HTML آن را در صفحه بگذارید.',
+        guideFilesTitle: 'افزودن استایل',
+        guideFilesText: 'فایل cpik.css و فونت‌های WOFF و WOFF2 آن را کنار هم در پوشه‌ی assets/cpik بگذارید و این خط را در head صفحه اضافه کنید.',
+        guideCdnText: 'یا بدون کپی فایل‌ها، آن را از jsDelivr بارگذاری کنید:',
+        guideIconTitle: 'افزودن آیکون',
+        guideIconText: 'هر آیکون فقط یک کلاس دارد. دکمه‌ی کپی هر کارت را بزنید و کد را هر جا خواستید بگذارید.',
+        guideStyleTitle: 'اندازه و رنگ',
+        guideStyleText: 'آیکون مثل متن است: اندازه را با font-size و رنگ را با color تنظیم کنید.',
+        guidePreviewTitle: 'پیش‌نمایش',
+        guidePreviewText: 'همان آیکون در ۱۶، ۳۲ و ۶۴ پیکسل.',
+        guideNote: 'فایل cpik.js فقط برای همین صفحه است و آیکون‌ها به JavaScript نیاز ندارند. اگر دکمه‌ای فقط آیکون دارد، به خود دکمه یک نام دسترس‌پذیر مثل aria-label بدهید.',
+        licence: 'کیت با مجوز MIT منتشر شده است. لوگوها متعلق به صاحبانشان است و استفاده از آن‌ها به معنای همکاری با آن برندها نیست.',
+        darkMode: 'تغییر به تم تیره',
+        lightMode: 'تغییر به تم روشن',
+        languageSwitch: 'Switch to English',
+        clearSearch: 'پاک کردن جستجو',
+        backToTop: 'برگشت به بالا',
+        copy: 'کپی کد HTML',
+        copying: 'در حال کپی کد',
+        copied: 'کد HTML کپی شد',
+        copyFailed: 'کپی انجام نشد. دوباره امتحان کنید یا دسترسی کلیپ‌بورد را بررسی کنید.',
+        copyCode: 'کپی کد',
+        codeCopied: 'کد کپی شد',
+        results: (visible, total) => `${visible} از ${total} آیکون`
+      }
+    };
+
+    const dictionary = () => translations[language];
+    const digits = value => new Intl.NumberFormat(
+      language === 'fa' ? 'fa-IR' : 'en-US'
+    ).format(value);
+
+    document.querySelectorAll('[data-version-output]').forEach(element => {
+      element.textContent = version ? `v${version}` : '';
+    });
+
+    /* The CDN example pins the version this page was built from. */
+    document.querySelectorAll('[data-cdn-link]').forEach(element => {
+      element.textContent = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cpik${
+        version ? `@${version}` : ''}/dist/cpik.css">`;
+    });
+
+    const startYear = 2026;
+    const currentYear = new Date().getFullYear();
+
+    document.getElementById('copyright-years').textContent =
+      currentYear > startYear ? `${startYear}-${currentYear}` : String(startYear);
+
+    function savePreference(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch { }
+    }
+
+    /*
+     * Search text: one form for Arabic and Persian letters and digits,
+     * no diacritics or tatweel, and hyphens, underscores and zero-width
+     * joiners read as spaces.
+     */
+    function normalize(value) {
+      return String(value)
+        .normalize('NFKC')
+        .toLowerCase()
+        .replace(/[يى]/g, 'ی')
+        .replace(/ك/g, 'ک')
+        .replace(/[آأإ]/g, 'ا')
+        .replace(/[۰-۹]/g, digit => String(digit.charCodeAt(0) - 1776))
+        .replace(/[٠-٩]/g, digit => String(digit.charCodeAt(0) - 1632))
+        .replace(/[ً-ٰٟـ]/g, '')
+        .replace(/[‌‍‎‏]/g, ' ')
+        .replace(/[-_]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    const prefixes = new Set(categories.map(category => category.prefix));
+
+    function getCategory(name) {
+      const prefix = name.split('-')[0];
+
+      return prefixes.has(prefix) ? prefix : 'other';
+    }
+
+    const icons = Array.from(
+      document.querySelectorAll('#icon-gallery .preview'),
+      element => {
+        const key = element.dataset.name;
+        const entry = Object.hasOwn(metadata, key) ? metadata[key] || {} : {};
+        const names = {
+          fa: typeof entry.name?.fa === 'string' ? entry.name.fa : key,
+          en: typeof entry.name?.en === 'string' ? entry.name.en : key
+        };
+        const keywords = Array.isArray(entry.keywords) ?
+          entry.keywords.filter(value => typeof value === 'string') : [];
+        const iconClass = element.querySelector('.inner > i').className;
+
+        return {
+          element,
+          key,
+          names,
+          nameElement: element.querySelector('.brand-name'),
+          copyButton: element.querySelector('.copy-button'),
+          feedback: element.querySelector('.copy-feedback'),
+          html: `<i class="${iconClass}" aria-hidden="true"></i>`,
+          category: getCategory(key),
+          searchText: normalize([key, names.fa, names.en, ...keywords].join(' ')),
+          state: 'idle',
+          busy: false,
+          resetTimer: null
+        };
+      }
+    );
+
+    /* Gallery order: categories as listed in config/categories.json, then by name. */
+    const categoryOrder = [...categories.map(category => category.prefix), 'other'];
+
+    icons.sort((a, b) =>
+      categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category) ||
+      a.key.localeCompare(b.key));
+    document.getElementById('icon-gallery').append(...icons.map(icon => icon.element));
+
+    const usedCategories = new Set(icons.map(icon => icon.category));
+
+    function renderCategories() {
+      const selected = categoryFilter.value || 'all';
+      const options = [{ value: 'all', label: dictionary().all }];
+
+      for (const category of categories) {
+        if (usedCategories.has(category.prefix)) {
+          options.push({ value: category.prefix, label: category[language] });
+        }
+      }
+
+      if (usedCategories.has('other')) {
+        options.push({ value: 'other', label: dictionary().other });
+      }
+
+      categoryFilter.replaceChildren(...options.map(({ value, label }) => {
+        const count = value === 'all' ? icons.length :
+          icons.filter(icon => icon.category === value).length;
+
+        return new Option(`${label} (${digits(count)})`, value);
+      }));
+      categoryFilter.value = options.some(option => option.value === selected) ?
+        selected : 'all';
+    }
+
+    function updateCopyButton(icon) {
+      const label = dictionary()[{
+        idle: 'copy',
+        busy: 'copying',
+        copied: 'copied',
+        error: 'copyFailed'
+      }[icon.state]];
+
+      icon.copyButton.dataset.state = icon.state;
+      icon.copyButton.title = label;
+      icon.copyButton.setAttribute('aria-label', `${label}: ${icon.names[language]}`);
+
+      if (icon.busy) {
+        icon.copyButton.setAttribute('aria-disabled', 'true');
+      } else {
+        icon.copyButton.removeAttribute('aria-disabled');
+      }
+
+      icon.feedback.textContent = icon.state === 'copied' || icon.state === 'error' ?
+        `${label}: ${icon.names[language]}` : '';
+    }
+
+    function filterIcons() {
+      const query = normalize(searchInput.value);
+      const terms = query ? query.split(' ') : [];
+      const category = categoryFilter.value;
+      let visibleCount = 0;
+
+      searchClear.hidden = searchInput.value.length === 0;
+
+      for (const icon of icons) {
+        const matches = (category === 'all' || icon.category === category) &&
+          terms.every(term => icon.searchText.includes(term));
+
+        icon.element.hidden = !matches;
+        visibleCount += matches;
+      }
+
+      results.textContent = dictionary().results(digits(visibleCount), digits(icons.length));
+      emptyMessage.hidden = visibleCount > 0;
+    }
+
+    function clearSearch() {
+      searchInput.value = '';
+      searchInput.focus({ preventScroll: true });
+      filterIcons();
+    }
+
+    async function copyText(text) {
+      if (window.isSecureContext && navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return;
+        } catch { }
+      }
+
+      const activeElement = document.activeElement;
+      const textarea = document.createElement('textarea');
+
+      textarea.value = text;
+      textarea.readOnly = true;
+      textarea.className = 'sr-only';
+      document.body.appendChild(textarea);
+
+      try {
+        textarea.select();
+
+        if (!document.execCommand('copy')) {
+          throw new Error('Copy failed');
+        }
+      } finally {
+        textarea.remove();
+
+        if (activeElement instanceof HTMLElement) {
+          activeElement.focus({ preventScroll: true });
+        }
+      }
+    }
+
+    /*
+     * One copy flow for icon cards and code blocks: busy, then copied or
+     * failed, then back to idle.
+     */
+    async function runCopy(target, text, update) {
+      if (target.busy) {
+        return;
+      }
+
+      clearTimeout(target.resetTimer);
+      target.busy = true;
+      target.state = 'busy';
+      update();
+
+      try {
+        await copyText(text);
+        target.state = 'copied';
+      } catch {
+        target.state = 'error';
+      } finally {
+        target.busy = false;
+        update();
+        target.resetTimer = setTimeout(() => {
+          target.state = 'idle';
+          update();
+        }, target.state === 'copied' ? 2500 : 4500);
+      }
+    }
+
+    for (const icon of icons) {
+      icon.copyButton.addEventListener('click', () =>
+        runCopy(icon, icon.html, () => updateCopyButton(icon)));
+    }
+
+    const codeBlocks = Array.from(document.querySelectorAll('#guide pre'), pre => {
+      const wrapper = document.createElement('div');
+      const button = document.createElement('button');
+      const feedback = document.createElement('span');
+      const block = { button, feedback, state: 'idle', busy: false, resetTimer: null };
+
+      wrapper.className = 'code-block';
+      button.type = 'button';
+      button.className = 'copy-button';
+      button.innerHTML = icons[0]?.copyButton.innerHTML || '';
+      feedback.className = 'sr-only';
+      feedback.setAttribute('role', 'status');
+      pre.before(wrapper);
+      wrapper.append(pre, button, feedback);
+      button.addEventListener('click', () =>
+        runCopy(block, pre.textContent, () => updateCodeButton(block)));
+
+      return block;
+    });
+
+    function updateCodeButton(block) {
+      const label = {
+        idle: dictionary().copyCode,
+        busy: dictionary().copying,
+        copied: dictionary().codeCopied,
+        error: dictionary().copyFailed
+      }[block.state];
+
+      block.button.dataset.state = block.state;
+      block.button.title = label;
+      block.button.setAttribute('aria-label', label);
+      block.feedback.textContent =
+        block.state === 'copied' || block.state === 'error' ? label : '';
+    }
+
+    function updateThemeButton() {
+      const label = dictionary()[root.dataset.theme === 'dark' ? 'lightMode' : 'darkMode'];
+
+      themeToggle.title = label;
+      themeToggle.setAttribute('aria-label', label);
+    }
+
+    function applyLanguage() {
+      const words = dictionary();
+
+      root.lang = language;
+      root.dir = language === 'fa' ? 'rtl' : 'ltr';
+
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        element.textContent = words[element.dataset.i18n];
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        element.placeholder = words[element.dataset.i18nPlaceholder];
+      });
+
+      document.querySelectorAll('.guide-step .num').forEach((element, index) => {
+        element.textContent = digits(index + 1);
+      });
+
+      for (const icon of icons) {
+        icon.nameElement.textContent = icon.names[language];
+        icon.nameElement.title = icon.names[language];
+        updateCopyButton(icon);
+      }
+
+      for (const block of codeBlocks) {
+        updateCodeButton(block);
+      }
+
+      languageToggle.textContent = language === 'fa' ? 'EN' : 'FA';
+      languageToggle.title = words.languageSwitch;
+      languageToggle.setAttribute('aria-label', words.languageSwitch);
+      searchClear.title = words.clearSearch;
+      searchClear.setAttribute('aria-label', words.clearSearch);
+      backToTop.title = words.backToTop;
+      backToTop.setAttribute('aria-label', words.backToTop);
+      updateThemeButton();
+      renderCategories();
+      filterIcons();
+    }
+
+    themeToggle.addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      savePreference('cpik-preview-theme', root.dataset.theme);
+      updateThemeButton();
+    });
+
+    languageToggle.addEventListener('click', () => {
+      language = language === 'fa' ? 'en' : 'fa';
+      savePreference('cpik-preview-language', language);
+      applyLanguage();
+    });
+
+    searchInput.addEventListener('input', filterIcons);
+    searchInput.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !event.isComposing) {
+        event.preventDefault();
+        clearSearch();
+      }
+    });
+    searchClear.addEventListener('click', clearSearch);
+    categoryFilter.addEventListener('change', filterIcons);
+
+    /* Section navigation and the back-to-top button follow the scroll. */
+    const sectionLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
+    const sections = sectionLinks
+      .map(link => document.getElementById(link.hash.slice(1)))
+      .filter(Boolean);
+    let frame = null;
+
+    function updateNavigation() {
+      frame = null;
+      backToTop.hidden = window.scrollY < 400;
+
+      let activeId = sections[0]?.id;
+
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= window.innerHeight * 0.35) {
+          activeId = section.id;
+        }
+      }
+
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+        activeId = sections[sections.length - 1]?.id;
+      }
+
+      for (const link of sectionLinks) {
+        if (link.hash === `#${activeId}`) {
+          link.setAttribute('aria-current', 'location');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      }
+    }
+
+    function scheduleNavigation() {
+      frame ??= requestAnimationFrame(updateNavigation);
+    }
+
+    backToTop.addEventListener('click', () => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'instant' : 'smooth' });
+    });
+
+    window.addEventListener('scroll', scheduleNavigation, { passive: true });
+    window.addEventListener('resize', scheduleNavigation);
+    scheduleNavigation();
+    applyLanguage();
+  </script>
+</body>
+</html>
