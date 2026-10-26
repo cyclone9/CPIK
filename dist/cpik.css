@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?7b73ac5f46865f22b8c6f9f563c12795") format("woff2"),
-url("./cpik.woff?7b73ac5f46865f22b8c6f9f563c12795") format("woff");
+    src: url("./cpik.woff2?8d83c63fa6f82dde6bbc302568456e2f") format("woff2"),
+url("./cpik.woff?8d83c63fa6f82dde6bbc302568456e2f") format("woff");
     font-display: block;
 }
 
@@ -263,4 +263,8 @@ url("./cpik.woff?7b73ac5f46865f22b8c6f9f563c12795") format("woff");
 
 .cpik-finance-zibal::before {
     content: "\e03b";
+}
+
+.cpik-finance-asanpardakht::before {
+    content: "\e03c";
 }

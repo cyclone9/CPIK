@@ -729,6 +729,12 @@
       margin: 0;
     }
 
+    /* The version sits on its own line under the copyright. */
+    .footer-version {
+      display: block;
+      margin-top: 0.2rem;
+    }
+
     .back-to-top {
       position: fixed;
       inset-inline-end: 1rem;
@@ -975,7 +981,7 @@
         &copy; <span id="copyright-years">2026</span>
         <a href="https://cyclone9.ir/cpik">CyClone</a>
         · <bdi dir="ltr">CPIK - CyClone Power Icon Kit</bdi>
-        <bdi dir="ltr" data-version-output></bdi>
+        <span class="footer-version" data-version-output></span>
       </p>
     </div>
   </footer>

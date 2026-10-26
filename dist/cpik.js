@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.3";
+window.CPIK_VERSION = "0.1.4";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -553,6 +553,29 @@ window.CPIK_DATA = {
       "trust",
       "trust seal",
       "ecommerce"
+    ]
+  },
+  "finance-asanpardakht": {
+    "name": {
+      "fa": "آسان پرداخت",
+      "en": "Asan Pardakht"
+    },
+    "keywords": [
+      "آسان‌پرداخت",
+      "آسانپرداخت",
+      "آپ",
+      "اپ",
+      "اپلیکیشن آپ",
+      "پرداخت",
+      "کیف پول",
+      "شارژ",
+      "قبض",
+      "asan pardakht",
+      "asanpardakht",
+      "ap",
+      "top",
+      "payment",
+      "wallet"
     ]
   },
   "finance-digipay": {

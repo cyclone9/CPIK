@@ -13,6 +13,7 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 const { execFileSync } = require('node:child_process');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -63,6 +64,29 @@ function writeMetadata(version) {
     fs.writeFileSync(path.join(DIST, 'cpik.js'), script, 'utf8');
 }
 
+/*
+ * Servers may let browsers keep cpik.css for a day (cpik.cp1.ir does), so a
+ * new build could show new icon cards with an old stylesheet and empty
+ * glyphs. The page links each file with a hash of its content instead: a
+ * change forces a fresh download, an unchanged file keeps the same URL.
+ */
+function bustCache(files) {
+    const page = path.join(DIST, 'index.html');
+    let html = fs.readFileSync(page, 'utf8');
+
+    for (const file of files) {
+        const hash = crypto.createHash('sha1')
+            .update(fs.readFileSync(path.join(DIST, file)))
+            .digest('hex')
+            .slice(0, 10);
+        const pattern = new RegExp(`((?:href|src)="(?:\\./)?${file.replace('.', '\\.')})"`, 'g');
+
+        html = html.replace(pattern, `$1?v=${hash}"`);
+    }
+
+    fs.writeFileSync(page, html, 'utf8');
+}
+
 async function main() {
     const force = process.argv.includes('--force') ? ['--force'] : [];
     const { version } = readJson('package.json');
@@ -87,6 +111,7 @@ async function main() {
     });
 
     writeMetadata(version);
+    bustCache(['cpik.css', 'cpik.js']);
     fs.cpSync(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), { recursive: true });
     fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
