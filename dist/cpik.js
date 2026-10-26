@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.4";
+window.CPIK_VERSION = "0.1.5";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -15,6 +15,11 @@ window.CPIK_CATEGORIES = [
     "prefix": "crypto",
     "fa": "رمزارز",
     "en": "Crypto"
+  },
+  {
+    "prefix": "telecom",
+    "fa": "اپراتور موبایل",
+    "en": "Mobile operators"
   },
   {
     "prefix": "shop",
@@ -45,6 +50,11 @@ window.CPIK_CATEGORIES = [
     "prefix": "map",
     "fa": "نقشه",
     "en": "Maps"
+  },
+  {
+    "prefix": "landmark",
+    "fa": "بناهای شاخص",
+    "en": "Landmarks"
   }
 ];
 window.CPIK_DATA = {
@@ -67,7 +77,10 @@ window.CPIK_DATA = {
       "digital bank",
       "neobank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e000",
+    "isNew": false
   },
   "bank-dey": {
     "name": {
@@ -81,7 +94,10 @@ window.CPIK_DATA = {
       "day bank",
       "deybank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e001",
+    "isNew": false
   },
   "bank-eghtesadnovin": {
     "name": {
@@ -95,7 +111,10 @@ window.CPIK_DATA = {
       "eghtesadnovin",
       "enbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e002",
+    "isNew": false
   },
   "bank-gardeshgari": {
     "name": {
@@ -109,7 +128,10 @@ window.CPIK_DATA = {
       "gardeshgari",
       "tourism",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e003",
+    "isNew": false
   },
   "bank-iranzamin": {
     "name": {
@@ -124,7 +146,10 @@ window.CPIK_DATA = {
       "iranzamin",
       "izbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e004",
+    "isNew": false
   },
   "bank-karafarin": {
     "name": {
@@ -139,7 +164,10 @@ window.CPIK_DATA = {
       "بانکداری",
       "karafarinbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e005",
+    "isNew": false
   },
   "bank-keshavarzi": {
     "name": {
@@ -154,7 +182,10 @@ window.CPIK_DATA = {
       "agricultural bank",
       "bki",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e006",
+    "isNew": false
   },
   "bank-khavarmianeh": {
     "name": {
@@ -170,7 +201,10 @@ window.CPIK_DATA = {
       "khavarmiyaneh",
       "middleeastbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e007",
+    "isNew": false
   },
   "bank-markazi": {
     "name": {
@@ -186,7 +220,10 @@ window.CPIK_DATA = {
       "cbi",
       "central bank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e008",
+    "isNew": false
   },
   "bank-maskan": {
     "name": {
@@ -200,7 +237,10 @@ window.CPIK_DATA = {
       "وام مسکن",
       "housing bank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e009",
+    "isNew": false
   },
   "bank-mehriran": {
     "name": {
@@ -218,7 +258,10 @@ window.CPIK_DATA = {
       "mehriran",
       "qmb",
       "banking"
-    ]
+    ],
+    "added": "0.1.3",
+    "codepoint": "e036",
+    "isNew": false
   },
   "bank-melal": {
     "name": {
@@ -236,7 +279,10 @@ window.CPIK_DATA = {
       "melall",
       "credit institution",
       "banking"
-    ]
+    ],
+    "added": "0.1.3",
+    "codepoint": "e037",
+    "isNew": false
   },
   "bank-mellat": {
     "name": {
@@ -249,7 +295,10 @@ window.CPIK_DATA = {
       "خدمات بانکی",
       "mellatbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e00a",
+    "isNew": false
   },
   "bank-melli": {
     "name": {
@@ -264,7 +313,10 @@ window.CPIK_DATA = {
       "bmi",
       "bank melli iran",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e00b",
+    "isNew": false
   },
   "bank-parsian": {
     "name": {
@@ -277,7 +329,10 @@ window.CPIK_DATA = {
       "خدمات بانکی",
       "parsianbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e00c",
+    "isNew": false
   },
   "bank-pasargad": {
     "name": {
@@ -291,7 +346,10 @@ window.CPIK_DATA = {
       "pasargad",
       "bpi",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e00d",
+    "isNew": false
   },
   "bank-post": {
     "name": {
@@ -307,7 +365,10 @@ window.CPIK_DATA = {
       "postbank",
       "post bank iran",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e00e",
+    "isNew": false
   },
   "bank-refah": {
     "name": {
@@ -324,7 +385,10 @@ window.CPIK_DATA = {
       "refah kargaran",
       "refahbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.3",
+    "codepoint": "e038",
+    "isNew": false
   },
   "bank-resalat": {
     "name": {
@@ -339,7 +403,10 @@ window.CPIK_DATA = {
       "بانکداری",
       "rqbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e00f",
+    "isNew": false
   },
   "bank-saderat": {
     "name": {
@@ -354,7 +421,10 @@ window.CPIK_DATA = {
       "saderat iran",
       "bsi",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e010",
+    "isNew": false
   },
   "bank-saman": {
     "name": {
@@ -367,7 +437,10 @@ window.CPIK_DATA = {
       "خدمات بانکی",
       "samanbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e011",
+    "isNew": false
   },
   "bank-sarmayeh": {
     "name": {
@@ -381,7 +454,10 @@ window.CPIK_DATA = {
       "sarmaye",
       "sarmayehbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e012",
+    "isNew": false
   },
   "bank-sepah": {
     "name": {
@@ -393,7 +469,10 @@ window.CPIK_DATA = {
       "بانکداری",
       "خدمات بانکی",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e013",
+    "isNew": false
   },
   "bank-shahr": {
     "name": {
@@ -406,7 +485,10 @@ window.CPIK_DATA = {
       "خدمات بانکی",
       "shahrbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e014",
+    "isNew": false
   },
   "bank-sina": {
     "name": {
@@ -418,7 +500,10 @@ window.CPIK_DATA = {
       "بانکداری",
       "خدمات بانکی",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e015",
+    "isNew": false
   },
   "bank-tejarat": {
     "name": {
@@ -430,7 +515,10 @@ window.CPIK_DATA = {
       "بانکداری",
       "خدمات بانکی",
       "banking"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e016",
+    "isNew": false
   },
   "channel-1": {
     "name": {
@@ -448,7 +536,10 @@ window.CPIK_DATA = {
       "tv",
       "irib 1",
       "television"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e017",
+    "isNew": false
   },
   "channel-2": {
     "name": {
@@ -466,7 +557,10 @@ window.CPIK_DATA = {
       "tv",
       "irib 2",
       "television"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e018",
+    "isNew": false
   },
   "channel-3": {
     "name": {
@@ -485,7 +579,10 @@ window.CPIK_DATA = {
       "tv",
       "irib 3",
       "sports"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e019",
+    "isNew": false
   },
   "cpik": {
     "name": {
@@ -500,7 +597,10 @@ window.CPIK_DATA = {
       "icon kit",
       "icon font",
       "cyclone"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e01a",
+    "isNew": false
   },
   "crypto-abantether": {
     "name": {
@@ -517,7 +617,10 @@ window.CPIK_DATA = {
       "usdt",
       "crypto",
       "exchange"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e01b",
+    "isNew": false
   },
   "crypto-nobitex": {
     "name": {
@@ -533,7 +636,10 @@ window.CPIK_DATA = {
       "bitcoin",
       "crypto",
       "exchange"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e01c",
+    "isNew": false
   },
   "e-namad": {
     "name": {
@@ -553,7 +659,10 @@ window.CPIK_DATA = {
       "trust",
       "trust seal",
       "ecommerce"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e01d",
+    "isNew": false
   },
   "finance-asanpardakht": {
     "name": {
@@ -576,7 +685,10 @@ window.CPIK_DATA = {
       "top",
       "payment",
       "wallet"
-    ]
+    ],
+    "added": "0.1.4",
+    "codepoint": "e03c",
+    "isNew": false
   },
   "finance-digipay": {
     "name": {
@@ -592,7 +704,10 @@ window.CPIK_DATA = {
       "digi pay",
       "wallet",
       "payment"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e01e",
+    "isNew": false
   },
   "finance-idpay": {
     "name": {
@@ -609,7 +724,10 @@ window.CPIK_DATA = {
       "idpay",
       "id pay",
       "payment gateway"
-    ]
+    ],
+    "added": "0.1.3",
+    "codepoint": "e039",
+    "isNew": false
   },
   "finance-zarinpal": {
     "name": {
@@ -626,7 +744,10 @@ window.CPIK_DATA = {
       "zarinpal",
       "payment gateway",
       "payment"
-    ]
+    ],
+    "added": "0.1.3",
+    "codepoint": "e03a",
+    "isNew": false
   },
   "finance-zibal": {
     "name": {
@@ -640,23 +761,53 @@ window.CPIK_DATA = {
       "zibal",
       "payment gateway",
       "payment"
-    ]
+    ],
+    "added": "0.1.3",
+    "codepoint": "e03b",
+    "isNew": false
   },
-  "irancell": {
+  "landmark-azadi-tower": {
     "name": {
-      "fa": "ایرانسل",
-      "en": "Irancell"
+      "fa": "برج آزادی",
+      "en": "Azadi Tower"
     },
     "keywords": [
-      "ایران سل",
-      "اپراتور",
-      "سیم کارت",
-      "اینترنت همراه",
-      "شارژ",
-      "mtn irancell",
-      "operator",
-      "mobile"
-    ]
+      "آزادی",
+      "میدان آزادی",
+      "برج آزادی تهران",
+      "تهران",
+      "نماد تهران",
+      "بنای تاریخی",
+      "azadi",
+      "azadi tower",
+      "freedom tower",
+      "tehran",
+      "landmark"
+    ],
+    "added": "0.1.5",
+    "codepoint": "e03d",
+    "isNew": true
+  },
+  "landmark-milad-tower": {
+    "name": {
+      "fa": "برج میلاد",
+      "en": "Milad Tower"
+    },
+    "keywords": [
+      "میلاد",
+      "برج میلاد تهران",
+      "تهران",
+      "نماد تهران",
+      "برج مخابراتی",
+      "milad",
+      "milad tower",
+      "tehran",
+      "tower",
+      "landmark"
+    ],
+    "added": "0.1.5",
+    "codepoint": "e03e",
+    "isNew": true
   },
   "map-iran": {
     "name": {
@@ -673,7 +824,36 @@ window.CPIK_DATA = {
       "persia",
       "country",
       "geography"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e020",
+    "isNew": false
+  },
+  "map-iran-seas": {
+    "name": {
+      "fa": "نقشه ایران با دریاها",
+      "en": "Iran Map with Seas"
+    },
+    "keywords": [
+      "ایران",
+      "نقشه",
+      "نقشه ایران",
+      "دریا",
+      "دریای خزر",
+      "خزر",
+      "خلیج فارس",
+      "دریای عمان",
+      "کشور",
+      "iran",
+      "map",
+      "caspian sea",
+      "persian gulf",
+      "gulf of oman",
+      "sea"
+    ],
+    "added": "0.1.5",
+    "codepoint": "e03f",
+    "isNew": true
   },
   "map-tehran": {
     "name": {
@@ -688,24 +868,30 @@ window.CPIK_DATA = {
       "tehran",
       "capital",
       "map"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e021",
+    "isNew": false
   },
-  "mobile-communications-of-iran": {
+  "news-digiato": {
     "name": {
-      "fa": "همراه اول",
-      "en": "Hamrah-e Aval"
+      "fa": "دیجیاتو",
+      "en": "Digiato"
     },
     "keywords": [
-      "همراه‌اول",
-      "ارتباطات سیار ایران",
-      "شرکت ارتباطات سیار",
-      "اپراتور",
-      "سیم کارت",
-      "mci",
-      "hamrah aval",
-      "operator",
-      "mobile"
-    ]
+      "دیجی اتو",
+      "فناوری",
+      "تکنولوژی",
+      "اخبار",
+      "رسانه",
+      "digiato",
+      "technology",
+      "tech",
+      "news"
+    ],
+    "added": "0.1.5",
+    "codepoint": "e040",
+    "isNew": true
   },
   "news-zoomg": {
     "name": {
@@ -722,7 +908,10 @@ window.CPIK_DATA = {
       "gaming",
       "games",
       "news"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e023",
+    "isNew": false
   },
   "news-zoomit": {
     "name": {
@@ -739,7 +928,10 @@ window.CPIK_DATA = {
       "technology",
       "tech",
       "news"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e024",
+    "isNew": false
   },
   "platform-30nama": {
     "name": {
@@ -767,7 +959,10 @@ window.CPIK_DATA = {
       "streaming",
       "watch online",
       "download"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e025",
+    "isNew": false
   },
   "platform-aparat": {
     "name": {
@@ -785,7 +980,10 @@ window.CPIK_DATA = {
       "video",
       "streaming",
       "live"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e026",
+    "isNew": false
   },
   "platform-bolboljan": {
     "name": {
@@ -802,7 +1000,10 @@ window.CPIK_DATA = {
       "bolboljan",
       "bolbol jan",
       "bol bol jan"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e027",
+    "isNew": false
   },
   "platform-digimoviez": {
     "name": {
@@ -818,7 +1019,10 @@ window.CPIK_DATA = {
       "digi moviez",
       "movie",
       "download"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e028",
+    "isNew": false
   },
   "platform-filimo": {
     "name": {
@@ -836,7 +1040,10 @@ window.CPIK_DATA = {
       "movie",
       "series",
       "vod"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e029",
+    "isNew": false
   },
   "platform-filmnet": {
     "name": {
@@ -854,7 +1061,10 @@ window.CPIK_DATA = {
       "film net",
       "streaming",
       "vod"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e02a",
+    "isNew": false
   },
   "platform-namava": {
     "name": {
@@ -872,7 +1082,10 @@ window.CPIK_DATA = {
       "movie",
       "series",
       "vod"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e02b",
+    "isNew": false
   },
   "platform-sheyda": {
     "name": {
@@ -888,7 +1101,10 @@ window.CPIK_DATA = {
       "sheida",
       "streaming",
       "vod"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e02c",
+    "isNew": false
   },
   "platform-tamashakhoone": {
     "name": {
@@ -903,7 +1119,10 @@ window.CPIK_DATA = {
       "tamasha khoone",
       "theatre",
       "streaming"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e02d",
+    "isNew": false
   },
   "platform-telewebion": {
     "name": {
@@ -919,7 +1138,10 @@ window.CPIK_DATA = {
       "tv",
       "live tv",
       "streaming"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e02e",
+    "isNew": false
   },
   "post": {
     "name": {
@@ -937,23 +1159,10 @@ window.CPIK_DATA = {
       "shipping",
       "delivery",
       "postal"
-    ]
-  },
-  "rightel": {
-    "name": {
-      "fa": "رایتل",
-      "en": "RighTel"
-    },
-    "keywords": [
-      "رای تل",
-      "اپراتور",
-      "سیم کارت",
-      "اینترنت همراه",
-      "شارژ",
-      "right tel",
-      "operator",
-      "mobile"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e02f",
+    "isNew": false
   },
   "shop-digikala": {
     "name": {
@@ -972,7 +1181,10 @@ window.CPIK_DATA = {
       "shopping",
       "marketplace",
       "ecommerce"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e031",
+    "isNew": false
   },
   "shop-lioncomputer": {
     "name": {
@@ -992,7 +1204,10 @@ window.CPIK_DATA = {
       "lion computer",
       "computer",
       "hardware"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e032",
+    "isNew": false
   },
   "shop-torob": {
     "name": {
@@ -1007,7 +1222,50 @@ window.CPIK_DATA = {
       "فروشگاه",
       "price comparison",
       "shopping"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e033",
+    "isNew": false
+  },
+  "socialmedia-bale": {
+    "name": {
+      "fa": "بله",
+      "en": "Bale"
+    },
+    "keywords": [
+      "پیام‌رسان بله",
+      "پیام‌رسان",
+      "پیامرسان",
+      "پیام رسان",
+      "چت",
+      "bale",
+      "bale messenger",
+      "messenger",
+      "chat"
+    ],
+    "added": "0.1.5",
+    "codepoint": "e041",
+    "isNew": true
+  },
+  "socialmedia-rubika": {
+    "name": {
+      "fa": "روبیکا",
+      "en": "Rubika"
+    },
+    "keywords": [
+      "پیام‌رسان",
+      "پیامرسان",
+      "پیام رسان",
+      "اپلیکیشن",
+      "چت",
+      "rubika",
+      "messenger",
+      "super app",
+      "chat"
+    ],
+    "added": "0.1.5",
+    "codepoint": "e042",
+    "isNew": true
   },
   "socialmedia-virgool": {
     "name": {
@@ -1022,7 +1280,68 @@ window.CPIK_DATA = {
       "blog",
       "writing",
       "publishing"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e034",
+    "isNew": false
+  },
+  "telecom-irancell": {
+    "name": {
+      "fa": "ایرانسل",
+      "en": "Irancell"
+    },
+    "keywords": [
+      "ایران سل",
+      "اپراتور",
+      "سیم کارت",
+      "اینترنت همراه",
+      "شارژ",
+      "mtn irancell",
+      "operator",
+      "mobile"
+    ],
+    "added": "0.1.0",
+    "codepoint": "e01f",
+    "isNew": false
+  },
+  "telecom-mci": {
+    "name": {
+      "fa": "همراه اول",
+      "en": "Hamrah-e Aval"
+    },
+    "keywords": [
+      "mci",
+      "همراه‌اول",
+      "ارتباطات سیار ایران",
+      "شرکت ارتباطات سیار",
+      "اپراتور",
+      "سیم کارت",
+      "hamrah aval",
+      "operator",
+      "mobile"
+    ],
+    "added": "0.1.0",
+    "codepoint": "e022",
+    "isNew": false
+  },
+  "telecom-rightel": {
+    "name": {
+      "fa": "رایتل",
+      "en": "RighTel"
+    },
+    "keywords": [
+      "رای تل",
+      "اپراتور",
+      "سیم کارت",
+      "اینترنت همراه",
+      "شارژ",
+      "right tel",
+      "operator",
+      "mobile"
+    ],
+    "added": "0.1.0",
+    "codepoint": "e030",
+    "isNew": false
   },
   "tipax": {
     "name": {
@@ -1039,6 +1358,9 @@ window.CPIK_DATA = {
       "shipping",
       "delivery",
       "courier"
-    ]
+    ],
+    "added": "0.1.0",
+    "codepoint": "e035",
+    "isNew": false
   }
 };

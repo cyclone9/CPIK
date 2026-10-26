@@ -29,6 +29,17 @@ function run(script, args = []) {
     });
 }
 
+function compareVersions(a, b) {
+    const pa = a.split('.').map(Number);
+    const pb = b.split('.').map(Number);
+
+    for (let i = 0; i < 3; i++) {
+        if (pa[i] !== pb[i]) return pa[i] - pb[i];
+    }
+
+    return 0;
+}
+
 function writeMetadata(version) {
     const icons = fs.readdirSync(ICONS)
         .filter(file => file.endsWith('.svg'))
@@ -36,15 +47,27 @@ function writeMetadata(version) {
         .sort();
     const metadata = readJson('config/metadata.json');
     const categories = readJson('config/categories.json');
+    const codepoints = readJson('config/codepoints.json');
     const data = {};
 
     for (const icon of icons) {
         if (!Object.hasOwn(metadata, icon)) {
             console.log(`warn  ${icon}: no entry in config/metadata.json; ` +
                 'the preview shows its file name and it has no keywords');
+        } else if (!metadata[icon].added) {
+            console.log(`warn  ${icon}: no "added" version in config/metadata.json`);
         }
 
-        data[icon] = metadata[icon] || { name: { fa: icon, en: icon }, keywords: [] };
+        const entry = metadata[icon] || { name: { fa: icon, en: icon }, keywords: [] };
+
+        // "New" means added in the version being built or in one still to come (icons added
+        // since the last release). Stored per icon rather than read from git tags, so a CI
+        // checkout without tag history builds the same dist/.
+        data[icon] = {
+            ...entry,
+            codepoint: codepoints[icon].toString(16),
+            isNew: Boolean(entry.added) && compareVersions(entry.added, version) >= 0
+        };
     }
 
     for (const key of Object.keys(metadata)) {
@@ -62,6 +85,35 @@ function writeMetadata(version) {
     ].join('\n');
 
     fs.writeFileSync(path.join(DIST, 'cpik.js'), script, 'utf8');
+}
+
+/*
+ * A renamed icon keeps its old class name as an alias (config/aliases.json:
+ * old name -> new name), so pages that already use the old class keep
+ * showing the same glyph.
+ */
+function appendAliases(prefix) {
+    const aliases = readJson('config/aliases.json');
+    const codepoints = readJson('config/codepoints.json');
+    const rules = [];
+
+    for (const [oldName, newName] of Object.entries(aliases)) {
+        if (!Object.hasOwn(codepoints, newName)) {
+            throw new Error(`config/aliases.json: "${oldName}" points at unknown icon "${newName}"`);
+        }
+
+        if (Object.hasOwn(codepoints, oldName)) {
+            throw new Error(`config/aliases.json: "${oldName}" is still an icon of its own`);
+        }
+
+        rules.push(`.${prefix}-${oldName}::before {\n    content: "\\${
+            codepoints[newName].toString(16)}";\n}`);
+    }
+
+    if (rules.length) {
+        fs.appendFileSync(path.join(DIST, 'cpik.css'),
+            `\n/* Old class names of renamed icons */\n${rules.join('\n')}\n`, 'utf8');
+    }
 }
 
 /*
@@ -111,8 +163,12 @@ async function main() {
     });
 
     writeMetadata(version);
+    appendAliases(config.prefix);
     bustCache(['cpik.css', 'cpik.js']);
-    fs.cpSync(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), { recursive: true });
+    // Only what the preview page uses; the README's video, cover and lockups stay out of dist/.
+    for (const dir of ['fonts', 'favicon']) {
+        fs.cpSync(path.join(ROOT, 'assets', dir), path.join(DIST, 'assets', dir), { recursive: true });
+    }
     fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
     const files = fs.readdirSync(DIST).filter(file => !file.startsWith('.'));

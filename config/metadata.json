@@ -18,7 +18,8 @@
       "digital bank",
       "neobank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-dey": {
     "name": {
@@ -32,7 +33,8 @@
       "day bank",
       "deybank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-eghtesadnovin": {
     "name": {
@@ -46,7 +48,8 @@
       "eghtesadnovin",
       "enbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-gardeshgari": {
     "name": {
@@ -60,7 +63,8 @@
       "gardeshgari",
       "tourism",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-iranzamin": {
     "name": {
@@ -75,7 +79,8 @@
       "iranzamin",
       "izbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-karafarin": {
     "name": {
@@ -90,7 +95,8 @@
       "بانکداری",
       "karafarinbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-keshavarzi": {
     "name": {
@@ -105,7 +111,8 @@
       "agricultural bank",
       "bki",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-khavarmianeh": {
     "name": {
@@ -121,7 +128,8 @@
       "khavarmiyaneh",
       "middleeastbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-markazi": {
     "name": {
@@ -137,7 +145,8 @@
       "cbi",
       "central bank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-maskan": {
     "name": {
@@ -151,7 +160,8 @@
       "وام مسکن",
       "housing bank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-mehriran": {
     "name": {
@@ -169,7 +179,8 @@
       "mehriran",
       "qmb",
       "banking"
-    ]
+    ],
+    "added": "0.1.3"
   },
   "bank-melal": {
     "name": {
@@ -187,7 +198,8 @@
       "melall",
       "credit institution",
       "banking"
-    ]
+    ],
+    "added": "0.1.3"
   },
   "bank-mellat": {
     "name": {
@@ -200,7 +212,8 @@
       "خدمات بانکی",
       "mellatbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-melli": {
     "name": {
@@ -215,7 +228,8 @@
       "bmi",
       "bank melli iran",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-parsian": {
     "name": {
@@ -228,7 +242,8 @@
       "خدمات بانکی",
       "parsianbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-pasargad": {
     "name": {
@@ -242,7 +257,8 @@
       "pasargad",
       "bpi",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-post": {
     "name": {
@@ -258,7 +274,8 @@
       "postbank",
       "post bank iran",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-refah": {
     "name": {
@@ -275,7 +292,8 @@
       "refah kargaran",
       "refahbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.3"
   },
   "bank-resalat": {
     "name": {
@@ -290,7 +308,8 @@
       "بانکداری",
       "rqbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-saderat": {
     "name": {
@@ -305,7 +324,8 @@
       "saderat iran",
       "bsi",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-saman": {
     "name": {
@@ -318,7 +338,8 @@
       "خدمات بانکی",
       "samanbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-sarmayeh": {
     "name": {
@@ -332,7 +353,8 @@
       "sarmaye",
       "sarmayehbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-sepah": {
     "name": {
@@ -344,7 +366,8 @@
       "بانکداری",
       "خدمات بانکی",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-shahr": {
     "name": {
@@ -357,7 +380,8 @@
       "خدمات بانکی",
       "shahrbank",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-sina": {
     "name": {
@@ -369,7 +393,8 @@
       "بانکداری",
       "خدمات بانکی",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "bank-tejarat": {
     "name": {
@@ -381,7 +406,8 @@
       "بانکداری",
       "خدمات بانکی",
       "banking"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "channel-1": {
     "name": {
@@ -399,7 +425,8 @@
       "tv",
       "irib 1",
       "television"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "channel-2": {
     "name": {
@@ -417,7 +444,8 @@
       "tv",
       "irib 2",
       "television"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "channel-3": {
     "name": {
@@ -436,7 +464,8 @@
       "tv",
       "irib 3",
       "sports"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "cpik": {
     "name": {
@@ -451,7 +480,8 @@
       "icon kit",
       "icon font",
       "cyclone"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "crypto-abantether": {
     "name": {
@@ -468,7 +498,8 @@
       "usdt",
       "crypto",
       "exchange"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "crypto-nobitex": {
     "name": {
@@ -484,7 +515,8 @@
       "bitcoin",
       "crypto",
       "exchange"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "e-namad": {
     "name": {
@@ -504,7 +536,8 @@
       "trust",
       "trust seal",
       "ecommerce"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "finance-asanpardakht": {
     "name": {
@@ -527,7 +560,8 @@
       "top",
       "payment",
       "wallet"
-    ]
+    ],
+    "added": "0.1.4"
   },
   "finance-digipay": {
     "name": {
@@ -543,7 +577,8 @@
       "digi pay",
       "wallet",
       "payment"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "finance-idpay": {
     "name": {
@@ -560,7 +595,8 @@
       "idpay",
       "id pay",
       "payment gateway"
-    ]
+    ],
+    "added": "0.1.3"
   },
   "finance-zarinpal": {
     "name": {
@@ -577,7 +613,8 @@
       "zarinpal",
       "payment gateway",
       "payment"
-    ]
+    ],
+    "added": "0.1.3"
   },
   "finance-zibal": {
     "name": {
@@ -591,23 +628,47 @@
       "zibal",
       "payment gateway",
       "payment"
-    ]
+    ],
+    "added": "0.1.3"
   },
-  "irancell": {
+  "landmark-azadi-tower": {
     "name": {
-      "fa": "ایرانسل",
-      "en": "Irancell"
+      "fa": "برج آزادی",
+      "en": "Azadi Tower"
     },
     "keywords": [
-      "ایران سل",
-      "اپراتور",
-      "سیم کارت",
-      "اینترنت همراه",
-      "شارژ",
-      "mtn irancell",
-      "operator",
-      "mobile"
-    ]
+      "آزادی",
+      "میدان آزادی",
+      "برج آزادی تهران",
+      "تهران",
+      "نماد تهران",
+      "بنای تاریخی",
+      "azadi",
+      "azadi tower",
+      "freedom tower",
+      "tehran",
+      "landmark"
+    ],
+    "added": "0.1.5"
+  },
+  "landmark-milad-tower": {
+    "name": {
+      "fa": "برج میلاد",
+      "en": "Milad Tower"
+    },
+    "keywords": [
+      "میلاد",
+      "برج میلاد تهران",
+      "تهران",
+      "نماد تهران",
+      "برج مخابراتی",
+      "milad",
+      "milad tower",
+      "tehran",
+      "tower",
+      "landmark"
+    ],
+    "added": "0.1.5"
   },
   "map-iran": {
     "name": {
@@ -624,7 +685,32 @@
       "persia",
       "country",
       "geography"
-    ]
+    ],
+    "added": "0.1.0"
+  },
+  "map-iran-seas": {
+    "name": {
+      "fa": "نقشه ایران با دریاها",
+      "en": "Iran Map with Seas"
+    },
+    "keywords": [
+      "ایران",
+      "نقشه",
+      "نقشه ایران",
+      "دریا",
+      "دریای خزر",
+      "خزر",
+      "خلیج فارس",
+      "دریای عمان",
+      "کشور",
+      "iran",
+      "map",
+      "caspian sea",
+      "persian gulf",
+      "gulf of oman",
+      "sea"
+    ],
+    "added": "0.1.5"
   },
   "map-tehran": {
     "name": {
@@ -639,24 +725,26 @@
       "tehran",
       "capital",
       "map"
-    ]
+    ],
+    "added": "0.1.0"
   },
-  "mobile-communications-of-iran": {
+  "news-digiato": {
     "name": {
-      "fa": "همراه اول",
-      "en": "Hamrah-e Aval"
+      "fa": "دیجیاتو",
+      "en": "Digiato"
     },
     "keywords": [
-      "همراه‌اول",
-      "ارتباطات سیار ایران",
-      "شرکت ارتباطات سیار",
-      "اپراتور",
-      "سیم کارت",
-      "mci",
-      "hamrah aval",
-      "operator",
-      "mobile"
-    ]
+      "دیجی اتو",
+      "فناوری",
+      "تکنولوژی",
+      "اخبار",
+      "رسانه",
+      "digiato",
+      "technology",
+      "tech",
+      "news"
+    ],
+    "added": "0.1.5"
   },
   "news-zoomg": {
     "name": {
@@ -673,7 +761,8 @@
       "gaming",
       "games",
       "news"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "news-zoomit": {
     "name": {
@@ -690,7 +779,8 @@
       "technology",
       "tech",
       "news"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-30nama": {
     "name": {
@@ -718,7 +808,8 @@
       "streaming",
       "watch online",
       "download"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-aparat": {
     "name": {
@@ -736,7 +827,8 @@
       "video",
       "streaming",
       "live"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-bolboljan": {
     "name": {
@@ -753,7 +845,8 @@
       "bolboljan",
       "bolbol jan",
       "bol bol jan"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-digimoviez": {
     "name": {
@@ -769,7 +862,8 @@
       "digi moviez",
       "movie",
       "download"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-filimo": {
     "name": {
@@ -787,7 +881,8 @@
       "movie",
       "series",
       "vod"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-filmnet": {
     "name": {
@@ -805,7 +900,8 @@
       "film net",
       "streaming",
       "vod"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-namava": {
     "name": {
@@ -823,7 +919,8 @@
       "movie",
       "series",
       "vod"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-sheyda": {
     "name": {
@@ -839,7 +936,8 @@
       "sheida",
       "streaming",
       "vod"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-tamashakhoone": {
     "name": {
@@ -854,7 +952,8 @@
       "tamasha khoone",
       "theatre",
       "streaming"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "platform-telewebion": {
     "name": {
@@ -870,7 +969,8 @@
       "tv",
       "live tv",
       "streaming"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "post": {
     "name": {
@@ -888,23 +988,8 @@
       "shipping",
       "delivery",
       "postal"
-    ]
-  },
-  "rightel": {
-    "name": {
-      "fa": "رایتل",
-      "en": "RighTel"
-    },
-    "keywords": [
-      "رای تل",
-      "اپراتور",
-      "سیم کارت",
-      "اینترنت همراه",
-      "شارژ",
-      "right tel",
-      "operator",
-      "mobile"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "shop-digikala": {
     "name": {
@@ -923,7 +1008,8 @@
       "shopping",
       "marketplace",
       "ecommerce"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "shop-lioncomputer": {
     "name": {
@@ -943,7 +1029,8 @@
       "lion computer",
       "computer",
       "hardware"
-    ]
+    ],
+    "added": "0.1.0"
   },
   "shop-torob": {
     "name": {
@@ -958,7 +1045,44 @@
       "فروشگاه",
       "price comparison",
       "shopping"
-    ]
+    ],
+    "added": "0.1.0"
+  },
+  "socialmedia-bale": {
+    "name": {
+      "fa": "بله",
+      "en": "Bale"
+    },
+    "keywords": [
+      "پیام‌رسان بله",
+      "پیام‌رسان",
+      "پیامرسان",
+      "پیام رسان",
+      "چت",
+      "bale",
+      "bale messenger",
+      "messenger",
+      "chat"
+    ],
+    "added": "0.1.5"
+  },
+  "socialmedia-rubika": {
+    "name": {
+      "fa": "روبیکا",
+      "en": "Rubika"
+    },
+    "keywords": [
+      "پیام‌رسان",
+      "پیامرسان",
+      "پیام رسان",
+      "اپلیکیشن",
+      "چت",
+      "rubika",
+      "messenger",
+      "super app",
+      "chat"
+    ],
+    "added": "0.1.5"
   },
   "socialmedia-virgool": {
     "name": {
@@ -973,7 +1097,60 @@
       "blog",
       "writing",
       "publishing"
-    ]
+    ],
+    "added": "0.1.0"
+  },
+  "telecom-irancell": {
+    "name": {
+      "fa": "ایرانسل",
+      "en": "Irancell"
+    },
+    "keywords": [
+      "ایران سل",
+      "اپراتور",
+      "سیم کارت",
+      "اینترنت همراه",
+      "شارژ",
+      "mtn irancell",
+      "operator",
+      "mobile"
+    ],
+    "added": "0.1.0"
+  },
+  "telecom-mci": {
+    "name": {
+      "fa": "همراه اول",
+      "en": "Hamrah-e Aval"
+    },
+    "keywords": [
+      "mci",
+      "همراه‌اول",
+      "ارتباطات سیار ایران",
+      "شرکت ارتباطات سیار",
+      "اپراتور",
+      "سیم کارت",
+      "hamrah aval",
+      "operator",
+      "mobile"
+    ],
+    "added": "0.1.0"
+  },
+  "telecom-rightel": {
+    "name": {
+      "fa": "رایتل",
+      "en": "RighTel"
+    },
+    "keywords": [
+      "رای تل",
+      "اپراتور",
+      "سیم کارت",
+      "اینترنت همراه",
+      "شارژ",
+      "right tel",
+      "operator",
+      "mobile"
+    ],
+    "added": "0.1.0"
   },
   "tipax": {
     "name": {
@@ -990,6 +1167,7 @@
       "shipping",
       "delivery",
       "courier"
-    ]
+    ],
+    "added": "0.1.0"
   }
 }

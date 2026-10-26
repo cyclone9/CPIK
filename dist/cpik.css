@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?8d83c63fa6f82dde6bbc302568456e2f") format("woff2"),
-url("./cpik.woff?8d83c63fa6f82dde6bbc302568456e2f") format("woff");
+    src: url("./cpik.woff2?1da24249a30dc43dc21732462c3c1446") format("woff2"),
+url("./cpik.woff?1da24249a30dc43dc21732462c3c1446") format("woff");
     font-display: block;
 }
 
@@ -149,20 +149,12 @@ url("./cpik.woff?8d83c63fa6f82dde6bbc302568456e2f") format("woff");
     content: "\e01e";
 }
 
-.cpik-irancell::before {
-    content: "\e01f";
-}
-
 .cpik-map-iran::before {
     content: "\e020";
 }
 
 .cpik-map-tehran::before {
     content: "\e021";
-}
-
-.cpik-mobile-communications-of-iran::before {
-    content: "\e022";
 }
 
 .cpik-news-zoomg::before {
@@ -217,10 +209,6 @@ url("./cpik.woff?8d83c63fa6f82dde6bbc302568456e2f") format("woff");
     content: "\e02f";
 }
 
-.cpik-rightel::before {
-    content: "\e030";
-}
-
 .cpik-shop-digikala::before {
     content: "\e031";
 }
@@ -267,4 +255,51 @@ url("./cpik.woff?8d83c63fa6f82dde6bbc302568456e2f") format("woff");
 
 .cpik-finance-asanpardakht::before {
     content: "\e03c";
+}
+
+.cpik-telecom-irancell::before {
+    content: "\e01f";
+}
+
+.cpik-telecom-rightel::before {
+    content: "\e030";
+}
+
+.cpik-telecom-mci::before {
+    content: "\e022";
+}
+
+.cpik-landmark-azadi-tower::before {
+    content: "\e03d";
+}
+
+.cpik-landmark-milad-tower::before {
+    content: "\e03e";
+}
+
+.cpik-map-iran-seas::before {
+    content: "\e03f";
+}
+
+.cpik-news-digiato::before {
+    content: "\e040";
+}
+
+.cpik-socialmedia-bale::before {
+    content: "\e041";
+}
+
+.cpik-socialmedia-rubika::before {
+    content: "\e042";
+}
+
+/* Old class names of renamed icons */
+.cpik-irancell::before {
+    content: "\e01f";
+}
+.cpik-rightel::before {
+    content: "\e030";
+}
+.cpik-mobile-communications-of-iran::before {
+    content: "\e022";
 }

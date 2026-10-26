@@ -26,7 +26,7 @@
       root.dataset.theme = theme;
     })();
   </script>
-  <link rel="stylesheet" href="cpik.css?v=cd2feaeedf">
+  <link rel="stylesheet" href="cpik.css?v=9fcb8062da">
   <style>
     @font-face {
       font-family: "Vazirmatn";
@@ -235,12 +235,13 @@
       fill: var(--cpik-lazuli);
     }
 
+    /* The nav sits next to the logo (on the right in Persian); the buttons take the far end. */
     .site-nav {
       display: flex;
       gap: 1.25rem;
       font-size: var(--fs-s);
       font-weight: 500;
-      margin-inline-start: auto;
+      margin-inline-start: 0.5rem;
     }
 
     .site-nav a {
@@ -259,6 +260,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      margin-inline-start: auto;
     }
 
     .action-button {
@@ -458,6 +460,7 @@
     }
 
     .preview {
+      position: relative;
       display: flex;
       flex-direction: column;
       min-width: 0;
@@ -479,9 +482,249 @@
     .preview .inner {
       display: grid;
       place-items: center;
+      width: 100%;
       height: 7rem;
+      padding: 0;
+      border: 0;
+      background: transparent;
       font-size: 3rem;
       color: var(--fg);
+      cursor: pointer;
+    }
+
+    .preview .inner:hover {
+      background: var(--surface-hover);
+    }
+
+    .badge-new {
+      position: absolute;
+      top: 0.55rem;
+      inset-inline-start: 0.55rem;
+      padding: 0.05rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--on-accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      pointer-events: none;
+    }
+
+    .badge-new[hidden] {
+      display: none;
+    }
+
+    /* "New" chip in the toolbar: the same filter as the dropdown's «تازه‌ها» option. */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      height: 2.75rem;
+      padding-inline: 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--fg);
+      font: inherit;
+      font-size: var(--fs-s);
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .chip:hover {
+      border-color: var(--keyline);
+    }
+
+    .chip[aria-pressed="true"] {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--on-accent);
+    }
+
+    .chip[hidden] {
+      display: none;
+    }
+
+    /* Request an icon: a notice box with a button. Two classes, so it wins over the .notice base rule further down. */
+    .notice.request-box {
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: calc(var(--gap) * 1.5);
+    }
+
+    .notice.request-box .request-text {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 1 1 20rem;
+    }
+
+    .notice.request-box .ui-icon {
+      margin-top: 0;
+    }
+
+    .request-button {
+      display: inline-flex;
+      align-items: center;
+      height: 2.4rem;
+      padding-inline: 1rem;
+      border-radius: 0.5rem;
+      background: var(--accent);
+      color: var(--on-accent);
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .request-button:hover {
+      color: var(--on-accent);
+      background: #3B4DE0;
+    }
+
+    .request-link {
+      font-weight: 700;
+    }
+
+    .empty .request-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    /* Icon detail panel */
+    .detail {
+      width: min(34rem, calc(100% - 2rem));
+      max-height: calc(100% - 2rem);
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    .detail::backdrop {
+      background: rgb(0 0 0 / 0.6);
+    }
+
+    .detail-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .detail-head h2 {
+      font-size: var(--fs-h3);
+    }
+
+    .detail-close {
+      color: var(--fg);
+      border-color: var(--line);
+    }
+
+    .detail-close:hover {
+      background: var(--surface-hover);
+    }
+
+    .detail-preview {
+      display: grid;
+      place-items: center;
+      height: 11rem;
+      margin-top: 1rem;
+      border-radius: 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .detail-preview i::before {
+      display: block;
+    }
+
+    .detail-controls {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 0.75rem 1rem;
+      margin-top: 1rem;
+      font-size: var(--fs-s);
+    }
+
+    .detail-controls output {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .detail-controls input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+
+    .detail-controls input[type="color"] {
+      width: 2.75rem;
+      height: 2rem;
+      padding: 0.15rem;
+      border: 1px solid var(--line);
+      border-radius: 0.4rem;
+      background: var(--surface);
+      cursor: pointer;
+    }
+
+    .detail-info {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.4rem 1rem;
+      margin: 1rem 0 0;
+      font-size: var(--fs-s);
+    }
+
+    .detail-info dt {
+      color: var(--muted);
+    }
+
+    .detail-info dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    /* Latin values (name, class, codepoint, version) keep their own order but line up with the Persian ones. */
+    [dir="rtl"] .detail-info dd[dir="ltr"] {
+      text-align: right;
+    }
+
+    .detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.1rem;
+    }
+
+    .text-button {
+      height: 2.4rem;
+      padding-inline: 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 0.5rem;
+      background: var(--surface);
+      color: var(--fg);
+      font: inherit;
+      font-size: var(--fs-s);
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .text-button:hover {
+      border-color: var(--keyline);
+    }
+
+    .text-button[data-state="copied"] {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--on-accent);
+    }
+
+    .text-button[data-state="error"] {
+      border-color: #E5484D;
+      color: #E5484D;
     }
 
     .caption {
@@ -876,6 +1119,7 @@
 
         <label class="sr-only" for="icon-filter" data-i18n="filterLabel">دسته</label>
         <select id="icon-filter" aria-controls="icon-gallery"></select>
+        <button id="new-toggle" class="chip" type="button" aria-pressed="false" aria-controls="icon-gallery" hidden></button>
 
         <p id="search-results" class="results" role="status" aria-live="polite" aria-atomic="true"></p>
       </div>
@@ -886,7 +1130,8 @@
       <div class="wrap">
         <div id="icon-gallery" class="gallery">
           <div class="preview" data-name="tipax">
-            <span class="inner"><i class="cpik-tipax" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-tipax" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">tipax</bdi>
@@ -904,8 +1149,69 @@
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
+          <div class="preview" data-name="telecom-rightel">
+            <button class="inner" type="button"><i class="cpik-telecom-rightel" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">telecom-rightel</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-telecom-rightel">cpik-telecom-rightel</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="telecom-mci">
+            <button class="inner" type="button"><i class="cpik-telecom-mci" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">telecom-mci</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-telecom-mci">cpik-telecom-mci</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="telecom-irancell">
+            <button class="inner" type="button"><i class="cpik-telecom-irancell" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">telecom-irancell</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-telecom-irancell">cpik-telecom-irancell</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
           <div class="preview" data-name="socialmedia-virgool">
-            <span class="inner"><i class="cpik-socialmedia-virgool" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-socialmedia-virgool" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">socialmedia-virgool</bdi>
@@ -923,8 +1229,49 @@
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
+          <div class="preview" data-name="socialmedia-rubika">
+            <button class="inner" type="button"><i class="cpik-socialmedia-rubika" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">socialmedia-rubika</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-socialmedia-rubika">cpik-socialmedia-rubika</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="socialmedia-bale">
+            <button class="inner" type="button"><i class="cpik-socialmedia-bale" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">socialmedia-bale</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-socialmedia-bale">cpik-socialmedia-bale</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
           <div class="preview" data-name="shop-torob">
-            <span class="inner"><i class="cpik-shop-torob" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-shop-torob" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">shop-torob</bdi>
@@ -943,7 +1290,8 @@
             </div>
           </div>
           <div class="preview" data-name="shop-lioncomputer">
-            <span class="inner"><i class="cpik-shop-lioncomputer" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-shop-lioncomputer" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">shop-lioncomputer</bdi>
@@ -962,7 +1310,8 @@
             </div>
           </div>
           <div class="preview" data-name="shop-digikala">
-            <span class="inner"><i class="cpik-shop-digikala" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-shop-digikala" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">shop-digikala</bdi>
@@ -980,27 +1329,9 @@
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
-          <div class="preview" data-name="rightel">
-            <span class="inner"><i class="cpik-rightel" aria-hidden="true"></i></span>
-            <div class="caption">
-              <div class="card-bottom">
-                <bdi class="brand-name" dir="auto">rightel</bdi>
-                <button class="copy-button" type="button" data-state="idle">
-                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <rect x="9" y="9" width="12" height="12" rx="2" />
-                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
-                  </svg>
-                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="m5 12 4 4L19 6" />
-                  </svg>
-                </button>
-              </div>
-              <code class="class-name" title="cpik-rightel">cpik-rightel</code>
-              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
-            </div>
-          </div>
           <div class="preview" data-name="post">
-            <span class="inner"><i class="cpik-post" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-post" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">post</bdi>
@@ -1019,7 +1350,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-telewebion">
-            <span class="inner"><i class="cpik-platform-telewebion" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-telewebion" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-telewebion</bdi>
@@ -1038,7 +1370,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-tamashakhoone">
-            <span class="inner"><i class="cpik-platform-tamashakhoone" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-tamashakhoone" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-tamashakhoone</bdi>
@@ -1057,7 +1390,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-sheyda">
-            <span class="inner"><i class="cpik-platform-sheyda" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-sheyda" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-sheyda</bdi>
@@ -1076,7 +1410,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-namava">
-            <span class="inner"><i class="cpik-platform-namava" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-namava" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-namava</bdi>
@@ -1095,7 +1430,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-filmnet">
-            <span class="inner"><i class="cpik-platform-filmnet" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-filmnet" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-filmnet</bdi>
@@ -1114,7 +1450,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-filimo">
-            <span class="inner"><i class="cpik-platform-filimo" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-filimo" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-filimo</bdi>
@@ -1133,7 +1470,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-digimoviez">
-            <span class="inner"><i class="cpik-platform-digimoviez" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-digimoviez" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-digimoviez</bdi>
@@ -1152,7 +1490,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-bolboljan">
-            <span class="inner"><i class="cpik-platform-bolboljan" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-bolboljan" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-bolboljan</bdi>
@@ -1171,7 +1510,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-aparat">
-            <span class="inner"><i class="cpik-platform-aparat" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-aparat" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-aparat</bdi>
@@ -1190,7 +1530,8 @@
             </div>
           </div>
           <div class="preview" data-name="platform-30nama">
-            <span class="inner"><i class="cpik-platform-30nama" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-platform-30nama" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">platform-30nama</bdi>
@@ -1209,7 +1550,8 @@
             </div>
           </div>
           <div class="preview" data-name="news-zoomit">
-            <span class="inner"><i class="cpik-news-zoomit" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-news-zoomit" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">news-zoomit</bdi>
@@ -1228,7 +1570,8 @@
             </div>
           </div>
           <div class="preview" data-name="news-zoomg">
-            <span class="inner"><i class="cpik-news-zoomg" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-news-zoomg" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">news-zoomg</bdi>
@@ -1246,11 +1589,12 @@
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
-          <div class="preview" data-name="mobile-communications-of-iran">
-            <span class="inner"><i class="cpik-mobile-communications-of-iran" aria-hidden="true"></i></span>
+          <div class="preview" data-name="news-digiato">
+            <button class="inner" type="button"><i class="cpik-news-digiato" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
-                <bdi class="brand-name" dir="auto">mobile-communications-of-iran</bdi>
+                <bdi class="brand-name" dir="auto">news-digiato</bdi>
                 <button class="copy-button" type="button" data-state="idle">
                   <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <rect x="9" y="9" width="12" height="12" rx="2" />
@@ -1261,12 +1605,13 @@
                   </svg>
                 </button>
               </div>
-              <code class="class-name" title="cpik-mobile-communications-of-iran">cpik-mobile-communications-of-iran</code>
+              <code class="class-name" title="cpik-news-digiato">cpik-news-digiato</code>
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
           <div class="preview" data-name="map-tehran">
-            <span class="inner"><i class="cpik-map-tehran" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-map-tehran" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">map-tehran</bdi>
@@ -1285,7 +1630,8 @@
             </div>
           </div>
           <div class="preview" data-name="map-iran">
-            <span class="inner"><i class="cpik-map-iran" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-map-iran" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">map-iran</bdi>
@@ -1303,11 +1649,12 @@
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
-          <div class="preview" data-name="irancell">
-            <span class="inner"><i class="cpik-irancell" aria-hidden="true"></i></span>
+          <div class="preview" data-name="map-iran-seas">
+            <button class="inner" type="button"><i class="cpik-map-iran-seas" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
-                <bdi class="brand-name" dir="auto">irancell</bdi>
+                <bdi class="brand-name" dir="auto">map-iran-seas</bdi>
                 <button class="copy-button" type="button" data-state="idle">
                   <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <rect x="9" y="9" width="12" height="12" rx="2" />
@@ -1318,12 +1665,53 @@
                   </svg>
                 </button>
               </div>
-              <code class="class-name" title="cpik-irancell">cpik-irancell</code>
+              <code class="class-name" title="cpik-map-iran-seas">cpik-map-iran-seas</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="landmark-milad-tower">
+            <button class="inner" type="button"><i class="cpik-landmark-milad-tower" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">landmark-milad-tower</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-landmark-milad-tower">cpik-landmark-milad-tower</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="landmark-azadi-tower">
+            <button class="inner" type="button"><i class="cpik-landmark-azadi-tower" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">landmark-azadi-tower</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-landmark-azadi-tower">cpik-landmark-azadi-tower</code>
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
           <div class="preview" data-name="finance-zibal">
-            <span class="inner"><i class="cpik-finance-zibal" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-finance-zibal" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">finance-zibal</bdi>
@@ -1342,7 +1730,8 @@
             </div>
           </div>
           <div class="preview" data-name="finance-zarinpal">
-            <span class="inner"><i class="cpik-finance-zarinpal" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-finance-zarinpal" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">finance-zarinpal</bdi>
@@ -1361,7 +1750,8 @@
             </div>
           </div>
           <div class="preview" data-name="finance-idpay">
-            <span class="inner"><i class="cpik-finance-idpay" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-finance-idpay" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">finance-idpay</bdi>
@@ -1380,7 +1770,8 @@
             </div>
           </div>
           <div class="preview" data-name="finance-digipay">
-            <span class="inner"><i class="cpik-finance-digipay" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-finance-digipay" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">finance-digipay</bdi>
@@ -1399,7 +1790,8 @@
             </div>
           </div>
           <div class="preview" data-name="finance-asanpardakht">
-            <span class="inner"><i class="cpik-finance-asanpardakht" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-finance-asanpardakht" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">finance-asanpardakht</bdi>
@@ -1418,7 +1810,8 @@
             </div>
           </div>
           <div class="preview" data-name="e-namad">
-            <span class="inner"><i class="cpik-e-namad" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-e-namad" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">e-namad</bdi>
@@ -1437,7 +1830,8 @@
             </div>
           </div>
           <div class="preview" data-name="crypto-nobitex">
-            <span class="inner"><i class="cpik-crypto-nobitex" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-crypto-nobitex" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">crypto-nobitex</bdi>
@@ -1456,7 +1850,8 @@
             </div>
           </div>
           <div class="preview" data-name="crypto-abantether">
-            <span class="inner"><i class="cpik-crypto-abantether" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-crypto-abantether" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">crypto-abantether</bdi>
@@ -1475,7 +1870,8 @@
             </div>
           </div>
           <div class="preview" data-name="cpik">
-            <span class="inner"><i class="cpik-cpik" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-cpik" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">cpik</bdi>
@@ -1494,7 +1890,8 @@
             </div>
           </div>
           <div class="preview" data-name="channel-3">
-            <span class="inner"><i class="cpik-channel-3" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-channel-3" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">channel-3</bdi>
@@ -1513,7 +1910,8 @@
             </div>
           </div>
           <div class="preview" data-name="channel-2">
-            <span class="inner"><i class="cpik-channel-2" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-channel-2" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">channel-2</bdi>
@@ -1532,7 +1930,8 @@
             </div>
           </div>
           <div class="preview" data-name="channel-1">
-            <span class="inner"><i class="cpik-channel-1" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-channel-1" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">channel-1</bdi>
@@ -1551,7 +1950,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-tejarat">
-            <span class="inner"><i class="cpik-bank-tejarat" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-tejarat" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-tejarat</bdi>
@@ -1570,7 +1970,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-sina">
-            <span class="inner"><i class="cpik-bank-sina" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-sina" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-sina</bdi>
@@ -1589,7 +1990,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-shahr">
-            <span class="inner"><i class="cpik-bank-shahr" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-shahr" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-shahr</bdi>
@@ -1608,7 +2010,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-sepah">
-            <span class="inner"><i class="cpik-bank-sepah" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-sepah" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-sepah</bdi>
@@ -1627,7 +2030,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-sarmayeh">
-            <span class="inner"><i class="cpik-bank-sarmayeh" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-sarmayeh" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-sarmayeh</bdi>
@@ -1646,7 +2050,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-saman">
-            <span class="inner"><i class="cpik-bank-saman" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-saman" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-saman</bdi>
@@ -1665,7 +2070,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-saderat">
-            <span class="inner"><i class="cpik-bank-saderat" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-saderat" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-saderat</bdi>
@@ -1684,7 +2090,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-resalat">
-            <span class="inner"><i class="cpik-bank-resalat" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-resalat" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-resalat</bdi>
@@ -1703,7 +2110,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-refah">
-            <span class="inner"><i class="cpik-bank-refah" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-refah" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-refah</bdi>
@@ -1722,7 +2130,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-post">
-            <span class="inner"><i class="cpik-bank-post" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-post" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-post</bdi>
@@ -1741,7 +2150,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-pasargad">
-            <span class="inner"><i class="cpik-bank-pasargad" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-pasargad" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-pasargad</bdi>
@@ -1760,7 +2170,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-parsian">
-            <span class="inner"><i class="cpik-bank-parsian" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-parsian" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-parsian</bdi>
@@ -1779,7 +2190,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-melli">
-            <span class="inner"><i class="cpik-bank-melli" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-melli" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-melli</bdi>
@@ -1798,7 +2210,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-mellat">
-            <span class="inner"><i class="cpik-bank-mellat" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-mellat" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-mellat</bdi>
@@ -1817,7 +2230,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-melal">
-            <span class="inner"><i class="cpik-bank-melal" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-melal" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-melal</bdi>
@@ -1836,7 +2250,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-mehriran">
-            <span class="inner"><i class="cpik-bank-mehriran" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-mehriran" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-mehriran</bdi>
@@ -1855,7 +2270,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-maskan">
-            <span class="inner"><i class="cpik-bank-maskan" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-maskan" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-maskan</bdi>
@@ -1874,7 +2290,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-markazi">
-            <span class="inner"><i class="cpik-bank-markazi" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-markazi" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-markazi</bdi>
@@ -1893,7 +2310,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-khavarmianeh">
-            <span class="inner"><i class="cpik-bank-khavarmianeh" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-khavarmianeh" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-khavarmianeh</bdi>
@@ -1912,7 +2330,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-keshavarzi">
-            <span class="inner"><i class="cpik-bank-keshavarzi" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-keshavarzi" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-keshavarzi</bdi>
@@ -1931,7 +2350,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-karafarin">
-            <span class="inner"><i class="cpik-bank-karafarin" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-karafarin" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-karafarin</bdi>
@@ -1950,7 +2370,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-iranzamin">
-            <span class="inner"><i class="cpik-bank-iranzamin" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-iranzamin" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-iranzamin</bdi>
@@ -1969,7 +2390,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-gardeshgari">
-            <span class="inner"><i class="cpik-bank-gardeshgari" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-gardeshgari" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-gardeshgari</bdi>
@@ -1988,7 +2410,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-eghtesadnovin">
-            <span class="inner"><i class="cpik-bank-eghtesadnovin" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-eghtesadnovin" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-eghtesadnovin</bdi>
@@ -2007,7 +2430,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-dey">
-            <span class="inner"><i class="cpik-bank-dey" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-dey" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-dey</bdi>
@@ -2026,7 +2450,8 @@
             </div>
           </div>
           <div class="preview" data-name="bank-blue">
-            <span class="inner"><i class="cpik-bank-blue" aria-hidden="true"></i></span>
+            <button class="inner" type="button"><i class="cpik-bank-blue" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
             <div class="caption">
               <div class="card-bottom">
                 <bdi class="brand-name" dir="auto">bank-blue</bdi>
@@ -2046,7 +2471,22 @@
           </div>
         </div>
 
-        <p id="empty-message" class="empty" data-i18n="empty" hidden>آیکونی پیدا نشد.</p>
+        <div id="empty-message" class="empty" hidden>
+          <p data-i18n="empty">آیکونی پیدا نشد.</p>
+          <a id="request-empty" class="request-link" target="_blank" rel="noopener" data-i18n="requestThis"
+            href="https://github.com/cyclone9/CPIK/issues/new?template=icon-request.yml">درخواست این آیکون</a>
+        </div>
+
+        <div class="notice request-box">
+          <span class="request-text">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <span data-i18n="requestText">آیکونی که می‌خواهید در کیت نیست؟ برند، بانک یا سرویس آن را از طریق GitHub درخواست کنید.</span>
+          </span>
+          <a id="request-link" class="request-button" target="_blank" rel="noopener" data-i18n="requestLink"
+            href="https://github.com/cyclone9/CPIK/issues/new?template=icon-request.yml">درخواست آیکون</a>
+        </div>
       </div>
     </section>
 
@@ -2113,6 +2553,51 @@
     </section>
   </main>
 
+  <dialog id="icon-dialog" class="detail" aria-labelledby="detail-title">
+    <div class="detail-head">
+      <h2 id="detail-title"></h2>
+      <button id="detail-close" class="action-button detail-close" type="button">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="m6 6 12 12M6 18 18 6" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="detail-preview">
+      <i id="detail-icon" aria-hidden="true"></i>
+    </div>
+
+    <div class="detail-controls">
+      <label for="detail-size" data-i18n="size">اندازه</label>
+      <input id="detail-size" type="range" min="16" max="128" step="4" value="64">
+      <output id="detail-size-out" for="detail-size" dir="ltr">64px</output>
+
+      <label for="detail-color" data-i18n="color">رنگ</label>
+      <input id="detail-color" type="color" value="#F4F2EC">
+      <button id="detail-color-reset" class="text-button" type="button" data-i18n="resetColor">رنگ پیش‌فرض</button>
+    </div>
+
+    <dl class="detail-info">
+      <dt data-i18n="englishName">نام انگلیسی</dt>
+      <dd id="detail-en" dir="ltr"></dd>
+      <dt data-i18n="className">کلاس</dt>
+      <dd dir="ltr"><code id="detail-class"></code></dd>
+      <dt data-i18n="codepoint">کدپوینت</dt>
+      <dd dir="ltr"><code id="detail-codepoint"></code></dd>
+      <dt data-i18n="category">دسته</dt>
+      <dd id="detail-category"></dd>
+      <dt data-i18n="addedIn">افزوده در نسخه</dt>
+      <dd id="detail-added" dir="ltr"></dd>
+    </dl>
+
+    <div class="detail-actions">
+      <button class="text-button" type="button" data-copy="html">کپی HTML</button>
+      <button class="text-button" type="button" data-copy="class">کپی کلاس</button>
+      <button class="text-button" type="button" data-copy="codepoint">کپی کدپوینت</button>
+    </div>
+    <span id="detail-feedback" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+  </dialog>
+
   <footer id="site-footer" class="site-footer">
     <div class="wrap">
       <p lang="en" dir="ltr">
@@ -2130,7 +2615,7 @@
     </svg>
   </button>
 
-  <script src="./cpik.js?v=690c7e4e98"></script>
+  <script src="./cpik.js?v=6e20765606"></script>
 
   <script>
     const root = document.documentElement;
@@ -2184,7 +2669,28 @@
         copyFailed: 'کپی انجام نشد. دوباره امتحان کنید یا دسترسی کلیپ‌بورد را بررسی کنید.',
         copyCode: 'کپی کد',
         codeCopied: 'کد کپی شد',
-        results: (visible, total) => `${visible} از ${total} آیکون`
+        results: (visible, total) => `${visible} از ${total} آیکون`,
+        newBadge: 'تازه',
+        newFilter: 'تازه‌ها',
+        requestText: 'آیکونی که می‌خواهید در کیت نیست؟ برند، بانک یا سرویس آن را از طریق GitHub درخواست کنید.',
+        requestLink: 'درخواست آیکون',
+        requestThis: 'درخواست این آیکون',
+        requestTitle: 'درخواست آیکون',
+        details: 'جزئیات',
+        close: 'بستن',
+        size: 'اندازه',
+        color: 'رنگ',
+        resetColor: 'رنگ پیش‌فرض',
+        englishName: 'نام انگلیسی',
+        className: 'کلاس',
+        codepoint: 'کدپوینت',
+        category: 'دسته',
+        addedIn: 'افزوده در نسخه',
+        copyHtml: 'کپی HTML',
+        copyClass: 'کپی کلاس',
+        copyCodepoint: 'کپی کدپوینت',
+        copiedShort: 'کپی شد',
+        copyError: 'کپی نشد'
       }
     };
 
@@ -2254,11 +2760,19 @@
         const keywords = Array.isArray(entry.keywords) ?
           entry.keywords.filter(value => typeof value === 'string') : [];
         const iconClass = element.querySelector('.inner > i').className;
+        const isNew = entry.isNew === true;
+
+        element.querySelector('.badge-new').hidden = !isNew;
 
         return {
           element,
           key,
           names,
+          iconClass,
+          isNew,
+          codepoint: typeof entry.codepoint === 'string' ? entry.codepoint : '',
+          added: typeof entry.added === 'string' ? entry.added : '',
+          openButton: element.querySelector('.inner'),
           nameElement: element.querySelector('.brand-name'),
           copyButton: element.querySelector('.copy-button'),
           feedback: element.querySelector('.copy-feedback'),
@@ -2286,6 +2800,10 @@
       const selected = categoryFilter.value || 'all';
       const options = [{ value: 'all', label: dictionary().all }];
 
+      if (icons.some(icon => icon.isNew)) {
+        options.push({ value: 'new', label: dictionary().newFilter });
+      }
+
       for (const category of categories) {
         if (usedCategories.has(category.prefix)) {
           options.push({ value: category.prefix, label: category[language] });
@@ -2298,7 +2816,7 @@
 
       categoryFilter.replaceChildren(...options.map(({ value, label }) => {
         const count = value === 'all' ? icons.length :
-          icons.filter(icon => icon.category === value).length;
+          icons.filter(icon => inCategory(icon, value)).length;
 
         return new Option(`${label} (${digits(count)})`, value);
       }));
@@ -2328,6 +2846,33 @@
         `${label}: ${icon.names[language]}` : '';
     }
 
+    const newToggle = document.getElementById('new-toggle');
+    const newCount = icons.filter(icon => icon.isNew).length;
+
+    newToggle.hidden = newCount === 0;
+    newToggle.addEventListener('click', () => {
+      categoryFilter.value = categoryFilter.value === 'new' ? 'all' : 'new';
+      filterIcons();
+    });
+
+    function inCategory(icon, category) {
+      return category === 'all' || (category === 'new' ? icon.isNew : icon.category === category);
+    }
+
+    /* Request an icon: a GitHub issue form, with the search text as the brand name. */
+    const requestBase = 'https://github.com/cyclone9/CPIK/issues/new?template=icon-request.yml';
+    const requestEmpty = document.getElementById('request-empty');
+    const requestLink = document.getElementById('request-link');
+
+    function requestUrl(brand) {
+      const name = brand.trim();
+
+      return name ?
+        `${requestBase}&title=${encodeURIComponent(`${dictionary().requestTitle}: ${name}`)}` +
+          `&brand=${encodeURIComponent(name)}` :
+        requestBase;
+    }
+
     function filterIcons() {
       const query = normalize(searchInput.value);
       const terms = query ? query.split(' ') : [];
@@ -2337,7 +2882,7 @@
       searchClear.hidden = searchInput.value.length === 0;
 
       for (const icon of icons) {
-        const matches = (category === 'all' || icon.category === category) &&
+        const matches = inCategory(icon, category) &&
           terms.every(term => icon.searchText.includes(term));
 
         icon.element.hidden = !matches;
@@ -2346,6 +2891,10 @@
 
       results.textContent = dictionary().results(digits(visibleCount), digits(icons.length));
       emptyMessage.hidden = visibleCount > 0;
+      requestEmpty.href = requestUrl(searchInput.value);
+      requestLink.href = requestUrl(searchInput.value);
+      newToggle.setAttribute('aria-pressed', String(category === 'new'));
+      newToggle.textContent = dictionary().newFilter;
     }
 
     function clearSearch() {
@@ -2417,7 +2966,111 @@
     for (const icon of icons) {
       icon.copyButton.addEventListener('click', () =>
         runCopy(icon, icon.html, () => updateCopyButton(icon)));
+      icon.openButton.addEventListener('click', () => openDetail(icon));
     }
+
+    /*
+     * Icon detail panel: a large preview with size and colour controls, the
+     * class name and codepoint, and copy buttons. A native <dialog> keeps
+     * focus inside while open, closes on Escape and restores focus after.
+     */
+    const dialog = document.getElementById('icon-dialog');
+    const detailIcon = document.getElementById('detail-icon');
+    const sizeInput = document.getElementById('detail-size');
+    const sizeOutput = document.getElementById('detail-size-out');
+    const colorInput = document.getElementById('detail-color');
+    const detailFeedback = document.getElementById('detail-feedback');
+    let current = null;
+
+    const copyActions = Array.from(dialog.querySelectorAll('[data-copy]'), button => ({
+      button,
+      kind: button.dataset.copy,
+      state: 'idle',
+      busy: false,
+      resetTimer: null
+    }));
+
+    function textColorHex() {
+      const [r, g, b] = getComputedStyle(dialog).color.match(/\d+/g).map(Number);
+
+      return `#${[r, g, b].map(value => value.toString(16).padStart(2, '0')).join('')}`;
+    }
+
+    function updateSize() {
+      detailIcon.style.fontSize = `${sizeInput.value}px`;
+      sizeOutput.textContent = `${sizeInput.value}px`;
+    }
+
+    function resetColor() {
+      detailIcon.style.color = '';
+      colorInput.value = textColorHex();
+    }
+
+    function copyValue(kind) {
+      if (kind === 'class') return current.iconClass;
+      if (kind === 'codepoint') return `\\${current.codepoint}`;
+      return current.html;
+    }
+
+    function updateCopyAction(action) {
+      const words = dictionary();
+      const idle = { html: words.copyHtml, class: words.copyClass, codepoint: words.copyCodepoint }[action.kind];
+      const label = action.state === 'copied' ? words.copiedShort :
+        action.state === 'error' ? words.copyError : idle;
+
+      action.button.dataset.state = action.state;
+      action.button.textContent = label;
+      detailFeedback.textContent = action.state === 'copied' || action.state === 'error' ? label : '';
+    }
+
+    function openDetail(icon) {
+      const words = dictionary();
+      const category = categories.find(item => item.prefix === icon.category);
+
+      current = icon;
+      document.getElementById('detail-title').textContent = icon.names[language];
+      document.getElementById('detail-en').textContent = icon.names.en;
+      document.getElementById('detail-class').textContent = icon.iconClass;
+      document.getElementById('detail-codepoint').textContent =
+        icon.codepoint ? `\\${icon.codepoint}  (U+${icon.codepoint.toUpperCase()})` : '';
+      document.getElementById('detail-category').textContent = category ? category[language] : words.other;
+      document.getElementById('detail-added').textContent = icon.added ? `v${icon.added}` : '';
+      detailIcon.className = icon.iconClass;
+
+      for (const action of copyActions) {
+        clearTimeout(action.resetTimer);
+        action.state = 'idle';
+        action.busy = false;
+        updateCopyAction(action);
+      }
+
+      dialog.showModal();
+      resetColor();
+      updateSize();
+    }
+
+    for (const action of copyActions) {
+      action.button.addEventListener('click', () =>
+        runCopy(action, copyValue(action.kind), () => updateCopyAction(action)));
+    }
+
+    sizeInput.addEventListener('input', updateSize);
+    colorInput.addEventListener('input', () => {
+      detailIcon.style.color = colorInput.value;
+    });
+    document.getElementById('detail-color-reset').addEventListener('click', resetColor);
+    document.getElementById('detail-close').addEventListener('click', () => dialog.close());
+
+    // A click on the backdrop (outside the panel's box) closes it.
+    dialog.addEventListener('click', event => {
+      const box = dialog.getBoundingClientRect();
+      const outside = event.clientX < box.left || event.clientX > box.right ||
+        event.clientY < box.top || event.clientY > box.bottom;
+
+      if (event.target === dialog && outside) {
+        dialog.close();
+      }
+    });
 
     const codeBlocks = Array.from(document.querySelectorAll('#guide pre'), pre => {
       const wrapper = document.createElement('div');
@@ -2476,7 +3129,14 @@
         element.textContent = digits(index + 1);
       });
 
+      const detailClose = document.getElementById('detail-close');
+
+      detailClose.title = words.close;
+      detailClose.setAttribute('aria-label', words.close);
+
       for (const icon of icons) {
+        icon.openButton.setAttribute('aria-label', `${words.details}: ${icon.names[language]}`);
+        icon.openButton.title = `${words.details}: ${icon.names[language]}`;
         icon.nameElement.textContent = icon.names[language];
         icon.nameElement.title = icon.names[language];
         updateCopyButton(icon);

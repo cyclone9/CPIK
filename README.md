@@ -4,11 +4,15 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cpik-lockup-on-dark.svg"><img src="assets/cpik-lockup-on-light.svg" alt="CPIK" width="300"></picture></p>
 
-نسخه‌ی 0.1.4. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
+نسخه‌ی 0.1.5. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
 
 **برندهای ایرانی، در یک کیت آیکون.**
 
 کیت CPIK آیکون بانک‌ها، پلتفرم‌ها، سرویس‌ها و برندهای ایرانی را یک‌جا می‌دهد. یک فایل استایل را لینک کنید تا هر آیکون با یک نام کلاس در دسترس باشد؛ در هر اندازه‌ای واضح می‌ماند و مثل متن کنارش با CSS رنگ می‌گیرد. لوگوها متعلق به صاحبانشان است.
+
+<p align="center"><a href="assets/cpik-video-fa.mp4"><img src="assets/cpik-video-fa.jpg" alt="ویدیوی معرفی CPIK" width="720"></a></p>
+
+<p align="center">نگاهی ۲۹ ثانیه‌ای به CPIK. برای دیدن ویدیو روی تصویر بزنید.</p>
 
 همه‌ی آیکون‌ها را در صفحه‌ی پیش‌نمایش ببینید و جستجو کنید: https://cyclone9.github.io/CPIK/
 
@@ -47,7 +51,7 @@
 <div dir="ltr">
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.4/dist/cpik.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.5/dist/cpik.css">
 ```
 
 </div>
@@ -98,14 +102,18 @@ npm install @cyclone9/cpik
 | `bank-` | بانک‌ها |
 | `finance-` | پرداخت |
 | `crypto-` | صرافی‌های رمزارز |
+| `telecom-` | اپراتورهای موبایل |
 | `shop-` | فروشگاه‌ها |
 | `platform-` | پلتفرم‌های ویدیو |
 | `channel-` | شبکه‌های تلویزیونی |
 | `news-` | خبری |
 | `socialmedia-` | شبکه‌های اجتماعی |
 | `map-` | نقشه‌ها |
+| `landmark-` | بناهای شاخص |
 
-چند آیکون پیشوند ندارند، مثل `irancell`، `rightel`، `post` و `tipax`. فهرست همه‌ی آیکون‌ها با کدپوینتشان در `cpik.json` است.
+چند آیکون پیشوند ندارند، مثل `post`، `tipax` و `e-namad`. اگر نام آیکونی عوض شود، نام قدیمی آن هم در `cpik.css` کار می‌کند؛ مثلاً `cpik-irancell` همان آیکون `cpik-telecom-irancell` را نشان می‌دهد. فهرست همه‌ی آیکون‌ها با کدپوینتشان در `cpik.json` است.
+
+آیکونی که می‌خواهید در کیت نیست؟ آن را از [فرم درخواست آیکون](https://github.com/cyclone9/CPIK/issues/new?template=icon-request.yml) بخواهید.
 
 کدپوینت هر آیکون هیچ‌وقت عوض نمی‌شود و کدپوینت آیکونی که حذف شده به آیکون دیگری داده نمی‌شود؛ پس با به‌روز کردن کیت، آیکون‌های صفحه‌هایتان جابه‌جا نمی‌شوند.
 
@@ -137,6 +145,6 @@ npm run preview -- 8080    # serves dist/ on http://127.0.0.1:8080
 
 کد، فایل‌های فونت و فایل استایل کیت با مجوز MIT منتشر شده‌اند، Copyright (c) 2026 CyClone (https://cyclone9.ir). متن کامل مجوز در [LICENSE](LICENSE) است.
 
-مجوز MIT شامل لوگوهای داخل کیت نمی‌شود. هر لوگو علامت تجاری صاحب آن است. کیت CPIK فقط آن‌ها را نمایش می‌دهد و استفاده از هر لوگو به معنای همکاری با آن برند نیست. لوگوی CPIK در پوشه‌ی [assets/](assets/) متعلق به CyClone است و همه‌ی حقوق آن محفوظ است. فونت وزیرمتن که صفحه‌ی پیش‌نمایش از آن استفاده می‌کند، مجوز SIL Open Font License دارد ([assets/fonts/OFL.txt](assets/fonts/OFL.txt)).
+مجوز MIT شامل لوگوهای داخل کیت نمی‌شود. هر لوگو علامت تجاری صاحب آن است. کیت CPIK فقط آن‌ها را نمایش می‌دهد و استفاده از هر لوگو به معنای همکاری با آن برند نیست. لوگوی CPIK و ویدیوی معرفی و تصویر آن در پوشه‌ی [assets/](assets/) متعلق به CyClone است و همه‌ی حقوق آن‌ها محفوظ است؛ موسیقی ویدیو هم جزو مجوز MIT نیست. مرز دریاها در آیکون `cpik-map-iran-seas` از داده‌های Natural Earth است که مالکیت عمومی دارد. فونت وزیرمتن که صفحه‌ی پیش‌نمایش از آن استفاده می‌کند، مجوز SIL Open Font License دارد ([assets/fonts/OFL.txt](assets/fonts/OFL.txt)).
 
 </div>

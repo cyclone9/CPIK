@@ -1,0 +1,48 @@
+name: درخواست آیکون
+description: برند، بانک یا سرویسی را که در کیت نیست پیشنهاد بدهید.
+title: "درخواست آیکون: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ممنون که CPIK را کامل‌تر می‌کنید. هر چه نشانی لوگوی رسمی دقیق‌تر باشد، آیکون زودتر اضافه می‌شود.
+  - type: input
+    id: brand
+    attributes:
+      label: نام برند
+      description: نام فارسی یا انگلیسی برند، مثل «بانک ملت» یا Snapp.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: دسته
+      options:
+        - بانک
+        - پرداخت
+        - رمزارز
+        - اپراتور موبایل
+        - فروشگاه
+        - پلتفرم ویدیو
+        - شبکه تلویزیونی
+        - خبری
+        - شبکه اجتماعی
+        - نقشه
+        - بناهای شاخص
+        - سایر
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: وب‌سایت رسمی
+      placeholder: https://
+  - type: textarea
+    id: logo
+    attributes:
+      label: لوگوی رسمی
+      description: نشانی فایل SVG یا صفحه‌ی لوگوی رسمی برند، اگر آن را می‌شناسید.
+  - type: textarea
+    id: notes
+    attributes:
+      label: توضیح بیشتر
