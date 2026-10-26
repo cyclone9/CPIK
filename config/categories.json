@@ -9,5 +9,6 @@
   { "prefix": "news", "fa": "خبری", "en": "News" },
   { "prefix": "socialmedia", "fa": "شبکه اجتماعی", "en": "Social media" },
   { "prefix": "map", "fa": "نقشه", "en": "Maps" },
-  { "prefix": "landmark", "fa": "بناهای شاخص", "en": "Landmarks" }
+  { "prefix": "landmark", "fa": "بناهای شاخص", "en": "Landmarks" },
+  { "prefix": "cyclone", "fa": "سایکلون - CyClone", "en": "CyClone products" }
 ]

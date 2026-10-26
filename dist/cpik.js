@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.6";
+window.CPIK_VERSION = "0.1.7";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -55,6 +55,11 @@ window.CPIK_CATEGORIES = [
     "prefix": "landmark",
     "fa": "بناهای شاخص",
     "en": "Landmarks"
+  },
+  {
+    "prefix": "cyclone",
+    "fa": "سایکلون - CyClone",
+    "en": "CyClone products"
   }
 ];
 window.CPIK_DATA = {
@@ -152,7 +157,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e043",
-    "isNew": true
+    "isNew": false
   },
   "bank-iranzamin": {
     "name": {
@@ -483,7 +488,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e044",
-    "isNew": true
+    "isNew": false
   },
   "bank-sarmayeh": {
     "name": {
@@ -583,7 +588,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e045",
-    "isNew": true
+    "isNew": false
   },
   "bank-toseetaavon": {
     "name": {
@@ -607,7 +612,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e046",
-    "isNew": true
+    "isNew": false
   },
   "channel-1": {
     "name": {
@@ -693,7 +698,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e047",
-    "isNew": true
+    "isNew": false
   },
   "channel-tehran": {
     "name": {
@@ -719,24 +724,6 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e048",
-    "isNew": true
-  },
-  "cpik": {
-    "name": {
-      "fa": "CPIK",
-      "en": "CPIK"
-    },
-    "keywords": [
-      "کیت آیکون",
-      "آیکون",
-      "فونت آیکون",
-      "سایکلون",
-      "icon kit",
-      "icon font",
-      "cyclone"
-    ],
-    "added": "0.1.0",
-    "codepoint": "e01a",
     "isNew": false
   },
   "crypto-abantether": {
@@ -777,6 +764,177 @@ window.CPIK_DATA = {
     "added": "0.1.0",
     "codepoint": "e01c",
     "isNew": false
+  },
+  "cyclone-cpck": {
+    "name": {
+      "fa": "CPCK",
+      "en": "CyClone Power Card Keeper"
+    },
+    "keywords": [
+      "کارت‌دان",
+      "کارت دان",
+      "کارت",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "cpck",
+      "card keeper"
+    ],
+    "added": "0.1.7",
+    "codepoint": "e04c",
+    "isNew": true
+  },
+  "cyclone-cpcs": {
+    "name": {
+      "fa": "CPCS",
+      "en": "CyClone Power Card Studio"
+    },
+    "keywords": [
+      "استودیو کارت",
+      "کارت",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "cpcs",
+      "card studio"
+    ],
+    "added": "0.1.7",
+    "codepoint": "e04d",
+    "isNew": true
+  },
+  "cyclone-cpfs": {
+    "name": {
+      "fa": "CPFS",
+      "en": "CyClone Power File Share"
+    },
+    "keywords": [
+      "اشتراک فایل",
+      "فایل",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "cpfs",
+      "file share"
+    ],
+    "added": "0.1.7",
+    "codepoint": "e04e",
+    "isNew": true
+  },
+  "cyclone-cpik": {
+    "name": {
+      "fa": "CPIK",
+      "en": "CyClone Power Icon Kit"
+    },
+    "keywords": [
+      "کیت آیکون",
+      "آیکون",
+      "فونت آیکون",
+      "سایکلون",
+      "icon kit",
+      "icon font",
+      "cyclone",
+      "محصولات سایکلون",
+      "cpik",
+      "cyclone power icon kit"
+    ],
+    "added": "0.1.0",
+    "codepoint": "e01a",
+    "isNew": false
+  },
+  "cyclone-cpwo": {
+    "name": {
+      "fa": "CPWO",
+      "en": "CyClone Power Web Optimizer"
+    },
+    "keywords": [
+      "بهینه‌سازی وب",
+      "بهینه سازی سایت",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "cpwo",
+      "web optimizer"
+    ],
+    "added": "0.1.7",
+    "codepoint": "e04f",
+    "isNew": true
+  },
+  "cyclone-frame9": {
+    "name": {
+      "fa": "Frame9",
+      "en": "Frame9"
+    },
+    "keywords": [
+      "فریم۹",
+      "عکاسی",
+      "گالری عکس",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "frame9",
+      "frame 9",
+      "photography",
+      "photo gallery"
+    ],
+    "added": "0.1.7",
+    "codepoint": "e050",
+    "isNew": true
+  },
+  "cyclone-gw3b": {
+    "name": {
+      "fa": "GW3b",
+      "en": "GW3b Grand Web Tools"
+    },
+    "keywords": [
+      "ابزار وب",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "gw3b",
+      "grand web tools",
+      "web tools"
+    ],
+    "added": "0.1.7",
+    "codepoint": "e051",
+    "isNew": true
+  },
+  "cyclone-logo": {
+    "name": {
+      "fa": "CyClone",
+      "en": "CyClone"
+    },
+    "keywords": [
+      "سایکلون",
+      "سیکلون",
+      "لوگوی سایکلون",
+      "cyclone",
+      "cyclone9",
+      "cyclone logo"
+    ],
+    "added": "0.1.7",
+    "codepoint": "e052",
+    "isNew": true
+  },
+  "cyclone-mp9": {
+    "name": {
+      "fa": "MP9",
+      "en": "MP9"
+    },
+    "keywords": [
+      "موسیقی",
+      "موزیک",
+      "دانلود موزیک",
+      "آهنگ",
+      "دانلود آهنگ",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "mp9",
+      "music"
+    ],
+    "added": "0.1.7",
+    "codepoint": "e053",
+    "isNew": true
   },
   "e-namad": {
     "name": {
@@ -1052,7 +1210,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e049",
-    "isNew": true
+    "isNew": false
   },
   "news-zoomg": {
     "name": {
@@ -1344,7 +1502,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e04a",
-    "isNew": true
+    "isNew": false
   },
   "shop-digikala": {
     "name": {
@@ -1410,7 +1568,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.6",
     "codepoint": "e04b",
-    "isNew": true
+    "isNew": false
   },
   "shop-torob": {
     "name": {

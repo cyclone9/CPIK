@@ -25,7 +25,7 @@
   "channel-1": 57367,
   "channel-2": 57368,
   "channel-3": 57369,
-  "cpik": 57370,
+  "cyclone-cpik": 57370,
   "crypto-abantether": 57371,
   "crypto-nobitex": 57372,
   "e-namad": 57373,
@@ -74,5 +74,13 @@
   "channel-tehran": 57416,
   "news-varzesh3": 57417,
   "shop-basalam": 57418,
-  "shop-technolife": 57419
+  "shop-technolife": 57419,
+  "cyclone-cpck": 57420,
+  "cyclone-cpcs": 57421,
+  "cyclone-cpfs": 57422,
+  "cyclone-cpwo": 57423,
+  "cyclone-frame9": 57424,
+  "cyclone-gw3b": 57425,
+  "cyclone-logo": 57426,
+  "cyclone-mp9": 57427
 }

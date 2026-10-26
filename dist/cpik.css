@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?dde202c63f704aa0c67f3c842e110b62") format("woff2"),
-url("./cpik.woff?dde202c63f704aa0c67f3c842e110b62") format("woff");
+    src: url("./cpik.woff2?d0dddedcb4919316da91b49c1b7b99e2") format("woff2"),
+url("./cpik.woff?d0dddedcb4919316da91b49c1b7b99e2") format("woff");
     font-display: block;
 }
 
@@ -129,7 +129,7 @@ url("./cpik.woff?dde202c63f704aa0c67f3c842e110b62") format("woff");
     content: "\e019";
 }
 
-.cpik-cpik::before {
+.cpik-cyclone-cpik::before {
     content: "\e01a";
 }
 
@@ -329,6 +329,38 @@ url("./cpik.woff?dde202c63f704aa0c67f3c842e110b62") format("woff");
     content: "\e04b";
 }
 
+.cpik-cyclone-cpck::before {
+    content: "\e04c";
+}
+
+.cpik-cyclone-cpcs::before {
+    content: "\e04d";
+}
+
+.cpik-cyclone-cpfs::before {
+    content: "\e04e";
+}
+
+.cpik-cyclone-cpwo::before {
+    content: "\e04f";
+}
+
+.cpik-cyclone-frame9::before {
+    content: "\e050";
+}
+
+.cpik-cyclone-gw3b::before {
+    content: "\e051";
+}
+
+.cpik-cyclone-logo::before {
+    content: "\e052";
+}
+
+.cpik-cyclone-mp9::before {
+    content: "\e053";
+}
+
 /* Old class names of renamed icons */
 .cpik-irancell::before {
     content: "\e01f";
@@ -338,4 +370,7 @@ url("./cpik.woff?dde202c63f704aa0c67f3c842e110b62") format("woff");
 }
 .cpik-mobile-communications-of-iran::before {
     content: "\e022";
+}
+.cpik-cpik::before {
+    content: "\e01a";
 }

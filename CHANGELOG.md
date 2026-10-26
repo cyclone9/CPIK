@@ -6,6 +6,12 @@
 
 ## منتشرنشده
 
+## 0.1.7 - 2026-10-26
+
+- دسته‌ی تازه‌ی «سایکلون - CyClone» با هشت آیکون تازه: CyClone (`cpik-cyclone-logo`)، GW3b (`cpik-cyclone-gw3b`)، MP9 (`cpik-cyclone-mp9`)، CPWO (`cpik-cyclone-cpwo`)، CPCS (`cpik-cyclone-cpcs`)، CPFS (`cpik-cyclone-cpfs`)، CPCK (`cpik-cyclone-cpck`) و Frame9 (`cpik-cyclone-frame9`). آیکون CPIK هم به این دسته رفته و حالا `cpik-cyclone-cpik` است؛ نام قدیمی `cpik-cpik` همچنان همان آیکون را نشان می‌دهد.
+- نقشه‌ی ایران (`cpik-map-iran`) و نقشه‌ی ایران با دریاها (`cpik-map-iran-seas`): خط‌های باریک میان استان‌ها که در اندازه‌های بزرگ دیده می‌شد، بسته شد.
+- صفحه‌ی پیش‌نمایش: نام‌های لاتین در کارت‌ها هم مثل نام‌های فارسی در سمت راست می‌نشینند.
+
 ## 0.1.6 - 2026-10-26
 
 - چهار آیکون تازه در دسته‌ی بانک‌ها: بانک صنعت و معدن (`cpik-bank-sanatmadan`)، بانک توسعه صادرات (`cpik-bank-toseesaderat`)، بانک توسعه تعاون (`cpik-bank-toseetaavon`) و بانک ایران و ونزوئلا (`cpik-bank-iranvenezuela`).

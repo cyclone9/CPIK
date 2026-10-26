@@ -4,7 +4,7 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cpik-lockup-on-dark.svg"><img src="assets/cpik-lockup-on-light.svg" alt="CPIK" width="300"></picture></p>
 
-نسخه‌ی 0.1.6. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
+نسخه‌ی 0.1.7. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
 
 **برندهای ایرانی، در یک کیت آیکون.**
 
@@ -37,7 +37,7 @@
 <div dir="ltr">
 
 ```html
-<i class="cpik-cpik" aria-hidden="true"></i>
+<i class="cpik-cyclone-cpik" aria-hidden="true"></i>
 ```
 
 </div>
@@ -51,7 +51,7 @@
 <div dir="ltr">
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.6/dist/cpik.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.7/dist/cpik.css">
 ```
 
 </div>
@@ -73,7 +73,7 @@ npm install @cyclone9/cpik
 <div dir="ltr">
 
 ```css
-.cpik-cpik {
+.cpik-cyclone-cpik {
   font-size: 48px;
   color: #4A5CF0;
 }
@@ -110,6 +110,7 @@ npm install @cyclone9/cpik
 | `socialmedia-` | شبکه‌های اجتماعی |
 | `map-` | نقشه‌ها |
 | `landmark-` | بناهای شاخص |
+| `cyclone-` | سایکلون - CyClone |
 
 چند آیکون پیشوند ندارند، مثل `post`، `tipax` و `e-namad`. اگر نام آیکونی عوض شود، نام قدیمی آن هم در `cpik.css` کار می‌کند؛ مثلاً `cpik-irancell` همان آیکون `cpik-telecom-irancell` را نشان می‌دهد. فهرست همه‌ی آیکون‌ها با کدپوینتشان در `cpik.json` است.
 

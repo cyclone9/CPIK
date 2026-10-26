@@ -592,22 +592,6 @@
     ],
     "added": "0.1.6"
   },
-  "cpik": {
-    "name": {
-      "fa": "CPIK",
-      "en": "CPIK"
-    },
-    "keywords": [
-      "کیت آیکون",
-      "آیکون",
-      "فونت آیکون",
-      "سایکلون",
-      "icon kit",
-      "icon font",
-      "cyclone"
-    ],
-    "added": "0.1.0"
-  },
   "crypto-abantether": {
     "name": {
       "fa": "آبان تتر",
@@ -642,6 +626,159 @@
       "exchange"
     ],
     "added": "0.1.0"
+  },
+  "cyclone-cpck": {
+    "name": {
+      "fa": "CPCK",
+      "en": "CyClone Power Card Keeper"
+    },
+    "keywords": [
+      "کارت‌دان",
+      "کارت دان",
+      "کارت",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "cpck",
+      "card keeper"
+    ],
+    "added": "0.1.7"
+  },
+  "cyclone-cpcs": {
+    "name": {
+      "fa": "CPCS",
+      "en": "CyClone Power Card Studio"
+    },
+    "keywords": [
+      "استودیو کارت",
+      "کارت",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "cpcs",
+      "card studio"
+    ],
+    "added": "0.1.7"
+  },
+  "cyclone-cpfs": {
+    "name": {
+      "fa": "CPFS",
+      "en": "CyClone Power File Share"
+    },
+    "keywords": [
+      "اشتراک فایل",
+      "فایل",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "cpfs",
+      "file share"
+    ],
+    "added": "0.1.7"
+  },
+  "cyclone-cpik": {
+    "name": {
+      "fa": "CPIK",
+      "en": "CyClone Power Icon Kit"
+    },
+    "keywords": [
+      "کیت آیکون",
+      "آیکون",
+      "فونت آیکون",
+      "سایکلون",
+      "icon kit",
+      "icon font",
+      "cyclone",
+      "محصولات سایکلون",
+      "cpik",
+      "cyclone power icon kit"
+    ],
+    "added": "0.1.0"
+  },
+  "cyclone-cpwo": {
+    "name": {
+      "fa": "CPWO",
+      "en": "CyClone Power Web Optimizer"
+    },
+    "keywords": [
+      "بهینه‌سازی وب",
+      "بهینه سازی سایت",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "cpwo",
+      "web optimizer"
+    ],
+    "added": "0.1.7"
+  },
+  "cyclone-frame9": {
+    "name": {
+      "fa": "Frame9",
+      "en": "Frame9"
+    },
+    "keywords": [
+      "فریم۹",
+      "عکاسی",
+      "گالری عکس",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "frame9",
+      "frame 9",
+      "photography",
+      "photo gallery"
+    ],
+    "added": "0.1.7"
+  },
+  "cyclone-gw3b": {
+    "name": {
+      "fa": "GW3b",
+      "en": "GW3b Grand Web Tools"
+    },
+    "keywords": [
+      "ابزار وب",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "gw3b",
+      "grand web tools",
+      "web tools"
+    ],
+    "added": "0.1.7"
+  },
+  "cyclone-logo": {
+    "name": {
+      "fa": "CyClone",
+      "en": "CyClone"
+    },
+    "keywords": [
+      "سایکلون",
+      "سیکلون",
+      "لوگوی سایکلون",
+      "cyclone",
+      "cyclone9",
+      "cyclone logo"
+    ],
+    "added": "0.1.7"
+  },
+  "cyclone-mp9": {
+    "name": {
+      "fa": "MP9",
+      "en": "MP9"
+    },
+    "keywords": [
+      "موسیقی",
+      "موزیک",
+      "دانلود موزیک",
+      "آهنگ",
+      "دانلود آهنگ",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "mp9",
+      "music"
+    ],
+    "added": "0.1.7"
   },
   "e-namad": {
     "name": {
