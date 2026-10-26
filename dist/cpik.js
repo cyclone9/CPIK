@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.2";
+window.CPIK_VERSION = "0.1.3";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -202,6 +202,42 @@ window.CPIK_DATA = {
       "banking"
     ]
   },
+  "bank-mehriran": {
+    "name": {
+      "fa": "بانک مهر ایران",
+      "en": "Mehr Iran Bank"
+    },
+    "keywords": [
+      "مهر ایران",
+      "مهر",
+      "بانک قرض الحسنه مهر ایران",
+      "قرض الحسنه",
+      "قرض‌الحسنه",
+      "بانکداری",
+      "mehr iran",
+      "mehriran",
+      "qmb",
+      "banking"
+    ]
+  },
+  "bank-melal": {
+    "name": {
+      "fa": "موسسه اعتباری ملل",
+      "en": "Melal Credit Institution"
+    },
+    "keywords": [
+      "ملل",
+      "موسسه ملل",
+      "مؤسسه اعتباری ملل",
+      "اعتباری ملل",
+      "موسسه اعتباری",
+      "بانکداری",
+      "melal",
+      "melall",
+      "credit institution",
+      "banking"
+    ]
+  },
   "bank-mellat": {
     "name": {
       "fa": "بانک ملت",
@@ -270,6 +306,23 @@ window.CPIK_DATA = {
       "بانکداری",
       "postbank",
       "post bank iran",
+      "banking"
+    ]
+  },
+  "bank-refah": {
+    "name": {
+      "fa": "بانک رفاه",
+      "en": "Refah Bank"
+    },
+    "keywords": [
+      "رفاه",
+      "بانک رفاه کارگران",
+      "رفاه کارگران",
+      "بانکداری",
+      "خدمات بانکی",
+      "refah",
+      "refah kargaran",
+      "refahbank",
       "banking"
     ]
   },
@@ -515,6 +568,54 @@ window.CPIK_DATA = {
       "خرید اقساطی",
       "digi pay",
       "wallet",
+      "payment"
+    ]
+  },
+  "finance-idpay": {
+    "name": {
+      "fa": "آیدی‌پی",
+      "en": "IDPay"
+    },
+    "keywords": [
+      "آیدی پی",
+      "ایدی پی",
+      "آیدیپی",
+      "درگاه پرداخت",
+      "پرداخت",
+      "درگاه",
+      "idpay",
+      "id pay",
+      "payment gateway"
+    ]
+  },
+  "finance-zarinpal": {
+    "name": {
+      "fa": "زرین‌پال",
+      "en": "ZarinPal"
+    },
+    "keywords": [
+      "زرین پال",
+      "زرینپال",
+      "درگاه پرداخت",
+      "پرداخت",
+      "درگاه",
+      "zarin pal",
+      "zarinpal",
+      "payment gateway",
+      "payment"
+    ]
+  },
+  "finance-zibal": {
+    "name": {
+      "fa": "زیبال",
+      "en": "Zibal"
+    },
+    "keywords": [
+      "درگاه پرداخت",
+      "پرداخت",
+      "درگاه",
+      "zibal",
+      "payment gateway",
       "payment"
     ]
   },

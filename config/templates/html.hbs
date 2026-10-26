@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CPIK - CyClone Power Icon Kit</title>
-  <meta name="description" content="CPIK is an icon kit of Iranian banks, platforms, services and brands. Link one stylesheet and each icon is a class name away.">
+  <meta name="description" content="کیت CPIK آیکون بانک‌ها، پلتفرم‌ها، سرویس‌ها و برندهای ایرانی را یک‌جا می‌دهد. یک فایل استایل را لینک کنید تا هر آیکون با یک نام کلاس در دسترس باشد.">
   <meta name="color-scheme" content="dark light">
   <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="32x32">
@@ -14,24 +14,16 @@
     (() => {
       const root = document.documentElement;
       let theme = 'dark';
-      let language = 'fa';
 
       try {
         const savedTheme = localStorage.getItem('cpik-preview-theme');
-        const savedLanguage = localStorage.getItem('cpik-preview-language');
 
         if (savedTheme === 'dark' || savedTheme === 'light') {
           theme = savedTheme;
         }
-
-        if (savedLanguage === 'fa' || savedLanguage === 'en') {
-          language = savedLanguage;
-        }
       } catch { }
 
       root.dataset.theme = theme;
-      root.lang = language;
-      root.dir = language === 'fa' ? 'rtl' : 'ltr';
     })();
   </script>
   <link rel="stylesheet" href="{{ name }}.css">
@@ -674,6 +666,12 @@
       border: 1px dashed var(--keyline);
     }
 
+    /* A block glyph box drops the text baseline offset, so the icon sits in the exact middle. */
+    .preview .inner i::before,
+    .guide-preview i::before {
+      display: block;
+    }
+
     .guide-preview i:nth-child(1) {
       font-size: 16px;
     }
@@ -828,7 +826,6 @@
       </nav>
 
       <div class="header-actions">
-        <button id="language-toggle" class="action-button" type="button" dir="ltr">EN</button>
 
         <button id="theme-toggle" class="action-button theme-toggle" type="button">
           <svg class="ui-icon moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -999,53 +996,14 @@
     const results = document.getElementById('search-results');
     const emptyMessage = document.getElementById('empty-message');
     const themeToggle = document.getElementById('theme-toggle');
-    const languageToggle = document.getElementById('language-toggle');
     const backToTop = document.getElementById('back-to-top');
     const metadata = window.CPIK_DATA || {};
     const categories = window.CPIK_CATEGORIES || [];
     const version = window.CPIK_VERSION;
-    let language = root.lang === 'en' ? 'en' : 'fa';
+    // The page is Persian only; names and labels come from the fa entries.
+    const language = 'fa';
 
     const translations = {
-      en: {
-        navIcons: 'Icons',
-        navGuide: 'Guide',
-        download: 'Get the kit',
-        shortName: 'Icon Kit',
-        tagline: 'Iranian brands. One icon kit.',
-        description: 'CPIK is an icon kit of Iranian banks, platforms, services and brands. Link one stylesheet and each icon is a class name away, sharp at any size and coloured with CSS like the text beside it. The logos belong to their owners.',
-        searchLabel: 'Search icons',
-        searchPlaceholder: 'Search by name or keyword',
-        filterLabel: 'Category',
-        all: 'All icons',
-        other: 'Other',
-        empty: 'No icons found. Try another name, keyword or category.',
-        guideTitle: 'How to use CPIK',
-        guideIntro: 'Add the stylesheet, choose an icon, and paste its HTML into your page.',
-        guideFilesTitle: 'Add the stylesheet',
-        guideFilesText: "Put cpik.css and its WOFF and WOFF2 font files together in assets/cpik, then add this line to your page's head.",
-        guideCdnText: 'Or load it from jsDelivr without copying any files:',
-        guideIconTitle: 'Insert an icon',
-        guideIconText: 'Every icon is a single class. Use the copy button on a card and paste the HTML where you want the icon.',
-        guideStyleTitle: 'Size and colour',
-        guideStyleText: 'An icon behaves like text: set its size with font-size and its colour with color.',
-        guidePreviewTitle: 'Preview',
-        guidePreviewText: 'The same icon at 16, 32 and 64 pixels.',
-        guideNote: 'cpik.js is only used by this page; the icons need no JavaScript. If a button shows only an icon, give the button itself an accessible name such as aria-label.',
-        licence: 'The kit is released under the MIT licence. The logos belong to their owners, and using one does not imply a partnership with the brand.',
-        darkMode: 'Switch to dark theme',
-        lightMode: 'Switch to light theme',
-        languageSwitch: 'تغییر زبان به فارسی',
-        clearSearch: 'Clear search',
-        backToTop: 'Back to top',
-        copy: 'Copy HTML',
-        copying: 'Copying HTML',
-        copied: 'HTML copied',
-        copyFailed: 'Copy failed. Try again or check clipboard permissions.',
-        copyCode: 'Copy code',
-        codeCopied: 'Code copied',
-        results: (visible, total) => `${visible} of ${total} icons`
-      },
       fa: {
         navIcons: 'آیکون‌ها',
         navGuide: 'راهنما',
@@ -1074,7 +1032,6 @@
         licence: 'کیت با مجوز MIT منتشر شده است. لوگوها متعلق به صاحبانشان است و استفاده از آن‌ها به معنای همکاری با آن برندها نیست.',
         darkMode: 'تغییر به تم تیره',
         lightMode: 'تغییر به تم روشن',
-        languageSwitch: 'Switch to English',
         clearSearch: 'پاک کردن جستجو',
         backToTop: 'برگشت به بالا',
         copy: 'کپی کد HTML',
@@ -1088,9 +1045,7 @@
     };
 
     const dictionary = () => translations[language];
-    const digits = value => new Intl.NumberFormat(
-      language === 'fa' ? 'fa-IR' : 'en-US'
-    ).format(value);
+    const digits = value => new Intl.NumberFormat('fa-IR').format(value);
 
     document.querySelectorAll('[data-version-output]').forEach(element => {
       element.textContent = version ? `v${version}` : '';
@@ -1362,11 +1317,8 @@
       themeToggle.setAttribute('aria-label', label);
     }
 
-    function applyLanguage() {
+    function applyText() {
       const words = dictionary();
-
-      root.lang = language;
-      root.dir = language === 'fa' ? 'rtl' : 'ltr';
 
       document.querySelectorAll('[data-i18n]').forEach(element => {
         element.textContent = words[element.dataset.i18n];
@@ -1390,9 +1342,6 @@
         updateCodeButton(block);
       }
 
-      languageToggle.textContent = language === 'fa' ? 'EN' : 'FA';
-      languageToggle.title = words.languageSwitch;
-      languageToggle.setAttribute('aria-label', words.languageSwitch);
       searchClear.title = words.clearSearch;
       searchClear.setAttribute('aria-label', words.clearSearch);
       backToTop.title = words.backToTop;
@@ -1406,12 +1355,6 @@
       root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
       savePreference('cpik-preview-theme', root.dataset.theme);
       updateThemeButton();
-    });
-
-    languageToggle.addEventListener('click', () => {
-      language = language === 'fa' ? 'en' : 'fa';
-      savePreference('cpik-preview-language', language);
-      applyLanguage();
     });
 
     searchInput.addEventListener('input', filterIcons);
@@ -1469,7 +1412,7 @@
     window.addEventListener('scroll', scheduleNavigation, { passive: true });
     window.addEventListener('resize', scheduleNavigation);
     scheduleNavigation();
-    applyLanguage();
+    applyText();
   </script>
 </body>
 </html>

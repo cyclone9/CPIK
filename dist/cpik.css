@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?592a34d008dbce3a358cb3c13e4d3331") format("woff2"),
-url("./cpik.woff?592a34d008dbce3a358cb3c13e4d3331") format("woff");
+    src: url("./cpik.woff2?7b73ac5f46865f22b8c6f9f563c12795") format("woff2"),
+url("./cpik.woff?7b73ac5f46865f22b8c6f9f563c12795") format("woff");
     font-display: block;
 }
 
@@ -239,4 +239,28 @@ url("./cpik.woff?592a34d008dbce3a358cb3c13e4d3331") format("woff");
 
 .cpik-tipax::before {
     content: "\e035";
+}
+
+.cpik-bank-mehriran::before {
+    content: "\e036";
+}
+
+.cpik-bank-melal::before {
+    content: "\e037";
+}
+
+.cpik-bank-refah::before {
+    content: "\e038";
+}
+
+.cpik-finance-idpay::before {
+    content: "\e039";
+}
+
+.cpik-finance-zarinpal::before {
+    content: "\e03a";
+}
+
+.cpik-finance-zibal::before {
+    content: "\e03b";
 }
