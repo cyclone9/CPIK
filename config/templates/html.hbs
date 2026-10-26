@@ -6,6 +6,22 @@
   <title>CPIK - CyClone Power Icon Kit</title>
   <meta name="description" content="کیت CPIK آیکون بانک‌ها، پلتفرم‌ها، سرویس‌ها و برندهای ایرانی را یک‌جا می‌دهد. یک فایل استایل را لینک کنید تا هر آیکون با یک نام کلاس در دسترس باشد.">
   <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CPIK">
+  <meta property="og:title" content="CPIK - CyClone Power Icon Kit">
+  <meta property="og:description" content="کیت CPIK آیکون بانک‌ها، پلتفرم‌ها، سرویس‌ها و برندهای ایرانی را یک‌جا می‌دهد. یک فایل استایل را لینک کنید تا هر آیکون با یک نام کلاس در دسترس باشد.">
+  <meta property="og:url" content="https://cyclone9.github.io/CPIK/">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:image" content="https://cyclone9.github.io/CPIK/assets/cpik-social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="لوگوی CPIK و نشانی cyclone9.ir/cpik">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CPIK - CyClone Power Icon Kit">
+  <meta name="twitter:description" content="کیت CPIK آیکون بانک‌ها، پلتفرم‌ها، سرویس‌ها و برندهای ایرانی را یک‌جا می‌دهد. یک فایل استایل را لینک کنید تا هر آیکون با یک نام کلاس در دسترس باشد.">
+  <meta name="twitter:image" content="https://cyclone9.github.io/CPIK/assets/cpik-social-preview.png">
+  <meta name="twitter:image:alt" content="لوگوی CPIK و نشانی cyclone9.ir/cpik">
   <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
@@ -24,6 +40,15 @@
       } catch { }
 
       root.dataset.theme = theme;
+
+      // Set before the first paint so a saved gallery icon size doesn't flash at 48 px.
+      try {
+        const savedSize = localStorage.getItem('cpik-preview-size');
+
+        if (savedSize === '16' || savedSize === '24' || savedSize === '48') {
+          root.dataset.iconSize = savedSize;
+        }
+      } catch { }
     })();
   </script>
   <link rel="stylesheet" href="{{ name }}.css">
@@ -414,6 +439,35 @@
       display: none;
     }
 
+    /* The "/" shortcut hint; it gives way to the clear button once there is text. */
+    .search-key {
+      position: absolute;
+      inset-inline-end: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      min-width: 1.5rem;
+      padding: 0.1rem 0.4rem;
+      border: 1px solid var(--control-line);
+      border-radius: 0.35rem;
+      color: var(--muted);
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 0.75rem;
+      line-height: 1.4;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .search-field input:focus ~ .search-key,
+    .search-field input:not(:placeholder-shown) ~ .search-key {
+      display: none;
+    }
+
+    @media (pointer: coarse), (max-width: 40rem) {
+      .search-key {
+        display: none;
+      }
+    }
+
     /* Category picker: a button and a popup with a search box and a listbox (native option popups ignore the page font). */
     .picker {
       position: relative;
@@ -626,6 +680,49 @@
 
     .chip[hidden] {
       display: none;
+    }
+
+    /* Gallery icon size: three pressed-state buttons in one pill. */
+    .segmented {
+      display: inline-flex;
+      height: 2.75rem;
+      padding: 0.25rem;
+      gap: 0.15rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+
+    .segmented button {
+      min-width: 2.4rem;
+      padding-inline: 0.6rem;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: var(--fs-s);
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .segmented button:hover {
+      color: var(--fg);
+      background: var(--surface-hover);
+    }
+
+    .segmented button[aria-pressed="true"] {
+      background: var(--accent);
+      color: var(--on-accent);
+    }
+
+    /* 48 px is the default (3rem on .inner). */
+    [data-icon-size="16"] .preview .inner {
+      font-size: 16px;
+    }
+
+    [data-icon-size="24"] .preview .inner {
+      font-size: 24px;
     }
 
     /* Request an icon: a notice box with a button. Two classes, so it wins over the .notice base rule further down. */
@@ -1243,7 +1340,9 @@
             <path d="m20 20-3.5-3.5" />
           </svg>
           <input id="icon-search" type="search" data-i18n-placeholder="searchPlaceholder"
-            placeholder="جستجو با نام یا کلیدواژه" autocomplete="off" spellcheck="false" aria-controls="icon-gallery">
+            placeholder="جستجو با نام یا کلیدواژه" autocomplete="off" spellcheck="false" aria-controls="icon-gallery"
+            aria-keyshortcuts="/">
+          <kbd class="search-key" aria-hidden="true">/</kbd>
           <button id="search-clear" class="search-clear" type="button" aria-controls="icon-gallery" hidden>
             <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="m6 6 12 12M6 18 18 6" />
@@ -1276,6 +1375,12 @@
           </div>
         </div>
         <button id="new-toggle" class="chip" type="button" aria-pressed="false" aria-controls="icon-gallery" hidden></button>
+
+        <div id="size-toggle" class="segmented" role="group" aria-label="اندازه‌ی آیکون‌ها">
+          <button type="button" data-size="16" aria-pressed="false" aria-controls="icon-gallery">۱۶</button>
+          <button type="button" data-size="24" aria-pressed="false" aria-controls="icon-gallery">۲۴</button>
+          <button type="button" data-size="48" aria-pressed="false" aria-controls="icon-gallery">۴۸</button>
+        </div>
 
         <p id="search-results" class="results" role="status" aria-live="polite" aria-atomic="true"></p>
       </div>
@@ -1331,7 +1436,7 @@
     <section id="guide" class="guide" aria-labelledby="guide-title">
       <div class="wrap">
         <h2 id="guide-title" data-i18n="guideTitle">راهنمای استفاده</h2>
-        <p data-i18n="guideIntro">فایل استایل را اضافه کنید، آیکون را انتخاب کنید و کد HTML آن را در صفحه بگذارید.</p>
+        <p data-i18n="guideIntro">فایل استایل را اضافه کنید، آیکون را انتخاب کنید و کد HTML آن را در صفحه بگذارید. با کلید / به جستجو بروید و با کلیدهای جهت میان آیکون‌ها جابه‌جا شوید.</p>
 
         <div class="steps">
           <div class="guide-step">
@@ -1444,6 +1549,7 @@
       <button class="text-button" type="button" data-copy="html">کپی HTML</button>
       <button class="text-button" type="button" data-copy="class">کپی کلاس</button>
       <button class="text-button" type="button" data-copy="codepoint">کپی کدپوینت</button>
+      <button class="text-button" type="button" data-copy="link">کپی پیوند</button>
     </div>
     <span id="detail-feedback" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
   </dialog>
@@ -1479,6 +1585,7 @@
     const metadata = window.CPIK_DATA || {};
     const categories = window.CPIK_CATEGORIES || [];
     const version = window.CPIK_VERSION;
+    const aliases = window.CPIK_ALIASES || {};
     // The page is Persian only; names and labels come from the fa entries.
     const language = 'fa';
 
@@ -1499,7 +1606,7 @@
         other: 'سایر',
         empty: 'آیکونی پیدا نشد. نام، کلیدواژه یا دسته‌ی دیگری را امتحان کنید.',
         guideTitle: 'راهنمای استفاده',
-        guideIntro: 'فایل استایل را اضافه کنید، آیکون را انتخاب کنید و کد HTML آن را در صفحه بگذارید.',
+        guideIntro: 'فایل استایل را اضافه کنید، آیکون را انتخاب کنید و کد HTML آن را در صفحه بگذارید. با کلید / به جستجو بروید و با کلیدهای جهت میان آیکون‌ها جابه‌جا شوید.',
         guideFilesTitle: 'افزودن استایل',
         guideFilesText: 'فایل cpik.css و فونت‌های WOFF و WOFF2 آن را کنار هم در پوشه‌ی assets/cpik بگذارید و این خط را در head صفحه اضافه کنید.',
         guideCdnText: 'یا بدون کپی فایل‌ها، آن را از jsDelivr بارگذاری کنید:',
@@ -1541,6 +1648,7 @@
         copyHtml: 'کپی HTML',
         copyClass: 'کپی کلاس',
         copyCodepoint: 'کپی کدپوینت',
+        copyLink: 'کپی پیوند',
         copiedShort: 'کپی شد',
         copyError: 'کپی نشد'
       }
@@ -2045,6 +2153,125 @@
     }
 
     /*
+     * Arrow keys move between the visible cards' open buttons. Up and Down jump
+     * by the number of cards in the first row, read from the layout so it holds
+     * at every width; Left and Right follow the screen, so on this RTL page Left
+     * is the next card. Tab order is unchanged.
+     */
+    const gallery = document.getElementById('icon-gallery');
+    const siteHeader = document.querySelector('.site-header');
+    const toolbar = document.querySelector('.toolbar');
+
+    function galleryColumns(cards) {
+      const top = cards[0].offsetTop;
+      const index = cards.findIndex(card => card.offsetTop !== top);
+
+      return index === -1 ? cards.length : index;
+    }
+
+    // Keep the focused card clear of the sticky header and toolbar.
+    function revealCard(card) {
+      const margin = 12;
+      const rect = card.getBoundingClientRect();
+      const toolbarSticky = getComputedStyle(toolbar).position === 'sticky';
+      const ceiling = Math.max(siteHeader.getBoundingClientRect().bottom,
+        toolbarSticky ? toolbar.getBoundingClientRect().bottom : 0, 0) + margin;
+      const floor = window.innerHeight - margin;
+
+      if (rect.top < ceiling) {
+        window.scrollBy({ top: rect.top - ceiling, behavior: 'instant' });
+      } else if (rect.bottom > floor) {
+        window.scrollBy({ top: rect.bottom - floor, behavior: 'instant' });
+      }
+    }
+
+    gallery.addEventListener('keydown', event => {
+      const button = event.target.closest('.preview .inner');
+
+      if (!button || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+        return;
+      }
+
+      const cards = icons.filter(icon => !icon.element.hidden).map(icon => icon.element);
+      const index = cards.indexOf(button.closest('.preview'));
+      const last = cards.length - 1;
+      const forward = getComputedStyle(gallery).direction === 'rtl' ? 'ArrowLeft' : 'ArrowRight';
+      let target;
+
+      if (index === -1) {
+        return;
+      }
+
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        target = index + (event.key === forward ? 1 : -1);
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        const columns = galleryColumns(cards);
+
+        if (event.key === 'ArrowUp') {
+          target = index - columns;
+        } else {
+          target = index + columns;
+
+          // From the row above a short last row, go to its final card.
+          if (target > last && Math.floor(index / columns) < Math.floor(last / columns)) {
+            target = last;
+          }
+        }
+      } else if (event.key === 'Home') {
+        target = 0;
+      } else if (event.key === 'End') {
+        target = last;
+      } else {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (target >= 0 && target <= last && target !== index) {
+        const card = cards[target];
+
+        card.querySelector('.inner').focus({ preventScroll: true });
+        revealCard(card);
+      }
+    });
+
+    // "/" jumps to the gallery search, unless the visitor is already typing or the panel is open.
+    document.addEventListener('keydown', event => {
+      const target = event.target;
+
+      if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey || event.isComposing ||
+          event.defaultPrevented || dialog.open || target.isContentEditable ||
+          target.closest?.('input, textarea, select')) {
+        return;
+      }
+
+      event.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    });
+
+    /* Gallery icon size; the head script has already applied a saved choice. */
+    const sizeButtons = Array.from(document.querySelectorAll('#size-toggle [data-size]'));
+
+    function setGallerySize(size) {
+      root.dataset.iconSize = size;
+
+      for (const button of sizeButtons) {
+        button.setAttribute('aria-pressed', String(button.dataset.size === size));
+      }
+    }
+
+    setGallerySize(sizeButtons.some(button => button.dataset.size === root.dataset.iconSize) ?
+      root.dataset.iconSize : '48');
+
+    for (const button of sizeButtons) {
+      button.addEventListener('click', () => {
+        setGallerySize(button.dataset.size);
+        savePreference('cpik-preview-size', button.dataset.size);
+      });
+    }
+
+    /*
      * Icon detail panel: a large preview with size and colour controls, the
      * class name and codepoint, and copy buttons. A native <dialog> keeps
      * focus inside while open, closes on Escape and restores focus after.
@@ -2093,12 +2320,15 @@
     function copyValue(kind) {
       if (kind === 'class') return current.iconClass;
       if (kind === 'codepoint') return `\\${current.codepoint}`;
+      if (kind === 'link') return `${location.origin}${location.pathname}#${current.key}`;
       return current.html;
     }
 
     function updateCopyAction(action) {
       const words = dictionary();
-      const idle = { html: words.copyHtml, class: words.copyClass, codepoint: words.copyCodepoint }[action.kind];
+      const idle = {
+        html: words.copyHtml, class: words.copyClass, codepoint: words.copyCodepoint, link: words.copyLink
+      }[action.kind];
       const label = action.state === 'copied' ? words.copiedShort :
         action.state === 'error' ? words.copyError : idle;
 
@@ -2128,10 +2358,68 @@
         updateCopyAction(action);
       }
 
-      dialog.showModal();
+      // Another icon opened from the address bar replaces the one on show.
+      if (!dialog.open) {
+        dialog.showModal();
+      }
+
       resetColor();
       updateSize();
+      history.replaceState(null, '', `${location.pathname}${location.search}#${icon.key}`);
     }
+
+    /*
+     * Shareable links: #bank-blue opens that icon's panel. The full class name
+     * and old names from config/aliases.json work too.
+     */
+    const iconsByKey = new Map(icons.map(icon => [icon.key, icon]));
+
+    function iconFromHash() {
+      let name;
+
+      try {
+        name = decodeURIComponent(location.hash.slice(1)).trim().toLowerCase();
+      } catch {
+        return null;
+      }
+
+      for (const key of [name, name.replace(/^cpik-/, '')]) {
+        const target = Object.hasOwn(aliases, key) ? aliases[key] : key;
+
+        if (iconsByKey.has(target)) {
+          return iconsByKey.get(target);
+        }
+      }
+
+      return null;
+    }
+
+    function openFromHash() {
+      const icon = iconFromHash();
+
+      if (!icon) {
+        return;
+      }
+
+      // The card has to be in the gallery to scroll to it, so a filter hiding it is cleared.
+      if (icon.element.hidden) {
+        searchInput.value = '';
+        categoryFilter.value = 'all';
+        filterIcons();
+      }
+
+      // Focus the card first so closing the panel returns focus to it.
+      icon.openButton.focus({ preventScroll: true });
+      icon.element.scrollIntoView({ block: 'center', behavior: 'instant' });
+      openDetail(icon);
+    }
+
+    dialog.addEventListener('close', () => {
+      if (location.hash) {
+        history.replaceState(null, '', `${location.pathname}${location.search}`);
+      }
+    });
+    window.addEventListener('hashchange', openFromHash);
 
     for (const action of copyActions) {
       action.button.addEventListener('click', () =>
@@ -2309,6 +2597,7 @@
     window.addEventListener('resize', scheduleNavigation);
     scheduleNavigation();
     applyText();
+    openFromHash();
   </script>
 </body>
 </html>

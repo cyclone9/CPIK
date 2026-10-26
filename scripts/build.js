@@ -3,8 +3,8 @@
  *   1. prepare-icons.js     icons/*.svg -> .build/icons/*.svg (checked, one path each)
  *   2. generate-codepoints  fixed Private Use Area codepoints in config/codepoints.json
  *   3. fantasticon          cpik.woff2, cpik.woff, cpik.css, cpik.json, index.html
- *   4. cpik.js              names, keywords and categories for the preview page
- *   5. assets               fonts and logo for the preview page
+ *   4. cpik.js              names, keywords, categories and aliases for the preview page
+ *   5. assets               fonts, favicons and link-preview image for the preview page
  *
  * dist/ is rebuilt from scratch each time, so removed icons disappear.
  *
@@ -81,6 +81,7 @@ function writeMetadata(version) {
         `window.CPIK_VERSION = ${JSON.stringify(version)};`,
         `window.CPIK_CATEGORIES = ${JSON.stringify(categories, null, 2)};`,
         `window.CPIK_DATA = ${JSON.stringify(data, null, 2)};`,
+        `window.CPIK_ALIASES = ${JSON.stringify(readJson('config/aliases.json'), null, 2)};`,
         ''
     ].join('\n');
 
@@ -166,8 +167,8 @@ async function main() {
     appendAliases(config.prefix);
     bustCache(['cpik.css', 'cpik.js']);
     // Only what the preview page uses; the README's video, cover and lockups stay out of dist/.
-    for (const dir of ['fonts', 'favicon']) {
-        fs.cpSync(path.join(ROOT, 'assets', dir), path.join(DIST, 'assets', dir), { recursive: true });
+    for (const item of ['fonts', 'favicon', 'cpik-social-preview.png']) {
+        fs.cpSync(path.join(ROOT, 'assets', item), path.join(DIST, 'assets', item), { recursive: true });
     }
     fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 

@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.7";
+window.CPIK_VERSION = "0.1.8";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -18,13 +18,23 @@ window.CPIK_CATEGORIES = [
   },
   {
     "prefix": "telecom",
-    "fa": "اپراتور موبایل",
-    "en": "Mobile operators"
+    "fa": "اپراتور و اینترنت",
+    "en": "Operators and internet"
   },
   {
     "prefix": "shop",
-    "fa": "فروشگاه",
-    "en": "Shops"
+    "fa": "فروشگاه و نیازمندی‌ها",
+    "en": "Shops and classifieds"
+  },
+  {
+    "prefix": "shipping",
+    "fa": "پست و ارسال",
+    "en": "Shipping"
+  },
+  {
+    "prefix": "transport",
+    "fa": "حمل و نقل",
+    "en": "Transport"
   },
   {
     "prefix": "platform",
@@ -42,9 +52,19 @@ window.CPIK_CATEGORIES = [
     "en": "News"
   },
   {
+    "prefix": "sport",
+    "fa": "تیم ورزشی",
+    "en": "Sports teams"
+  },
+  {
     "prefix": "socialmedia",
     "fa": "شبکه اجتماعی",
     "en": "Social media"
+  },
+  {
+    "prefix": "gov",
+    "fa": "خدمات دولتی",
+    "en": "Government services"
   },
   {
     "prefix": "map",
@@ -55,6 +75,11 @@ window.CPIK_CATEGORIES = [
     "prefix": "landmark",
     "fa": "بناهای شاخص",
     "en": "Landmarks"
+  },
+  {
+    "prefix": "symbol",
+    "fa": "نمادهای شاخص",
+    "en": "Iconic symbols"
   },
   {
     "prefix": "cyclone",
@@ -782,7 +807,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.7",
     "codepoint": "e04c",
-    "isNew": true
+    "isNew": false
   },
   "cyclone-cpcs": {
     "name": {
@@ -800,7 +825,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.7",
     "codepoint": "e04d",
-    "isNew": true
+    "isNew": false
   },
   "cyclone-cpfs": {
     "name": {
@@ -818,7 +843,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.7",
     "codepoint": "e04e",
-    "isNew": true
+    "isNew": false
   },
   "cyclone-cpik": {
     "name": {
@@ -857,7 +882,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.7",
     "codepoint": "e04f",
-    "isNew": true
+    "isNew": false
   },
   "cyclone-frame9": {
     "name": {
@@ -878,7 +903,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.7",
     "codepoint": "e050",
-    "isNew": true
+    "isNew": false
   },
   "cyclone-gw3b": {
     "name": {
@@ -896,7 +921,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.7",
     "codepoint": "e051",
-    "isNew": true
+    "isNew": false
   },
   "cyclone-logo": {
     "name": {
@@ -913,7 +938,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.7",
     "codepoint": "e052",
-    "isNew": true
+    "isNew": false
   },
   "cyclone-mp9": {
     "name": {
@@ -934,29 +959,6 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.7",
     "codepoint": "e053",
-    "isNew": true
-  },
-  "e-namad": {
-    "name": {
-      "fa": "نماد اعتماد الکترونیکی",
-      "en": "eNamad"
-    },
-    "keywords": [
-      "اینماد",
-      "ای نماد",
-      "ای‌نماد",
-      "نماد اعتماد",
-      "اعتماد",
-      "تجارت الکترونیکی",
-      "فروشگاه اینترنتی",
-      "enamad",
-      "e namad",
-      "trust",
-      "trust seal",
-      "ecommerce"
-    ],
-    "added": "0.1.0",
-    "codepoint": "e01d",
     "isNew": false
   },
   "finance-asanpardakht": {
@@ -1061,6 +1063,29 @@ window.CPIK_DATA = {
     "codepoint": "e03b",
     "isNew": false
   },
+  "gov-e-namad": {
+    "name": {
+      "fa": "نماد اعتماد الکترونیکی",
+      "en": "eNamad"
+    },
+    "keywords": [
+      "اینماد",
+      "ای نماد",
+      "ای‌نماد",
+      "نماد اعتماد",
+      "اعتماد",
+      "تجارت الکترونیکی",
+      "فروشگاه اینترنتی",
+      "enamad",
+      "e namad",
+      "trust",
+      "trust seal",
+      "ecommerce"
+    ],
+    "added": "0.1.0",
+    "codepoint": "e01d",
+    "isNew": false
+  },
   "landmark-azadi-tower": {
     "name": {
       "fa": "برج آزادی",
@@ -1103,6 +1128,228 @@ window.CPIK_DATA = {
     "added": "0.1.5",
     "codepoint": "e03e",
     "isNew": false
+  },
+  "map-alborz": {
+    "name": {
+      "fa": "نقشه البرز",
+      "en": "Alborz Map"
+    },
+    "keywords": [
+      "البرز",
+      "استان البرز",
+      "کرج",
+      "استان",
+      "نقشه",
+      "alborz",
+      "karaj",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e054",
+    "isNew": true
+  },
+  "map-ardabil": {
+    "name": {
+      "fa": "نقشه اردبیل",
+      "en": "Ardabil Map"
+    },
+    "keywords": [
+      "اردبیل",
+      "استان اردبیل",
+      "استان",
+      "نقشه",
+      "ardabil",
+      "ardebil",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e055",
+    "isNew": true
+  },
+  "map-bushehr": {
+    "name": {
+      "fa": "نقشه بوشهر",
+      "en": "Bushehr Map"
+    },
+    "keywords": [
+      "بوشهر",
+      "استان بوشهر",
+      "استان",
+      "نقشه",
+      "bushehr",
+      "bushire",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e056",
+    "isNew": true
+  },
+  "map-chaharmahal-bakhtiari": {
+    "name": {
+      "fa": "نقشه چهارمحال و بختیاری",
+      "en": "Chaharmahal and Bakhtiari Map"
+    },
+    "keywords": [
+      "چهارمحال و بختیاری",
+      "استان چهارمحال و بختیاری",
+      "شهرکرد",
+      "استان",
+      "نقشه",
+      "chaharmahal and bakhtiari",
+      "chaharmahal",
+      "bakhtiari",
+      "shahrekord",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e057",
+    "isNew": true
+  },
+  "map-east-azarbaijan": {
+    "name": {
+      "fa": "نقشه آذربایجان شرقی",
+      "en": "East Azerbaijan Map"
+    },
+    "keywords": [
+      "آذربایجان شرقی",
+      "استان آذربایجان شرقی",
+      "تبریز",
+      "استان",
+      "نقشه",
+      "east azerbaijan",
+      "east azarbaijan",
+      "azerbaijan",
+      "tabriz",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e058",
+    "isNew": true
+  },
+  "map-fars": {
+    "name": {
+      "fa": "نقشه فارس",
+      "en": "Fars Map"
+    },
+    "keywords": [
+      "فارس",
+      "استان فارس",
+      "شیراز",
+      "استان",
+      "نقشه",
+      "fars",
+      "pars",
+      "shiraz",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e059",
+    "isNew": true
+  },
+  "map-gilan": {
+    "name": {
+      "fa": "نقشه گیلان",
+      "en": "Gilan Map"
+    },
+    "keywords": [
+      "گیلان",
+      "استان گیلان",
+      "رشت",
+      "استان",
+      "نقشه",
+      "gilan",
+      "guilan",
+      "rasht",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e05a",
+    "isNew": true
+  },
+  "map-golestan": {
+    "name": {
+      "fa": "نقشه گلستان",
+      "en": "Golestan Map"
+    },
+    "keywords": [
+      "گلستان",
+      "استان گلستان",
+      "گرگان",
+      "استان",
+      "نقشه",
+      "golestan",
+      "gorgan",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e05b",
+    "isNew": true
+  },
+  "map-hamadan": {
+    "name": {
+      "fa": "نقشه همدان",
+      "en": "Hamadan Map"
+    },
+    "keywords": [
+      "همدان",
+      "استان همدان",
+      "استان",
+      "نقشه",
+      "hamadan",
+      "hamedan",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e05c",
+    "isNew": true
+  },
+  "map-hormozgan": {
+    "name": {
+      "fa": "نقشه هرمزگان",
+      "en": "Hormozgan Map"
+    },
+    "keywords": [
+      "هرمزگان",
+      "استان هرمزگان",
+      "بندرعباس",
+      "استان",
+      "نقشه",
+      "hormozgan",
+      "hormuz",
+      "bandar abbas",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e05d",
+    "isNew": true
+  },
+  "map-ilam": {
+    "name": {
+      "fa": "نقشه ایلام",
+      "en": "Ilam Map"
+    },
+    "keywords": [
+      "ایلام",
+      "استان ایلام",
+      "استان",
+      "نقشه",
+      "ilam",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e05e",
+    "isNew": true
   },
   "map-iran": {
     "name": {
@@ -1150,6 +1397,329 @@ window.CPIK_DATA = {
     "codepoint": "e03f",
     "isNew": false
   },
+  "map-isfahan": {
+    "name": {
+      "fa": "نقشه اصفهان",
+      "en": "Isfahan Map"
+    },
+    "keywords": [
+      "اصفهان",
+      "استان اصفهان",
+      "استان",
+      "نقشه",
+      "isfahan",
+      "esfahan",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e05f",
+    "isNew": true
+  },
+  "map-kerman": {
+    "name": {
+      "fa": "نقشه کرمان",
+      "en": "Kerman Map"
+    },
+    "keywords": [
+      "کرمان",
+      "استان کرمان",
+      "استان",
+      "نقشه",
+      "kerman",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e060",
+    "isNew": true
+  },
+  "map-kermanshah": {
+    "name": {
+      "fa": "نقشه کرمانشاه",
+      "en": "Kermanshah Map"
+    },
+    "keywords": [
+      "کرمانشاه",
+      "استان کرمانشاه",
+      "استان",
+      "نقشه",
+      "kermanshah",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e061",
+    "isNew": true
+  },
+  "map-khuzestan": {
+    "name": {
+      "fa": "نقشه خوزستان",
+      "en": "Khuzestan Map"
+    },
+    "keywords": [
+      "خوزستان",
+      "استان خوزستان",
+      "اهواز",
+      "استان",
+      "نقشه",
+      "khuzestan",
+      "ahvaz",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e062",
+    "isNew": true
+  },
+  "map-kohgiluyeh-boyerahmad": {
+    "name": {
+      "fa": "نقشه کهگیلویه و بویراحمد",
+      "en": "Kohgiluyeh and Boyer-Ahmad Map"
+    },
+    "keywords": [
+      "کهگیلویه و بویراحمد",
+      "استان کهگیلویه و بویراحمد",
+      "یاسوج",
+      "استان",
+      "نقشه",
+      "kohgiluyeh and boyer-ahmad",
+      "kohgiluyeh",
+      "boyer ahmad",
+      "yasuj",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e063",
+    "isNew": true
+  },
+  "map-kordestan": {
+    "name": {
+      "fa": "نقشه کردستان",
+      "en": "Kurdistan Map"
+    },
+    "keywords": [
+      "کردستان",
+      "استان کردستان",
+      "سنندج",
+      "استان",
+      "نقشه",
+      "kurdistan",
+      "kordestan",
+      "sanandaj",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e064",
+    "isNew": true
+  },
+  "map-lorestan": {
+    "name": {
+      "fa": "نقشه لرستان",
+      "en": "Lorestan Map"
+    },
+    "keywords": [
+      "لرستان",
+      "استان لرستان",
+      "خرم‌آباد",
+      "استان",
+      "نقشه",
+      "lorestan",
+      "luristan",
+      "khorramabad",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e065",
+    "isNew": true
+  },
+  "map-markazi": {
+    "name": {
+      "fa": "نقشه مرکزی",
+      "en": "Markazi Map"
+    },
+    "keywords": [
+      "مرکزی",
+      "استان مرکزی",
+      "اراک",
+      "استان",
+      "نقشه",
+      "markazi",
+      "central province",
+      "arak",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e066",
+    "isNew": true
+  },
+  "map-mazandaran": {
+    "name": {
+      "fa": "نقشه مازندران",
+      "en": "Mazandaran Map"
+    },
+    "keywords": [
+      "مازندران",
+      "استان مازندران",
+      "ساری",
+      "استان",
+      "نقشه",
+      "mazandaran",
+      "sari",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e067",
+    "isNew": true
+  },
+  "map-north-khorasan": {
+    "name": {
+      "fa": "نقشه خراسان شمالی",
+      "en": "North Khorasan Map"
+    },
+    "keywords": [
+      "خراسان شمالی",
+      "استان خراسان شمالی",
+      "بجنورد",
+      "استان",
+      "نقشه",
+      "north khorasan",
+      "khorasan",
+      "bojnurd",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e068",
+    "isNew": true
+  },
+  "map-qazvin": {
+    "name": {
+      "fa": "نقشه قزوین",
+      "en": "Qazvin Map"
+    },
+    "keywords": [
+      "قزوین",
+      "استان قزوین",
+      "استان",
+      "نقشه",
+      "qazvin",
+      "ghazvin",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e069",
+    "isNew": true
+  },
+  "map-qom": {
+    "name": {
+      "fa": "نقشه قم",
+      "en": "Qom Map"
+    },
+    "keywords": [
+      "قم",
+      "استان قم",
+      "استان",
+      "نقشه",
+      "qom",
+      "ghom",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e06a",
+    "isNew": true
+  },
+  "map-razavi-khorasan": {
+    "name": {
+      "fa": "نقشه خراسان رضوی",
+      "en": "Razavi Khorasan Map"
+    },
+    "keywords": [
+      "خراسان رضوی",
+      "استان خراسان رضوی",
+      "مشهد",
+      "استان",
+      "نقشه",
+      "razavi khorasan",
+      "khorasan razavi",
+      "khorasan",
+      "mashhad",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e06b",
+    "isNew": true
+  },
+  "map-semnan": {
+    "name": {
+      "fa": "نقشه سمنان",
+      "en": "Semnan Map"
+    },
+    "keywords": [
+      "سمنان",
+      "استان سمنان",
+      "استان",
+      "نقشه",
+      "semnan",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e06c",
+    "isNew": true
+  },
+  "map-sistan-baluchestan": {
+    "name": {
+      "fa": "نقشه سیستان و بلوچستان",
+      "en": "Sistan and Baluchestan Map"
+    },
+    "keywords": [
+      "سیستان و بلوچستان",
+      "استان سیستان و بلوچستان",
+      "زاهدان",
+      "استان",
+      "نقشه",
+      "sistan and baluchestan",
+      "sistan",
+      "baluchestan",
+      "balochistan",
+      "zahedan",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e06d",
+    "isNew": true
+  },
+  "map-south-khorasan": {
+    "name": {
+      "fa": "نقشه خراسان جنوبی",
+      "en": "South Khorasan Map"
+    },
+    "keywords": [
+      "خراسان جنوبی",
+      "استان خراسان جنوبی",
+      "بیرجند",
+      "استان",
+      "نقشه",
+      "south khorasan",
+      "khorasan",
+      "birjand",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e06e",
+    "isNew": true
+  },
   "map-tehran": {
     "name": {
       "fa": "نقشه تهران",
@@ -1167,6 +1737,64 @@ window.CPIK_DATA = {
     "added": "0.1.0",
     "codepoint": "e021",
     "isNew": false
+  },
+  "map-west-azarbaijan": {
+    "name": {
+      "fa": "نقشه آذربایجان غربی",
+      "en": "West Azerbaijan Map"
+    },
+    "keywords": [
+      "آذربایجان غربی",
+      "استان آذربایجان غربی",
+      "ارومیه",
+      "استان",
+      "نقشه",
+      "west azerbaijan",
+      "west azarbaijan",
+      "azerbaijan",
+      "urmia",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e06f",
+    "isNew": true
+  },
+  "map-yazd": {
+    "name": {
+      "fa": "نقشه یزد",
+      "en": "Yazd Map"
+    },
+    "keywords": [
+      "یزد",
+      "استان یزد",
+      "استان",
+      "نقشه",
+      "yazd",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e070",
+    "isNew": true
+  },
+  "map-zanjan": {
+    "name": {
+      "fa": "نقشه زنجان",
+      "en": "Zanjan Map"
+    },
+    "keywords": [
+      "زنجان",
+      "استان زنجان",
+      "استان",
+      "نقشه",
+      "zanjan",
+      "province",
+      "map"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e071",
+    "isNew": true
   },
   "news-digiato": {
     "name": {
@@ -1462,7 +2090,7 @@ window.CPIK_DATA = {
     "codepoint": "e02e",
     "isNew": false
   },
-  "post": {
+  "shipping-post": {
     "name": {
       "fa": "شرکت پست",
       "en": "Iran Post"
@@ -1481,6 +2109,26 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.0",
     "codepoint": "e02f",
+    "isNew": false
+  },
+  "shipping-tipax": {
+    "name": {
+      "fa": "تیپاکس",
+      "en": "Tipax"
+    },
+    "keywords": [
+      "تی پاکس",
+      "ارسال",
+      "حمل و نقل",
+      "پست",
+      "بسته",
+      "مرسوله",
+      "shipping",
+      "delivery",
+      "courier"
+    ],
+    "added": "0.1.0",
+    "codepoint": "e035",
     "isNew": false
   },
   "shop-basalam": {
@@ -1526,6 +2174,66 @@ window.CPIK_DATA = {
     "codepoint": "e031",
     "isNew": false
   },
+  "shop-divar": {
+    "name": {
+      "fa": "دیوار",
+      "en": "Divar"
+    },
+    "keywords": [
+      "نیازمندی",
+      "آگهی",
+      "خرید و فروش",
+      "دست دوم",
+      "فروشگاه",
+      "divar",
+      "classifieds",
+      "ads",
+      "marketplace"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e074",
+    "isNew": true
+  },
+  "shop-emalls": {
+    "name": {
+      "fa": "ایمالز",
+      "en": "eMalls"
+    },
+    "keywords": [
+      "ای مالز",
+      "مقایسه قیمت",
+      "قیمت",
+      "خرید",
+      "فروشگاه",
+      "emalls",
+      "e-malls",
+      "price comparison",
+      "shopping"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e075",
+    "isNew": true
+  },
+  "shop-esam": {
+    "name": {
+      "fa": "ایسام",
+      "en": "eSam"
+    },
+    "keywords": [
+      "ای سام",
+      "حراجی",
+      "مزایده",
+      "خرید و فروش",
+      "فروشگاه",
+      "esam",
+      "e-sam",
+      "auction",
+      "marketplace"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e076",
+    "isNew": true
+  },
   "shop-lioncomputer": {
     "name": {
       "fa": "لیون کامپیوتر",
@@ -1548,6 +2256,27 @@ window.CPIK_DATA = {
     "added": "0.1.0",
     "codepoint": "e032",
     "isNew": false
+  },
+  "shop-sheypoor": {
+    "name": {
+      "fa": "شیپور",
+      "en": "Sheypoor"
+    },
+    "keywords": [
+      "نیازمندی",
+      "آگهی",
+      "خرید و فروش",
+      "دست دوم",
+      "فروشگاه",
+      "sheypoor",
+      "shypoor",
+      "classifieds",
+      "ads",
+      "marketplace"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e077",
+    "isNew": true
   },
   "shop-technolife": {
     "name": {
@@ -1646,6 +2375,145 @@ window.CPIK_DATA = {
     "codepoint": "e034",
     "isNew": false
   },
+  "sport-esteghlal": {
+    "name": {
+      "fa": "استقلال",
+      "en": "Esteghlal"
+    },
+    "keywords": [
+      "استقلال تهران",
+      "باشگاه استقلال",
+      "آبی‌ها",
+      "باشگاه",
+      "فوتبال",
+      "لیگ برتر",
+      "تیم فوتبال",
+      "football",
+      "soccer",
+      "club",
+      "esteghlal",
+      "esteghlal fc",
+      "esteghlal tehran"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e07b",
+    "isNew": true
+  },
+  "sport-persepolis": {
+    "name": {
+      "fa": "پرسپولیس",
+      "en": "Persepolis"
+    },
+    "keywords": [
+      "پرسپولیس تهران",
+      "باشگاه پرسپولیس",
+      "سرخ‌ها",
+      "باشگاه",
+      "فوتبال",
+      "لیگ برتر",
+      "تیم فوتبال",
+      "football",
+      "soccer",
+      "club",
+      "persepolis",
+      "persepolis fc",
+      "perspolis"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e07c",
+    "isNew": true
+  },
+  "sport-tractor": {
+    "name": {
+      "fa": "تراکتور",
+      "en": "Tractor"
+    },
+    "keywords": [
+      "تراکتور تبریز",
+      "باشگاه تراکتور",
+      "تراکتورسازی",
+      "تبریز",
+      "باشگاه",
+      "فوتبال",
+      "لیگ برتر",
+      "تیم فوتبال",
+      "football",
+      "soccer",
+      "club",
+      "tractor",
+      "tractor fc",
+      "tractor sazi"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e07d",
+    "isNew": true
+  },
+  "symbol-faravahar": {
+    "name": {
+      "fa": "فروهر",
+      "en": "Faravahar"
+    },
+    "keywords": [
+      "فروهر",
+      "فره‌وهر",
+      "نماد ایران باستان",
+      "هخامنشی",
+      "زرتشتی",
+      "ایران باستان",
+      "نماد",
+      "faravahar",
+      "farvahar",
+      "fravashi",
+      "persian symbol",
+      "zoroastrian",
+      "achaemenid"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e073",
+    "isNew": true
+  },
+  "symbol-homa": {
+    "name": {
+      "fa": "هما",
+      "en": "Homa"
+    },
+    "keywords": [
+      "هما",
+      "همای",
+      "پرنده هما",
+      "همای سعادت",
+      "تخت جمشید",
+      "سرستون هما",
+      "نماد",
+      "homa",
+      "huma",
+      "homa bird",
+      "persepolis",
+      "griffin"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e072",
+    "isNew": true
+  },
+  "telecom-asiatech": {
+    "name": {
+      "fa": "آسیاتک",
+      "en": "Asiatech"
+    },
+    "keywords": [
+      "آسیا تک",
+      "اینترنت",
+      "اینترنت خانگی",
+      "اینترنت پرسرعت",
+      "asiatech",
+      "asia tech",
+      "isp",
+      "internet"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e078",
+    "isNew": true
+  },
   "telecom-irancell": {
     "name": {
       "fa": "ایرانسل",
@@ -1685,6 +2553,25 @@ window.CPIK_DATA = {
     "codepoint": "e022",
     "isNew": false
   },
+  "telecom-mobinnet": {
+    "name": {
+      "fa": "مبین‌نت",
+      "en": "Mobinnet"
+    },
+    "keywords": [
+      "مبین نت",
+      "اینترنت",
+      "اینترنت بی‌سیم",
+      "اینترنت خانگی",
+      "mobinnet",
+      "mobin net",
+      "isp",
+      "internet"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e079",
+    "isNew": true
+  },
   "telecom-rightel": {
     "name": {
       "fa": "رایتل",
@@ -1704,24 +2591,75 @@ window.CPIK_DATA = {
     "codepoint": "e030",
     "isNew": false
   },
-  "tipax": {
+  "telecom-shatel": {
     "name": {
-      "fa": "تیپاکس",
-      "en": "Tipax"
+      "fa": "شاتل",
+      "en": "Shatel"
     },
     "keywords": [
-      "تی پاکس",
-      "ارسال",
-      "حمل و نقل",
-      "پست",
-      "بسته",
-      "مرسوله",
-      "shipping",
-      "delivery",
-      "courier"
+      "شاتل موبایل",
+      "اینترنت",
+      "اینترنت خانگی",
+      "ای‌دی‌اس‌ال",
+      "اپراتور",
+      "shatel",
+      "shatel mobile",
+      "isp",
+      "internet"
     ],
-    "added": "0.1.0",
-    "codepoint": "e035",
-    "isNew": false
+    "added": "0.1.8",
+    "codepoint": "e07a",
+    "isNew": true
+  },
+  "telecom-zitel": {
+    "name": {
+      "fa": "زی‌تل",
+      "en": "Zitel"
+    },
+    "keywords": [
+      "زی تل",
+      "زیتل",
+      "اینترنت",
+      "اینترنت ثابت",
+      "اپراتور",
+      "zitel",
+      "zi-tel",
+      "isp",
+      "internet"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e07e",
+    "isNew": true
+  },
+  "transport-iranair": {
+    "name": {
+      "fa": "ایران ایر",
+      "en": "Iran Air"
+    },
+    "keywords": [
+      "هما",
+      "هواپیمایی جمهوری اسلامی ایران",
+      "هواپیمایی",
+      "پرواز",
+      "بلیت هواپیما",
+      "ایرلاین",
+      "iran air",
+      "iranair",
+      "homa",
+      "airline",
+      "flight"
+    ],
+    "added": "0.1.8",
+    "codepoint": "e07f",
+    "isNew": true
   }
+};
+window.CPIK_ALIASES = {
+  "irancell": "telecom-irancell",
+  "rightel": "telecom-rightel",
+  "mobile-communications-of-iran": "telecom-mci",
+  "cpik": "cyclone-cpik",
+  "post": "shipping-post",
+  "tipax": "shipping-tipax",
+  "e-namad": "gov-e-namad"
 };

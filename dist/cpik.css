@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?d0dddedcb4919316da91b49c1b7b99e2") format("woff2"),
-url("./cpik.woff?d0dddedcb4919316da91b49c1b7b99e2") format("woff");
+    src: url("./cpik.woff2?1c81c5d5b8315ee25343618a18505af1") format("woff2"),
+url("./cpik.woff?1c81c5d5b8315ee25343618a18505af1") format("woff");
     font-display: block;
 }
 
@@ -141,7 +141,7 @@ url("./cpik.woff?d0dddedcb4919316da91b49c1b7b99e2") format("woff");
     content: "\e01c";
 }
 
-.cpik-e-namad::before {
+.cpik-gov-e-namad::before {
     content: "\e01d";
 }
 
@@ -205,7 +205,7 @@ url("./cpik.woff?d0dddedcb4919316da91b49c1b7b99e2") format("woff");
     content: "\e02e";
 }
 
-.cpik-post::before {
+.cpik-shipping-post::before {
     content: "\e02f";
 }
 
@@ -225,7 +225,7 @@ url("./cpik.woff?d0dddedcb4919316da91b49c1b7b99e2") format("woff");
     content: "\e034";
 }
 
-.cpik-tipax::before {
+.cpik-shipping-tipax::before {
     content: "\e035";
 }
 
@@ -361,6 +361,182 @@ url("./cpik.woff?d0dddedcb4919316da91b49c1b7b99e2") format("woff");
     content: "\e053";
 }
 
+.cpik-map-alborz::before {
+    content: "\e054";
+}
+
+.cpik-map-ardabil::before {
+    content: "\e055";
+}
+
+.cpik-map-bushehr::before {
+    content: "\e056";
+}
+
+.cpik-map-chaharmahal-bakhtiari::before {
+    content: "\e057";
+}
+
+.cpik-map-east-azarbaijan::before {
+    content: "\e058";
+}
+
+.cpik-map-fars::before {
+    content: "\e059";
+}
+
+.cpik-map-gilan::before {
+    content: "\e05a";
+}
+
+.cpik-map-golestan::before {
+    content: "\e05b";
+}
+
+.cpik-map-hamadan::before {
+    content: "\e05c";
+}
+
+.cpik-map-hormozgan::before {
+    content: "\e05d";
+}
+
+.cpik-map-ilam::before {
+    content: "\e05e";
+}
+
+.cpik-map-isfahan::before {
+    content: "\e05f";
+}
+
+.cpik-map-kerman::before {
+    content: "\e060";
+}
+
+.cpik-map-kermanshah::before {
+    content: "\e061";
+}
+
+.cpik-map-khuzestan::before {
+    content: "\e062";
+}
+
+.cpik-map-kohgiluyeh-boyerahmad::before {
+    content: "\e063";
+}
+
+.cpik-map-kordestan::before {
+    content: "\e064";
+}
+
+.cpik-map-lorestan::before {
+    content: "\e065";
+}
+
+.cpik-map-markazi::before {
+    content: "\e066";
+}
+
+.cpik-map-mazandaran::before {
+    content: "\e067";
+}
+
+.cpik-map-north-khorasan::before {
+    content: "\e068";
+}
+
+.cpik-map-qazvin::before {
+    content: "\e069";
+}
+
+.cpik-map-qom::before {
+    content: "\e06a";
+}
+
+.cpik-map-razavi-khorasan::before {
+    content: "\e06b";
+}
+
+.cpik-map-semnan::before {
+    content: "\e06c";
+}
+
+.cpik-map-sistan-baluchestan::before {
+    content: "\e06d";
+}
+
+.cpik-map-south-khorasan::before {
+    content: "\e06e";
+}
+
+.cpik-map-west-azarbaijan::before {
+    content: "\e06f";
+}
+
+.cpik-map-yazd::before {
+    content: "\e070";
+}
+
+.cpik-map-zanjan::before {
+    content: "\e071";
+}
+
+.cpik-symbol-homa::before {
+    content: "\e072";
+}
+
+.cpik-symbol-faravahar::before {
+    content: "\e073";
+}
+
+.cpik-shop-divar::before {
+    content: "\e074";
+}
+
+.cpik-shop-emalls::before {
+    content: "\e075";
+}
+
+.cpik-shop-esam::before {
+    content: "\e076";
+}
+
+.cpik-shop-sheypoor::before {
+    content: "\e077";
+}
+
+.cpik-telecom-asiatech::before {
+    content: "\e078";
+}
+
+.cpik-telecom-mobinnet::before {
+    content: "\e079";
+}
+
+.cpik-telecom-shatel::before {
+    content: "\e07a";
+}
+
+.cpik-sport-esteghlal::before {
+    content: "\e07b";
+}
+
+.cpik-sport-persepolis::before {
+    content: "\e07c";
+}
+
+.cpik-sport-tractor::before {
+    content: "\e07d";
+}
+
+.cpik-telecom-zitel::before {
+    content: "\e07e";
+}
+
+.cpik-transport-iranair::before {
+    content: "\e07f";
+}
+
 /* Old class names of renamed icons */
 .cpik-irancell::before {
     content: "\e01f";
@@ -373,4 +549,13 @@ url("./cpik.woff?d0dddedcb4919316da91b49c1b7b99e2") format("woff");
 }
 .cpik-cpik::before {
     content: "\e01a";
+}
+.cpik-post::before {
+    content: "\e02f";
+}
+.cpik-tipax::before {
+    content: "\e035";
+}
+.cpik-e-namad::before {
+    content: "\e01d";
 }

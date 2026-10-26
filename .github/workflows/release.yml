@@ -28,16 +28,15 @@ jobs:
             echo "::error::dist/ is out of date. Run npm run build and commit dist/."
             exit 1
           fi
-      # The release notes are this version's entry in CHANGELOG.md.
-      - name: Release notes from CHANGELOG.md
+      # The release notes are in English: the body of the tagged release commit, which lists
+      # the version's changes one per line (CHANGELOG.md stays Persian).
+      - name: Release notes from the release commit
         run: |
-          awk -v h="## ${GITHUB_REF_NAME#v}" '
-            /^<\/?div/ { next }
-            on && /^## / { exit }
-            on { print }
-            $0 == h || index($0, h " ") == 1 { on = 1 }
-          ' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
-          grep -q '[^[:space:]]' "$RUNNER_TEMP/notes.md"
+          git log -1 --format=%b "$GITHUB_SHA" > "$RUNNER_TEMP/notes.md"
+          if ! grep -q '[^[:space:]]' "$RUNNER_TEMP/notes.md"; then
+            echo "::error::The release commit has no body; list the version's changes in English there."
+            exit 1
+          fi
       - name: Package the kit
         run: |
           version="${GITHUB_REF_NAME#v}"
