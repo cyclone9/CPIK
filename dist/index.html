@@ -26,7 +26,7 @@
       root.dataset.theme = theme;
     })();
   </script>
-  <link rel="stylesheet" href="cpik.css?v=9fcb8062da">
+  <link rel="stylesheet" href="cpik.css?v=d4827afc72">
   <style>
     @font-face {
       font-family: "Vazirmatn";
@@ -80,7 +80,6 @@
       --code-fg: var(--cpik-paper);
       --code-muted: #A3A5AA;
       --code-line: #3A3F49;
-      --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A3A5AA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
 
       --gutter: clamp(1rem, 3vw, 2.5rem);
       --gap: clamp(0.75rem, 1.5vw, 1.25rem);
@@ -111,7 +110,6 @@
       --code-fg: var(--cpik-ink);
       --code-muted: #5E636C;
       --code-line: #D9D6CE;
-      --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235E636C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     }
 
     *, *::before, *::after {
@@ -364,8 +362,7 @@
       pointer-events: none;
     }
 
-    input[type="search"],
-    select {
+    input[type="search"] {
       width: 100%;
       height: 2.75rem;
       border: 1px solid var(--line);
@@ -388,8 +385,7 @@
       color: var(--muted);
     }
 
-    input[type="search"]:hover,
-    select:hover {
+    input[type="search"]:hover {
       border-color: var(--keyline);
     }
 
@@ -418,27 +414,114 @@
       display: none;
     }
 
-    /* The filter draws its own chevron at the inline end, so text and arrow sit together in RTL and LTR. */
-    select {
+    /* Category picker: a button and a popup with a search box and a listbox (native option popups ignore the page font). */
+    .picker {
+      position: relative;
       flex: 0 0 auto;
-      width: auto;
       min-width: 12rem;
-      padding-inline: 0.9rem 2.5rem;
-      appearance: none;
-      background-image: var(--chevron);
-      background-repeat: no-repeat;
-      background-size: 1rem;
-      background-position: right 0.85rem center;
+    }
+
+    .picker-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      width: 100%;
+      height: 2.75rem;
+      padding-inline: 0.9rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 0.6rem;
+      background: var(--surface);
+      color: var(--fg);
+      font: inherit;
+      font-size: var(--fs-s);
+      white-space: nowrap;
       cursor: pointer;
     }
 
-    [dir="rtl"] select {
-      background-position: left 0.85rem center;
+    .picker-button:hover,
+    .picker-button[aria-expanded="true"] {
+      border-color: var(--keyline);
     }
 
-    select option {
+    .picker-button .ui-icon {
+      width: 1rem;
+      height: 1rem;
+      color: var(--muted);
+      transition: transform 0.15s ease;
+    }
+
+    .picker-button[aria-expanded="true"] .ui-icon {
+      transform: rotate(180deg);
+    }
+
+    .picker-popup {
+      position: absolute;
+      top: calc(100% + 0.4rem);
+      inset-inline-start: 0;
+      z-index: 6;
+      width: max(100%, 17rem);
+      max-width: calc(100vw - 2 * var(--gutter));
+      padding: 0.4rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       background: var(--surface);
-      color: var(--fg);
+      box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 0.3);
+    }
+
+    .picker-popup[hidden] {
+      display: none;
+    }
+
+    .picker-popup .search-field input {
+      height: 2.5rem;
+      padding-inline: 2.5rem 0.75rem;
+      background: var(--bg);
+    }
+
+    .picker-list {
+      list-style: none;
+      margin: 0.4rem 0 0;
+      padding: 0;
+      max-height: min(20rem, 50vh);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .picker-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.45rem;
+      font-size: var(--fs-s);
+      cursor: pointer;
+    }
+
+    .picker-option[hidden] {
+      display: none;
+    }
+
+    .picker-option[data-active] {
+      background: var(--control-hover);
+    }
+
+    .picker-option[aria-selected="true"] {
+      color: var(--accent-text);
+      font-weight: 500;
+    }
+
+    .picker-count {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .picker-empty {
+      margin: 0;
+      padding: 0.75rem 0.7rem;
+      color: var(--muted);
+      font-size: var(--fs-s);
     }
 
     .results {
@@ -670,6 +753,52 @@
       cursor: pointer;
     }
 
+    /* Preset colours next to the native picker: the picker opens on the near-white text colour,
+       where moving the hue barely changes anything. */
+    .color-choices {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 0;
+    }
+
+    .swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .swatch {
+      width: 1.5rem;
+      height: 1.5rem;
+      padding: 0;
+      border: 2px solid var(--surface);
+      border-radius: 50%;
+      background: var(--swatch);
+      box-shadow: 0 0 0 1px var(--line);
+      cursor: pointer;
+    }
+
+    .swatch:hover {
+      box-shadow: 0 0 0 1px var(--keyline);
+    }
+
+    .swatch[aria-pressed="true"] {
+      box-shadow: 0 0 0 2px var(--fg);
+    }
+
+    @media (max-width: 560px) {
+      .color-choices {
+        grid-column: 2 / -1;
+      }
+
+      #detail-color-reset {
+        grid-column: 2 / -1;
+        justify-self: start;
+      }
+    }
+
     .detail-info {
       display: grid;
       grid-template-columns: auto minmax(0, 1fr);
@@ -738,20 +867,24 @@
 
     .card-bottom {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 0.5rem;
     }
 
     .brand-name {
-      display: block;
       flex: 1 1 auto;
       min-width: 0;
       font-weight: 700;
       font-size: var(--fs-s);
+      line-height: 1.5;
+      /* Long names wrap to two lines; every card reserves both so the rows stay even. */
+      min-height: 3em;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
       overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
 
     .class-name {
@@ -1026,7 +1159,7 @@
         position: static;
       }
 
-      select {
+      .picker {
         flex: 1 1 auto;
       }
 
@@ -1117,8 +1250,30 @@
           </button>
         </div>
 
-        <label class="sr-only" for="icon-filter" data-i18n="filterLabel">دسته</label>
-        <select id="icon-filter" aria-controls="icon-gallery"></select>
+        <div id="category-picker" class="picker">
+          <span id="picker-label" class="sr-only" data-i18n="filterLabel">دسته</span>
+          <button id="picker-button" class="picker-button" type="button" aria-haspopup="listbox" aria-expanded="false"
+            aria-controls="picker-popup" aria-labelledby="picker-label picker-value">
+            <span id="picker-value"></span>
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div id="picker-popup" class="picker-popup" hidden>
+            <div class="search-field">
+              <label class="sr-only" for="picker-search" data-i18n="categorySearch">جستجوی دسته</label>
+              <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.5-3.5" />
+              </svg>
+              <input id="picker-search" type="search" role="combobox" aria-autocomplete="list" aria-expanded="true"
+                aria-controls="picker-list" data-i18n-placeholder="categorySearch" placeholder="جستجوی دسته"
+                autocomplete="off" spellcheck="false">
+            </div>
+            <ul id="picker-list" class="picker-list" role="listbox" aria-labelledby="picker-label"></ul>
+            <p class="picker-empty" data-i18n="categoryEmpty" hidden>دسته‌ای پیدا نشد.</p>
+          </div>
+        </div>
         <button id="new-toggle" class="chip" type="button" aria-pressed="false" aria-controls="icon-gallery" hidden></button>
 
         <p id="search-results" class="results" role="status" aria-live="polite" aria-atomic="true"></p>
@@ -1289,6 +1444,26 @@
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
+          <div class="preview" data-name="shop-technolife">
+            <button class="inner" type="button"><i class="cpik-shop-technolife" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">shop-technolife</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-shop-technolife">cpik-shop-technolife</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
           <div class="preview" data-name="shop-lioncomputer">
             <button class="inner" type="button"><i class="cpik-shop-lioncomputer" aria-hidden="true"></i></button>
             <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
@@ -1326,6 +1501,26 @@
                 </button>
               </div>
               <code class="class-name" title="cpik-shop-digikala">cpik-shop-digikala</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="shop-basalam">
+            <button class="inner" type="button"><i class="cpik-shop-basalam" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">shop-basalam</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-shop-basalam">cpik-shop-basalam</code>
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
@@ -1586,6 +1781,26 @@
                 </button>
               </div>
               <code class="class-name" title="cpik-news-zoomg">cpik-news-zoomg</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="news-varzesh3">
+            <button class="inner" type="button"><i class="cpik-news-varzesh3" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">news-varzesh3</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-news-varzesh3">cpik-news-varzesh3</code>
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
@@ -1889,6 +2104,46 @@
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
+          <div class="preview" data-name="channel-tehran">
+            <button class="inner" type="button"><i class="cpik-channel-tehran" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">channel-tehran</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-channel-tehran">cpik-channel-tehran</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="channel-4">
+            <button class="inner" type="button"><i class="cpik-channel-4" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">channel-4</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-channel-4">cpik-channel-4</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
           <div class="preview" data-name="channel-3">
             <button class="inner" type="button"><i class="cpik-channel-3" aria-hidden="true"></i></button>
             <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
@@ -1946,6 +2201,46 @@
                 </button>
               </div>
               <code class="class-name" title="cpik-channel-1">cpik-channel-1</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-toseetaavon">
+            <button class="inner" type="button"><i class="cpik-bank-toseetaavon" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-toseetaavon</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-toseetaavon">cpik-bank-toseetaavon</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-toseesaderat">
+            <button class="inner" type="button"><i class="cpik-bank-toseesaderat" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-toseesaderat</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-toseesaderat">cpik-bank-toseesaderat</code>
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
@@ -2046,6 +2341,26 @@
                 </button>
               </div>
               <code class="class-name" title="cpik-bank-sarmayeh">cpik-bank-sarmayeh</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
+          <div class="preview" data-name="bank-sanatmadan">
+            <button class="inner" type="button"><i class="cpik-bank-sanatmadan" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-sanatmadan</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-sanatmadan">cpik-bank-sanatmadan</code>
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
@@ -2389,6 +2704,26 @@
               <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
           </div>
+          <div class="preview" data-name="bank-iranvenezuela">
+            <button class="inner" type="button"><i class="cpik-bank-iranvenezuela" aria-hidden="true"></i></button>
+            <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
+            <div class="caption">
+              <div class="card-bottom">
+                <bdi class="brand-name" dir="auto">bank-iranvenezuela</bdi>
+                <button class="copy-button" type="button" data-state="idle">
+                  <svg class="ui-icon copy-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                  <svg class="ui-icon copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </button>
+              </div>
+              <code class="class-name" title="cpik-bank-iranvenezuela">cpik-bank-iranvenezuela</code>
+              <span class="copy-feedback sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </div>
           <div class="preview" data-name="bank-gardeshgari">
             <button class="inner" type="button"><i class="cpik-bank-gardeshgari" aria-hidden="true"></i></button>
             <span class="badge-new" data-i18n="newBadge" hidden>تازه</span>
@@ -2573,7 +2908,19 @@
       <output id="detail-size-out" for="detail-size" dir="ltr">64px</output>
 
       <label for="detail-color" data-i18n="color">رنگ</label>
-      <input id="detail-color" type="color" value="#F4F2EC">
+      <div class="color-choices">
+        <div class="swatches" role="group" aria-label="رنگ‌های آماده">
+          <button class="swatch" type="button" data-color="#4A5CF0" style="--swatch: #4A5CF0" aria-label="لاجوردی" aria-pressed="false"></button>
+          <button class="swatch" type="button" data-color="#E5484D" style="--swatch: #E5484D" aria-label="قرمز" aria-pressed="false"></button>
+          <button class="swatch" type="button" data-color="#F76B15" style="--swatch: #F76B15" aria-label="نارنجی" aria-pressed="false"></button>
+          <button class="swatch" type="button" data-color="#FFC53D" style="--swatch: #FFC53D" aria-label="زرد" aria-pressed="false"></button>
+          <button class="swatch" type="button" data-color="#30A46C" style="--swatch: #30A46C" aria-label="سبز" aria-pressed="false"></button>
+          <button class="swatch" type="button" data-color="#12A594" style="--swatch: #12A594" aria-label="فیروزه‌ای" aria-pressed="false"></button>
+          <button class="swatch" type="button" data-color="#D6409F" style="--swatch: #D6409F" aria-label="صورتی" aria-pressed="false"></button>
+          <button class="swatch" type="button" data-color="#8E4EC6" style="--swatch: #8E4EC6" aria-label="بنفش" aria-pressed="false"></button>
+        </div>
+        <input id="detail-color" type="color" value="#F4F2EC">
+      </div>
       <button id="detail-color-reset" class="text-button" type="button" data-i18n="resetColor">رنگ پیش‌فرض</button>
     </div>
 
@@ -2615,13 +2962,13 @@
     </svg>
   </button>
 
-  <script src="./cpik.js?v=6e20765606"></script>
+  <script src="./cpik.js?v=001be46f97"></script>
 
   <script>
     const root = document.documentElement;
     const searchInput = document.getElementById('icon-search');
     const searchClear = document.getElementById('search-clear');
-    const categoryFilter = document.getElementById('icon-filter');
+    const categoryFilter = createCategoryPicker(document.getElementById('category-picker'));
     const results = document.getElementById('search-results');
     const emptyMessage = document.getElementById('empty-message');
     const themeToggle = document.getElementById('theme-toggle');
@@ -2643,6 +2990,8 @@
         searchLabel: 'جستجوی آیکون',
         searchPlaceholder: 'جستجو با نام یا کلیدواژه',
         filterLabel: 'دسته',
+        categorySearch: 'جستجوی دسته',
+        categoryEmpty: 'دسته‌ای پیدا نشد.',
         all: 'همه‌ی آیکون‌ها',
         other: 'سایر',
         empty: 'آیکونی پیدا نشد. نام، کلیدواژه یا دسته‌ی دیگری را امتحان کنید.',
@@ -2786,40 +3135,263 @@
       }
     );
 
-    /* Gallery order: categories as listed in config/categories.json, then by name. */
+    /* Gallery order: categories as listed in config/categories.json, then by Persian name,
+       ignoring a leading «بانک» or «موسسه اعتباری» so banks don't all sort under ب.
+       TV channels go by number instead (channel-1, channel-2, ...). */
     const categoryOrder = [...categories.map(category => category.prefix), 'other'];
+    const persianOrder = new Intl.Collator('fa');
+    const numericOrder = new Intl.Collator('en', { numeric: true });
+    const sortName = icon => icon.names.fa.replace(/^(بانک|مؤسسه اعتباری|موسسه اعتباری)\s+/, '');
 
     icons.sort((a, b) =>
       categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category) ||
+      (a.category === 'channel' ? numericOrder.compare(a.key, b.key) : 0) ||
+      persianOrder.compare(sortName(a), sortName(b)) ||
       a.key.localeCompare(b.key));
     document.getElementById('icon-gallery').append(...icons.map(icon => icon.element));
 
     const usedCategories = new Set(icons.map(icon => icon.category));
 
+    /*
+     * Category picker. It exposes the parts of a <select> the page uses (value,
+     * change event), so the filter code treats it as one. Focus stays in the
+     * search box while the popup is open; aria-activedescendant marks the option.
+     */
+    function createCategoryPicker(element) {
+      const button = element.querySelector('.picker-button');
+      const buttonText = element.querySelector('#picker-value');
+      const popup = element.querySelector('.picker-popup');
+      const search = popup.querySelector('input');
+      const list = popup.querySelector('[role="listbox"]');
+      const empty = popup.querySelector('.picker-empty');
+      let items = [];
+      let current = 'all';
+      let active = null;
+
+      const itemFor = value => items.find(item => item.value === value);
+      const visibleItems = () => items.filter(item => !item.element.hidden);
+
+      function updateSelection() {
+        const item = itemFor(current);
+
+        buttonText.textContent = item ? `${item.label} (${item.count})` : '';
+
+        for (const { value, element: option } of items) {
+          option.setAttribute('aria-selected', String(value === current));
+        }
+      }
+
+      function setActive(item, scroll = true) {
+        active?.element.removeAttribute('data-active');
+        active = item;
+
+        if (item) {
+          item.element.dataset.active = '';
+          search.setAttribute('aria-activedescendant', item.element.id);
+
+          if (scroll) {
+            item.element.scrollIntoView({ block: 'nearest' });
+          }
+        } else {
+          search.removeAttribute('aria-activedescendant');
+        }
+      }
+
+      function filterList() {
+        const query = normalize(search.value);
+        const terms = query ? query.split(' ') : [];
+
+        for (const item of items) {
+          item.element.hidden = !terms.every(term => item.searchText.includes(term));
+        }
+
+        const visible = visibleItems();
+
+        empty.hidden = visible.length > 0;
+        setActive(visible[0] ?? null);
+      }
+
+      function open(query = '') {
+        if (!popup.hidden) {
+          return;
+        }
+
+        popup.hidden = false;
+        button.setAttribute('aria-expanded', 'true');
+        search.value = query;
+        filterList();
+
+        if (!query) {
+          setActive(itemFor(current) ?? null);
+        }
+
+        search.focus({ preventScroll: true });
+      }
+
+      function close(returnFocus) {
+        if (popup.hidden) {
+          return;
+        }
+
+        popup.hidden = true;
+        button.setAttribute('aria-expanded', 'false');
+        setActive(null);
+
+        if (returnFocus) {
+          button.focus({ preventScroll: true });
+        }
+      }
+
+      function choose(item) {
+        close(true);
+
+        if (item && item.value !== current) {
+          current = item.value;
+          updateSelection();
+          element.dispatchEvent(new Event('change'));
+        }
+      }
+
+      function move(step) {
+        const visible = visibleItems();
+        const index = visible.indexOf(active);
+
+        if (visible.length) {
+          setActive(visible[Math.min(Math.max(index + step, 0), visible.length - 1)]);
+        }
+      }
+
+      button.addEventListener('click', () => {
+        if (popup.hidden) {
+          open();
+        } else {
+          close(true);
+        }
+      });
+
+      button.addEventListener('keydown', event => {
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          open();
+        } else if (event.key.length === 1 && event.key !== ' ' &&
+            !event.ctrlKey && !event.metaKey && !event.altKey) {
+          // Typing on the closed button starts a search with that letter.
+          event.preventDefault();
+          open(event.key);
+        }
+      });
+
+      search.addEventListener('input', filterList);
+      search.addEventListener('keydown', event => {
+        if (event.isComposing) {
+          return;
+        }
+
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          move(event.key === 'ArrowDown' ? 1 : -1);
+        } else if (event.key === 'Enter') {
+          event.preventDefault();
+
+          if (active) {
+            choose(active);
+          }
+        } else if (event.key === 'Escape') {
+          event.preventDefault();
+          close(true);
+        }
+      });
+
+      // Keep focus in the search box when an option is pressed.
+      list.addEventListener('mousedown', event => event.preventDefault());
+      list.addEventListener('click', event => {
+        const option = event.target.closest('[role="option"]');
+
+        if (option) {
+          choose(items.find(item => item.element === option));
+        }
+      });
+      list.addEventListener('mousemove', event => {
+        const option = event.target.closest('[role="option"]');
+
+        if (option && option !== active?.element) {
+          setActive(items.find(item => item.element === option), false);
+        }
+      });
+
+      element.addEventListener('focusout', event => {
+        if (event.relatedTarget && !element.contains(event.relatedTarget)) {
+          close(false);
+        }
+      });
+      document.addEventListener('pointerdown', event => {
+        if (!element.contains(event.target)) {
+          close(false);
+        }
+      });
+
+      return {
+        get value() {
+          return current;
+        },
+        set value(value) {
+          current = value;
+          updateSelection();
+        },
+        setOptions(options) {
+          items = options.map(({ value, label, count, keywords }) => {
+            const option = document.createElement('li');
+            const name = document.createElement('span');
+            const amount = document.createElement('span');
+
+            option.id = `picker-option-${value}`;
+            option.className = 'picker-option';
+            option.setAttribute('role', 'option');
+            name.textContent = label;
+            amount.className = 'picker-count';
+            amount.textContent = count;
+            option.append(name, amount);
+
+            return { value, label, count, searchText: normalize(`${label} ${keywords}`), element: option };
+          });
+          list.replaceChildren(...items.map(item => item.element));
+          updateSelection();
+
+          if (!popup.hidden) {
+            filterList();
+          }
+        },
+        addEventListener: (type, listener) => element.addEventListener(type, listener)
+      };
+    }
+
     function renderCategories() {
       const selected = categoryFilter.value || 'all';
-      const options = [{ value: 'all', label: dictionary().all }];
+      const options = [{ value: 'all', label: dictionary().all, keywords: 'all' }];
 
       if (icons.some(icon => icon.isNew)) {
-        options.push({ value: 'new', label: dictionary().newFilter });
+        options.push({ value: 'new', label: dictionary().newFilter, keywords: 'new' });
       }
 
       for (const category of categories) {
         if (usedCategories.has(category.prefix)) {
-          options.push({ value: category.prefix, label: category[language] });
+          options.push({
+            value: category.prefix,
+            label: category[language],
+            keywords: `${category.en} ${category.prefix}`
+          });
         }
       }
 
       if (usedCategories.has('other')) {
-        options.push({ value: 'other', label: dictionary().other });
+        options.push({ value: 'other', label: dictionary().other, keywords: 'other' });
       }
 
-      categoryFilter.replaceChildren(...options.map(({ value, label }) => {
-        const count = value === 'all' ? icons.length :
-          icons.filter(icon => inCategory(icon, value)).length;
-
-        return new Option(`${label} (${digits(count)})`, value);
-      }));
+      categoryFilter.setOptions(options.map(option => ({
+        ...option,
+        count: digits(option.value === 'all' ? icons.length :
+          icons.filter(icon => inCategory(icon, option.value)).length)
+      })));
       categoryFilter.value = options.some(option => option.value === selected) ?
         selected : 'all';
     }
@@ -3001,9 +3573,18 @@
       sizeOutput.textContent = `${sizeInput.value}px`;
     }
 
+    const swatches = Array.from(dialog.querySelectorAll('.swatch'));
+
+    function markSwatch(color) {
+      for (const swatch of swatches) {
+        swatch.setAttribute('aria-pressed', String(swatch.dataset.color.toLowerCase() === color));
+      }
+    }
+
     function resetColor() {
       detailIcon.style.color = '';
       colorInput.value = textColorHex();
+      markSwatch('');
     }
 
     function copyValue(kind) {
@@ -3057,7 +3638,15 @@
     sizeInput.addEventListener('input', updateSize);
     colorInput.addEventListener('input', () => {
       detailIcon.style.color = colorInput.value;
+      markSwatch(colorInput.value.toLowerCase());
     });
+    for (const swatch of swatches) {
+      swatch.addEventListener('click', () => {
+        detailIcon.style.color = swatch.dataset.color;
+        colorInput.value = swatch.dataset.color.toLowerCase();
+        markSwatch(colorInput.value);
+      });
+    }
     document.getElementById('detail-color-reset').addEventListener('click', resetColor);
     document.getElementById('detail-close').addEventListener('click', () => dialog.close());
 

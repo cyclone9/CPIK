@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?1da24249a30dc43dc21732462c3c1446") format("woff2"),
-url("./cpik.woff?1da24249a30dc43dc21732462c3c1446") format("woff");
+    src: url("./cpik.woff2?dde202c63f704aa0c67f3c842e110b62") format("woff2"),
+url("./cpik.woff?dde202c63f704aa0c67f3c842e110b62") format("woff");
     font-display: block;
 }
 
@@ -291,6 +291,42 @@ url("./cpik.woff?1da24249a30dc43dc21732462c3c1446") format("woff");
 
 .cpik-socialmedia-rubika::before {
     content: "\e042";
+}
+
+.cpik-bank-iranvenezuela::before {
+    content: "\e043";
+}
+
+.cpik-bank-sanatmadan::before {
+    content: "\e044";
+}
+
+.cpik-bank-toseesaderat::before {
+    content: "\e045";
+}
+
+.cpik-bank-toseetaavon::before {
+    content: "\e046";
+}
+
+.cpik-channel-4::before {
+    content: "\e047";
+}
+
+.cpik-channel-tehran::before {
+    content: "\e048";
+}
+
+.cpik-news-varzesh3::before {
+    content: "\e049";
+}
+
+.cpik-shop-basalam::before {
+    content: "\e04a";
+}
+
+.cpik-shop-technolife::before {
+    content: "\e04b";
 }
 
 /* Old class names of renamed icons */

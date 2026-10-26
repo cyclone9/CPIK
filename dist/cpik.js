@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.5";
+window.CPIK_VERSION = "0.1.6";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -132,6 +132,27 @@ window.CPIK_DATA = {
     "added": "0.1.0",
     "codepoint": "e003",
     "isNew": false
+  },
+  "bank-iranvenezuela": {
+    "name": {
+      "fa": "بانک ایران و ونزوئلا",
+      "en": "Iran-Venezuela Bank"
+    },
+    "keywords": [
+      "ایران و ونزوئلا",
+      "ونزوئلا",
+      "ایران ونزوئلا",
+      "بانک دوملیتی",
+      "بانکداری",
+      "خدمات بانکی",
+      "iran venezuela",
+      "venezuela",
+      "ivbb",
+      "banking"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e043",
+    "isNew": true
   },
   "bank-iranzamin": {
     "name": {
@@ -442,6 +463,28 @@ window.CPIK_DATA = {
     "codepoint": "e011",
     "isNew": false
   },
+  "bank-sanatmadan": {
+    "name": {
+      "fa": "بانک صنعت و معدن",
+      "en": "Bank of Industry and Mine"
+    },
+    "keywords": [
+      "صنعت و معدن",
+      "صنعت",
+      "معدن",
+      "بانک صنعت",
+      "بانکداری",
+      "خدمات بانکی",
+      "sanat madan",
+      "sanat va madan",
+      "industry and mine",
+      "bim",
+      "banking"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e044",
+    "isNew": true
+  },
   "bank-sarmayeh": {
     "name": {
       "fa": "بانک سرمایه",
@@ -520,6 +563,52 @@ window.CPIK_DATA = {
     "codepoint": "e016",
     "isNew": false
   },
+  "bank-toseesaderat": {
+    "name": {
+      "fa": "بانک توسعه صادرات",
+      "en": "Export Development Bank of Iran"
+    },
+    "keywords": [
+      "توسعه صادرات",
+      "صادرات",
+      "توسعه",
+      "بانک توسعه صادرات ایران",
+      "بانکداری",
+      "خدمات بانکی",
+      "tosee saderat",
+      "tose saderat",
+      "export development",
+      "edbi",
+      "banking"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e045",
+    "isNew": true
+  },
+  "bank-toseetaavon": {
+    "name": {
+      "fa": "بانک توسعه تعاون",
+      "en": "Tose'e Ta'avon Bank"
+    },
+    "keywords": [
+      "توسعه تعاون",
+      "تعاون",
+      "توسعه",
+      "موسسه اعتباری توسعه",
+      "مؤسسه اعتباری توسعه",
+      "بانکداری",
+      "خدمات بانکی",
+      "tosee taavon",
+      "tose taavon",
+      "cooperative development",
+      "ttbank",
+      "tosee credit institution",
+      "banking"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e046",
+    "isNew": true
+  },
   "channel-1": {
     "name": {
       "fa": "شبکه یک",
@@ -583,6 +672,54 @@ window.CPIK_DATA = {
     "added": "0.1.0",
     "codepoint": "e019",
     "isNew": false
+  },
+  "channel-4": {
+    "name": {
+      "fa": "شبکه چهار",
+      "en": "Channel 4"
+    },
+    "keywords": [
+      "شبکه چهارم",
+      "شبکه 4",
+      "شبکه ۴",
+      "شبکه چهار سیما",
+      "سیما",
+      "صدا و سیما",
+      "تلویزیون",
+      "پخش زنده",
+      "tv",
+      "irib 4",
+      "television"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e047",
+    "isNew": true
+  },
+  "channel-tehran": {
+    "name": {
+      "fa": "شبکه تهران",
+      "en": "Tehran Channel"
+    },
+    "keywords": [
+      "شبکه پنج",
+      "شبکه پنجم",
+      "شبکه 5",
+      "شبکه ۵",
+      "شبکه تهران سیما",
+      "تهران",
+      "سیما",
+      "صدا و سیما",
+      "تلویزیون",
+      "پخش زنده",
+      "tv",
+      "channel 5",
+      "irib 5",
+      "irib tehran",
+      "television"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e048",
+    "isNew": true
   },
   "cpik": {
     "name": {
@@ -786,7 +923,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.5",
     "codepoint": "e03d",
-    "isNew": true
+    "isNew": false
   },
   "landmark-milad-tower": {
     "name": {
@@ -807,7 +944,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.5",
     "codepoint": "e03e",
-    "isNew": true
+    "isNew": false
   },
   "map-iran": {
     "name": {
@@ -853,7 +990,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.5",
     "codepoint": "e03f",
-    "isNew": true
+    "isNew": false
   },
   "map-tehran": {
     "name": {
@@ -891,6 +1028,30 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.5",
     "codepoint": "e040",
+    "isNew": false
+  },
+  "news-varzesh3": {
+    "name": {
+      "fa": "ورزش سه",
+      "en": "Varzesh3"
+    },
+    "keywords": [
+      "ورزش ۳",
+      "ورزش 3",
+      "ورزش3",
+      "اخبار ورزشی",
+      "فوتبال",
+      "ورزش",
+      "نتایج زنده",
+      "اخبار",
+      "varzesh 3",
+      "varzesh",
+      "sports",
+      "football",
+      "news"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e049",
     "isNew": true
   },
   "news-zoomg": {
@@ -1164,6 +1325,27 @@ window.CPIK_DATA = {
     "codepoint": "e02f",
     "isNew": false
   },
+  "shop-basalam": {
+    "name": {
+      "fa": "باسلام",
+      "en": "Basalam"
+    },
+    "keywords": [
+      "با سلام",
+      "بازار آنلاین",
+      "محصولات محلی",
+      "دست‌ساز",
+      "خرید",
+      "فروشگاه",
+      "basalam",
+      "ba salam",
+      "marketplace",
+      "shopping"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e04a",
+    "isNew": true
+  },
   "shop-digikala": {
     "name": {
       "fa": "دیجی‌کالا",
@@ -1209,6 +1391,27 @@ window.CPIK_DATA = {
     "codepoint": "e032",
     "isNew": false
   },
+  "shop-technolife": {
+    "name": {
+      "fa": "تکنولایف",
+      "en": "Technolife"
+    },
+    "keywords": [
+      "تکنو لایف",
+      "موبایل",
+      "لپ‌تاپ",
+      "کالای دیجیتال",
+      "خرید",
+      "فروشگاه",
+      "technolife",
+      "techno life",
+      "electronics",
+      "shopping"
+    ],
+    "added": "0.1.6",
+    "codepoint": "e04b",
+    "isNew": true
+  },
   "shop-torob": {
     "name": {
       "fa": "ترب",
@@ -1245,7 +1448,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.5",
     "codepoint": "e041",
-    "isNew": true
+    "isNew": false
   },
   "socialmedia-rubika": {
     "name": {
@@ -1265,7 +1468,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.5",
     "codepoint": "e042",
-    "isNew": true
+    "isNew": false
   },
   "socialmedia-virgool": {
     "name": {

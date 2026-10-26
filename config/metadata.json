@@ -66,6 +66,25 @@
     ],
     "added": "0.1.0"
   },
+  "bank-iranvenezuela": {
+    "name": {
+      "fa": "بانک ایران و ونزوئلا",
+      "en": "Iran-Venezuela Bank"
+    },
+    "keywords": [
+      "ایران و ونزوئلا",
+      "ونزوئلا",
+      "ایران ونزوئلا",
+      "بانک دوملیتی",
+      "بانکداری",
+      "خدمات بانکی",
+      "iran venezuela",
+      "venezuela",
+      "ivbb",
+      "banking"
+    ],
+    "added": "0.1.6"
+  },
   "bank-iranzamin": {
     "name": {
       "fa": "بانک ایران زمین",
@@ -341,6 +360,26 @@
     ],
     "added": "0.1.0"
   },
+  "bank-sanatmadan": {
+    "name": {
+      "fa": "بانک صنعت و معدن",
+      "en": "Bank of Industry and Mine"
+    },
+    "keywords": [
+      "صنعت و معدن",
+      "صنعت",
+      "معدن",
+      "بانک صنعت",
+      "بانکداری",
+      "خدمات بانکی",
+      "sanat madan",
+      "sanat va madan",
+      "industry and mine",
+      "bim",
+      "banking"
+    ],
+    "added": "0.1.6"
+  },
   "bank-sarmayeh": {
     "name": {
       "fa": "بانک سرمایه",
@@ -409,6 +448,48 @@
     ],
     "added": "0.1.0"
   },
+  "bank-toseesaderat": {
+    "name": {
+      "fa": "بانک توسعه صادرات",
+      "en": "Export Development Bank of Iran"
+    },
+    "keywords": [
+      "توسعه صادرات",
+      "صادرات",
+      "توسعه",
+      "بانک توسعه صادرات ایران",
+      "بانکداری",
+      "خدمات بانکی",
+      "tosee saderat",
+      "tose saderat",
+      "export development",
+      "edbi",
+      "banking"
+    ],
+    "added": "0.1.6"
+  },
+  "bank-toseetaavon": {
+    "name": {
+      "fa": "بانک توسعه تعاون",
+      "en": "Tose'e Ta'avon Bank"
+    },
+    "keywords": [
+      "توسعه تعاون",
+      "تعاون",
+      "توسعه",
+      "موسسه اعتباری توسعه",
+      "مؤسسه اعتباری توسعه",
+      "بانکداری",
+      "خدمات بانکی",
+      "tosee taavon",
+      "tose taavon",
+      "cooperative development",
+      "ttbank",
+      "tosee credit institution",
+      "banking"
+    ],
+    "added": "0.1.6"
+  },
   "channel-1": {
     "name": {
       "fa": "شبکه یک",
@@ -466,6 +547,50 @@
       "sports"
     ],
     "added": "0.1.0"
+  },
+  "channel-4": {
+    "name": {
+      "fa": "شبکه چهار",
+      "en": "Channel 4"
+    },
+    "keywords": [
+      "شبکه چهارم",
+      "شبکه 4",
+      "شبکه ۴",
+      "شبکه چهار سیما",
+      "سیما",
+      "صدا و سیما",
+      "تلویزیون",
+      "پخش زنده",
+      "tv",
+      "irib 4",
+      "television"
+    ],
+    "added": "0.1.6"
+  },
+  "channel-tehran": {
+    "name": {
+      "fa": "شبکه تهران",
+      "en": "Tehran Channel"
+    },
+    "keywords": [
+      "شبکه پنج",
+      "شبکه پنجم",
+      "شبکه 5",
+      "شبکه ۵",
+      "شبکه تهران سیما",
+      "تهران",
+      "سیما",
+      "صدا و سیما",
+      "تلویزیون",
+      "پخش زنده",
+      "tv",
+      "channel 5",
+      "irib 5",
+      "irib tehran",
+      "television"
+    ],
+    "added": "0.1.6"
   },
   "cpik": {
     "name": {
@@ -746,6 +871,28 @@
     ],
     "added": "0.1.5"
   },
+  "news-varzesh3": {
+    "name": {
+      "fa": "ورزش سه",
+      "en": "Varzesh3"
+    },
+    "keywords": [
+      "ورزش ۳",
+      "ورزش 3",
+      "ورزش3",
+      "اخبار ورزشی",
+      "فوتبال",
+      "ورزش",
+      "نتایج زنده",
+      "اخبار",
+      "varzesh 3",
+      "varzesh",
+      "sports",
+      "football",
+      "news"
+    ],
+    "added": "0.1.6"
+  },
   "news-zoomg": {
     "name": {
       "fa": "زومجی",
@@ -991,6 +1138,25 @@
     ],
     "added": "0.1.0"
   },
+  "shop-basalam": {
+    "name": {
+      "fa": "باسلام",
+      "en": "Basalam"
+    },
+    "keywords": [
+      "با سلام",
+      "بازار آنلاین",
+      "محصولات محلی",
+      "دست‌ساز",
+      "خرید",
+      "فروشگاه",
+      "basalam",
+      "ba salam",
+      "marketplace",
+      "shopping"
+    ],
+    "added": "0.1.6"
+  },
   "shop-digikala": {
     "name": {
       "fa": "دیجی‌کالا",
@@ -1031,6 +1197,25 @@
       "hardware"
     ],
     "added": "0.1.0"
+  },
+  "shop-technolife": {
+    "name": {
+      "fa": "تکنولایف",
+      "en": "Technolife"
+    },
+    "keywords": [
+      "تکنو لایف",
+      "موبایل",
+      "لپ‌تاپ",
+      "کالای دیجیتال",
+      "خرید",
+      "فروشگاه",
+      "technolife",
+      "techno life",
+      "electronics",
+      "shopping"
+    ],
+    "added": "0.1.6"
   },
   "shop-torob": {
     "name": {
