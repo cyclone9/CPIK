@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?1c81c5d5b8315ee25343618a18505af1") format("woff2"),
-url("./cpik.woff?1c81c5d5b8315ee25343618a18505af1") format("woff");
+    src: url("./cpik.woff2?9f6fed5f6ea7d69ad2486cb51900ffef") format("woff2"),
+url("./cpik.woff?9f6fed5f6ea7d69ad2486cb51900ffef") format("woff");
     font-display: block;
 }
 
@@ -535,6 +535,14 @@ url("./cpik.woff?1c81c5d5b8315ee25343618a18505af1") format("woff");
 
 .cpik-transport-iranair::before {
     content: "\e07f";
+}
+
+.cpik-shop-cafebazaar::before {
+    content: "\e080";
+}
+
+.cpik-transport-raja::before {
+    content: "\e081";
 }
 
 /* Old class names of renamed icons */

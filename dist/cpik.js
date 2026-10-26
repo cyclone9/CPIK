@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.8";
+window.CPIK_VERSION = "0.1.9";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -1147,7 +1147,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e054",
-    "isNew": true
+    "isNew": false
   },
   "map-ardabil": {
     "name": {
@@ -1166,7 +1166,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e055",
-    "isNew": true
+    "isNew": false
   },
   "map-bushehr": {
     "name": {
@@ -1185,7 +1185,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e056",
-    "isNew": true
+    "isNew": false
   },
   "map-chaharmahal-bakhtiari": {
     "name": {
@@ -1207,7 +1207,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e057",
-    "isNew": true
+    "isNew": false
   },
   "map-east-azarbaijan": {
     "name": {
@@ -1229,7 +1229,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e058",
-    "isNew": true
+    "isNew": false
   },
   "map-fars": {
     "name": {
@@ -1250,7 +1250,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e059",
-    "isNew": true
+    "isNew": false
   },
   "map-gilan": {
     "name": {
@@ -1271,7 +1271,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e05a",
-    "isNew": true
+    "isNew": false
   },
   "map-golestan": {
     "name": {
@@ -1291,7 +1291,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e05b",
-    "isNew": true
+    "isNew": false
   },
   "map-hamadan": {
     "name": {
@@ -1310,7 +1310,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e05c",
-    "isNew": true
+    "isNew": false
   },
   "map-hormozgan": {
     "name": {
@@ -1331,7 +1331,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e05d",
-    "isNew": true
+    "isNew": false
   },
   "map-ilam": {
     "name": {
@@ -1349,7 +1349,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e05e",
-    "isNew": true
+    "isNew": false
   },
   "map-iran": {
     "name": {
@@ -1414,7 +1414,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e05f",
-    "isNew": true
+    "isNew": false
   },
   "map-kerman": {
     "name": {
@@ -1432,7 +1432,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e060",
-    "isNew": true
+    "isNew": false
   },
   "map-kermanshah": {
     "name": {
@@ -1450,7 +1450,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e061",
-    "isNew": true
+    "isNew": false
   },
   "map-khuzestan": {
     "name": {
@@ -1470,7 +1470,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e062",
-    "isNew": true
+    "isNew": false
   },
   "map-kohgiluyeh-boyerahmad": {
     "name": {
@@ -1492,7 +1492,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e063",
-    "isNew": true
+    "isNew": false
   },
   "map-kordestan": {
     "name": {
@@ -1513,7 +1513,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e064",
-    "isNew": true
+    "isNew": false
   },
   "map-lorestan": {
     "name": {
@@ -1534,7 +1534,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e065",
-    "isNew": true
+    "isNew": false
   },
   "map-markazi": {
     "name": {
@@ -1555,7 +1555,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e066",
-    "isNew": true
+    "isNew": false
   },
   "map-mazandaran": {
     "name": {
@@ -1575,7 +1575,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e067",
-    "isNew": true
+    "isNew": false
   },
   "map-north-khorasan": {
     "name": {
@@ -1596,7 +1596,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e068",
-    "isNew": true
+    "isNew": false
   },
   "map-qazvin": {
     "name": {
@@ -1615,7 +1615,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e069",
-    "isNew": true
+    "isNew": false
   },
   "map-qom": {
     "name": {
@@ -1634,7 +1634,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e06a",
-    "isNew": true
+    "isNew": false
   },
   "map-razavi-khorasan": {
     "name": {
@@ -1656,7 +1656,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e06b",
-    "isNew": true
+    "isNew": false
   },
   "map-semnan": {
     "name": {
@@ -1674,7 +1674,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e06c",
-    "isNew": true
+    "isNew": false
   },
   "map-sistan-baluchestan": {
     "name": {
@@ -1697,7 +1697,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e06d",
-    "isNew": true
+    "isNew": false
   },
   "map-south-khorasan": {
     "name": {
@@ -1718,7 +1718,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e06e",
-    "isNew": true
+    "isNew": false
   },
   "map-tehran": {
     "name": {
@@ -1758,7 +1758,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e06f",
-    "isNew": true
+    "isNew": false
   },
   "map-yazd": {
     "name": {
@@ -1776,7 +1776,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e070",
-    "isNew": true
+    "isNew": false
   },
   "map-zanjan": {
     "name": {
@@ -1794,7 +1794,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e071",
-    "isNew": true
+    "isNew": false
   },
   "news-digiato": {
     "name": {
@@ -2152,6 +2152,30 @@ window.CPIK_DATA = {
     "codepoint": "e04a",
     "isNew": false
   },
+  "shop-cafebazaar": {
+    "name": {
+      "fa": "کافه‌بازار",
+      "en": "Cafe Bazaar"
+    },
+    "keywords": [
+      "کافه بازار",
+      "بازار",
+      "فروشگاه اپلیکیشن",
+      "اپلیکیشن",
+      "برنامه",
+      "بازی",
+      "اندروید",
+      "فروشگاه",
+      "cafe bazaar",
+      "cafebazaar",
+      "bazaar",
+      "app store",
+      "android"
+    ],
+    "added": "0.1.9",
+    "codepoint": "e080",
+    "isNew": true
+  },
   "shop-digikala": {
     "name": {
       "fa": "دیجی‌کالا",
@@ -2192,7 +2216,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e074",
-    "isNew": true
+    "isNew": false
   },
   "shop-emalls": {
     "name": {
@@ -2212,7 +2236,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e075",
-    "isNew": true
+    "isNew": false
   },
   "shop-esam": {
     "name": {
@@ -2232,7 +2256,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e076",
-    "isNew": true
+    "isNew": false
   },
   "shop-lioncomputer": {
     "name": {
@@ -2276,7 +2300,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e077",
-    "isNew": true
+    "isNew": false
   },
   "shop-technolife": {
     "name": {
@@ -2397,7 +2421,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e07b",
-    "isNew": true
+    "isNew": false
   },
   "sport-persepolis": {
     "name": {
@@ -2421,7 +2445,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e07c",
-    "isNew": true
+    "isNew": false
   },
   "sport-tractor": {
     "name": {
@@ -2446,7 +2470,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e07d",
-    "isNew": true
+    "isNew": false
   },
   "symbol-faravahar": {
     "name": {
@@ -2470,7 +2494,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e073",
-    "isNew": true
+    "isNew": false
   },
   "symbol-homa": {
     "name": {
@@ -2493,7 +2517,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e072",
-    "isNew": true
+    "isNew": false
   },
   "telecom-asiatech": {
     "name": {
@@ -2512,7 +2536,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e078",
-    "isNew": true
+    "isNew": false
   },
   "telecom-irancell": {
     "name": {
@@ -2570,7 +2594,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e079",
-    "isNew": true
+    "isNew": false
   },
   "telecom-rightel": {
     "name": {
@@ -2609,7 +2633,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e07a",
-    "isNew": true
+    "isNew": false
   },
   "telecom-zitel": {
     "name": {
@@ -2629,7 +2653,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e07e",
-    "isNew": true
+    "isNew": false
   },
   "transport-iranair": {
     "name": {
@@ -2651,6 +2675,27 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.8",
     "codepoint": "e07f",
+    "isNew": false
+  },
+  "transport-raja": {
+    "name": {
+      "fa": "رجا",
+      "en": "Raja Rail"
+    },
+    "keywords": [
+      "قطار رجا",
+      "شرکت حمل و نقل ریلی رجا",
+      "قطار",
+      "راه‌آهن",
+      "بلیت قطار",
+      "ریلی",
+      "raja",
+      "raja rail",
+      "train",
+      "railway"
+    ],
+    "added": "0.1.9",
+    "codepoint": "e081",
     "isNew": true
   }
 };

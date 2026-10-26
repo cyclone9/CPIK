@@ -1855,6 +1855,28 @@
     ],
     "added": "0.1.6"
   },
+  "shop-cafebazaar": {
+    "name": {
+      "fa": "کافه‌بازار",
+      "en": "Cafe Bazaar"
+    },
+    "keywords": [
+      "کافه بازار",
+      "بازار",
+      "فروشگاه اپلیکیشن",
+      "اپلیکیشن",
+      "برنامه",
+      "بازی",
+      "اندروید",
+      "فروشگاه",
+      "cafe bazaar",
+      "cafebazaar",
+      "bazaar",
+      "app store",
+      "android"
+    ],
+    "added": "0.1.9"
+  },
   "shop-digikala": {
     "name": {
       "fa": "دیجی‌کالا",
@@ -2307,5 +2329,24 @@
       "flight"
     ],
     "added": "0.1.8"
+  },
+  "transport-raja": {
+    "name": {
+      "fa": "رجا",
+      "en": "Raja Rail"
+    },
+    "keywords": [
+      "قطار رجا",
+      "شرکت حمل و نقل ریلی رجا",
+      "قطار",
+      "راه‌آهن",
+      "بلیت قطار",
+      "ریلی",
+      "raja",
+      "raja rail",
+      "train",
+      "railway"
+    ],
+    "added": "0.1.9"
   }
 }

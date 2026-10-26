@@ -4,7 +4,7 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cpik-lockup-on-dark.svg"><img src="assets/cpik-lockup-on-light.svg" alt="CPIK" width="300"></picture></p>
 
-نسخه‌ی 0.1.8. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
+نسخه‌ی 0.1.9. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
 
 **برندهای ایرانی، در یک کیت آیکون.**
 
@@ -51,7 +51,7 @@
 <div dir="ltr">
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.8/dist/cpik.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.9/dist/cpik.css">
 ```
 
 </div>
