@@ -16,6 +16,8 @@
 
 همه‌ی آیکون‌ها را در صفحه‌ی پیش‌نمایش ببینید و جستجو کنید: https://cpik.cyclone9.dev/
 
+صفحه‌ی معرفی CPIK در سایت CyClone: https://cyclone9.dev/cpik
+
 ## شروع سریع
 
 ۱. فایل `cpik-<version>.zip` را از [آخرین نسخه‌ی منتشرشده](https://github.com/cyclone9/CPIK/releases/latest) دانلود کنید.

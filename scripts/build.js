@@ -121,7 +121,8 @@ function appendAliases(prefix) {
  * Servers may let browsers keep cpik.css for a day (cpik.cp1.ir does), so a
  * new build could show new icon cards with an old stylesheet and empty
  * glyphs. The page links each file with a hash of its content instead: a
- * change forces a fresh download, an unchanged file keeps the same URL.
+ * change forces a fresh download, an unchanged file keeps the same URL. The
+ * link preview image gets one too, so chat apps fetch a new image again.
  */
 function bustCache(files) {
     const page = path.join(DIST, 'index.html');
@@ -132,7 +133,8 @@ function bustCache(files) {
             .update(fs.readFileSync(path.join(DIST, file)))
             .digest('hex')
             .slice(0, 10);
-        const pattern = new RegExp(`((?:href|src)="(?:\\./)?${file.replace('.', '\\.')})"`, 'g');
+        const name = file.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const pattern = new RegExp(`((?:href|src|content)="(?:\\./|https://cpik\\.cyclone9\\.dev/)?${name})"`, 'g');
 
         html = html.replace(pattern, `$1?v=${hash}"`);
     }
@@ -165,12 +167,12 @@ async function main() {
 
     writeMetadata(version);
     appendAliases(config.prefix);
-    bustCache(['cpik.css', 'cpik.js']);
     // Only what the preview page uses; the README's video, cover and lockups stay out of dist/.
     for (const item of ['fonts', 'favicon', 'cpik-social-preview.png']) {
         fs.cpSync(path.join(ROOT, 'assets', item), path.join(DIST, 'assets', item), { recursive: true });
     }
     fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
+    bustCache(['cpik.css', 'cpik.js', 'assets/cpik-social-preview.png']);
 
     const files = fs.readdirSync(DIST).filter(file => !file.startsWith('.'));
 
