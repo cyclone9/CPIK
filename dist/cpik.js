@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.9";
+window.CPIK_VERSION = "0.1.10";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -35,6 +35,11 @@ window.CPIK_CATEGORIES = [
     "prefix": "transport",
     "fa": "حمل و نقل",
     "en": "Transport"
+  },
+  {
+    "prefix": "car",
+    "fa": "خودروسازی",
+    "en": "Carmakers"
   },
   {
     "prefix": "platform",
@@ -639,6 +644,46 @@ window.CPIK_DATA = {
     "codepoint": "e046",
     "isNew": false
   },
+  "car-irankhodro": {
+    "name": {
+      "fa": "ایران خودرو",
+      "en": "Iran Khodro"
+    },
+    "keywords": [
+      "ایران‌خودرو",
+      "ایرانخودرو",
+      "ایکو",
+      "خودرو",
+      "خودروسازی",
+      "ماشین",
+      "ikco",
+      "iran khodro",
+      "irankhodro",
+      "car",
+      "carmaker"
+    ],
+    "added": "0.1.10",
+    "codepoint": "e082",
+    "isNew": true
+  },
+  "car-saipa": {
+    "name": {
+      "fa": "سایپا",
+      "en": "Saipa"
+    },
+    "keywords": [
+      "گروه سایپا",
+      "خودرو",
+      "خودروسازی",
+      "ماشین",
+      "saipa",
+      "car",
+      "carmaker"
+    ],
+    "added": "0.1.10",
+    "codepoint": "e083",
+    "isNew": true
+  },
   "channel-1": {
     "name": {
       "fa": "شبکه یک",
@@ -724,6 +769,53 @@ window.CPIK_DATA = {
     "added": "0.1.6",
     "codepoint": "e047",
     "isNew": false
+  },
+  "channel-ifilm": {
+    "name": {
+      "fa": "شبکه آی‌فیلم",
+      "en": "iFilm Channel"
+    },
+    "keywords": [
+      "آی فیلم",
+      "آیفیلم",
+      "ای فیلم",
+      "فیلم",
+      "سریال",
+      "سریال ایرانی",
+      "سیما",
+      "صدا و سیما",
+      "تلویزیون",
+      "ifilm",
+      "i film",
+      "irib ifilm",
+      "tv"
+    ],
+    "added": "0.1.10",
+    "codepoint": "e084",
+    "isNew": true
+  },
+  "channel-nasim": {
+    "name": {
+      "fa": "شبکه نسیم",
+      "en": "Nasim Channel"
+    },
+    "keywords": [
+      "نسیم",
+      "شبکه نسیم سیما",
+      "سرگرمی",
+      "طنز",
+      "سیما",
+      "صدا و سیما",
+      "تلویزیون",
+      "پخش زنده",
+      "nasim",
+      "nasim tv",
+      "irib nasim",
+      "tv"
+    ],
+    "added": "0.1.10",
+    "codepoint": "e085",
+    "isNew": true
   },
   "channel-tehran": {
     "name": {
@@ -2174,7 +2266,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.9",
     "codepoint": "e080",
-    "isNew": true
+    "isNew": false
   },
   "shop-digikala": {
     "name": {
@@ -2258,6 +2350,27 @@ window.CPIK_DATA = {
     "codepoint": "e076",
     "isNew": false
   },
+  "shop-khanoumi": {
+    "name": {
+      "fa": "خانومی",
+      "en": "Khanoumi"
+    },
+    "keywords": [
+      "خانمی",
+      "لوازم آرایش",
+      "آرایشی و بهداشتی",
+      "زیبایی",
+      "خرید آنلاین",
+      "فروشگاه",
+      "khanoumi",
+      "khanomi",
+      "cosmetics",
+      "beauty"
+    ],
+    "added": "0.1.10",
+    "codepoint": "e086",
+    "isNew": true
+  },
   "shop-lioncomputer": {
     "name": {
       "fa": "لیون کامپیوتر",
@@ -2280,6 +2393,27 @@ window.CPIK_DATA = {
     "added": "0.1.0",
     "codepoint": "e032",
     "isNew": false
+  },
+  "shop-okala": {
+    "name": {
+      "fa": "اُکالا",
+      "en": "Okala"
+    },
+    "keywords": [
+      "اکالا",
+      "سوپرمارکت آنلاین",
+      "سوپرمارکت",
+      "مواد غذایی",
+      "خرید آنلاین",
+      "فروشگاه",
+      "okala",
+      "supermarket",
+      "grocery",
+      "online grocery"
+    ],
+    "added": "0.1.10",
+    "codepoint": "e087",
+    "isNew": true
   },
   "shop-sheypoor": {
     "name": {
@@ -2696,7 +2830,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.9",
     "codepoint": "e081",
-    "isNew": true
+    "isNew": false
   }
 };
 window.CPIK_ALIASES = {

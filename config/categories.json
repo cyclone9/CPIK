@@ -6,6 +6,7 @@
   { "prefix": "shop", "fa": "فروشگاه و نیازمندی‌ها", "en": "Shops and classifieds" },
   { "prefix": "shipping", "fa": "پست و ارسال", "en": "Shipping" },
   { "prefix": "transport", "fa": "حمل و نقل", "en": "Transport" },
+  { "prefix": "car", "fa": "خودروسازی", "en": "Carmakers" },
   { "prefix": "platform", "fa": "پلتفرم ویدیو", "en": "Video platforms" },
   { "prefix": "channel", "fa": "شبکه تلویزیونی", "en": "TV channels" },
   { "prefix": "news", "fa": "خبری", "en": "News" },

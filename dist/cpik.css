@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?9f6fed5f6ea7d69ad2486cb51900ffef") format("woff2"),
-url("./cpik.woff?9f6fed5f6ea7d69ad2486cb51900ffef") format("woff");
+    src: url("./cpik.woff2?c1c2d8273f269a3a2fe37318ec619fee") format("woff2"),
+url("./cpik.woff?c1c2d8273f269a3a2fe37318ec619fee") format("woff");
     font-display: block;
 }
 
@@ -543,6 +543,30 @@ url("./cpik.woff?9f6fed5f6ea7d69ad2486cb51900ffef") format("woff");
 
 .cpik-transport-raja::before {
     content: "\e081";
+}
+
+.cpik-car-irankhodro::before {
+    content: "\e082";
+}
+
+.cpik-car-saipa::before {
+    content: "\e083";
+}
+
+.cpik-channel-ifilm::before {
+    content: "\e084";
+}
+
+.cpik-channel-nasim::before {
+    content: "\e085";
+}
+
+.cpik-shop-khanoumi::before {
+    content: "\e086";
+}
+
+.cpik-shop-okala::before {
+    content: "\e087";
 }
 
 /* Old class names of renamed icons */

@@ -6,6 +6,9 @@
 
 ## منتشرنشده
 
+## 0.1.10 - 2026-10-28
+
+- شش آیکون تازه: ایران‌خودرو (`cpik-car-irankhodro`) و سایپا (`cpik-car-saipa`) در دسته‌ی تازه‌ی «خودروسازی»، شبکه‌های آی‌فیلم (`cpik-channel-ifilm`) و نسیم (`cpik-channel-nasim`)، و فروشگاه‌های اُکالا (`cpik-shop-okala`) و خانومی (`cpik-shop-khanoumi`).
 - نشانی تازه‌ی صفحه‌ی پیش‌نمایش: https://cpik.cyclone9.dev (نشانی قبلی در GitHub Pages به آن منتقل می‌شود). پیوند صفحه‌ی محصول و نشانی CyClone در کیت حالا `cyclone9.dev` است.
 
 ## 0.1.9 - 2026-10-26

@@ -490,6 +490,42 @@
     ],
     "added": "0.1.6"
   },
+  "car-irankhodro": {
+    "name": {
+      "fa": "ایران خودرو",
+      "en": "Iran Khodro"
+    },
+    "keywords": [
+      "ایران‌خودرو",
+      "ایرانخودرو",
+      "ایکو",
+      "خودرو",
+      "خودروسازی",
+      "ماشین",
+      "ikco",
+      "iran khodro",
+      "irankhodro",
+      "car",
+      "carmaker"
+    ],
+    "added": "0.1.10"
+  },
+  "car-saipa": {
+    "name": {
+      "fa": "سایپا",
+      "en": "Saipa"
+    },
+    "keywords": [
+      "گروه سایپا",
+      "خودرو",
+      "خودروسازی",
+      "ماشین",
+      "saipa",
+      "car",
+      "carmaker"
+    ],
+    "added": "0.1.10"
+  },
   "channel-1": {
     "name": {
       "fa": "شبکه یک",
@@ -567,6 +603,49 @@
       "television"
     ],
     "added": "0.1.6"
+  },
+  "channel-ifilm": {
+    "name": {
+      "fa": "شبکه آی‌فیلم",
+      "en": "iFilm Channel"
+    },
+    "keywords": [
+      "آی فیلم",
+      "آیفیلم",
+      "ای فیلم",
+      "فیلم",
+      "سریال",
+      "سریال ایرانی",
+      "سیما",
+      "صدا و سیما",
+      "تلویزیون",
+      "ifilm",
+      "i film",
+      "irib ifilm",
+      "tv"
+    ],
+    "added": "0.1.10"
+  },
+  "channel-nasim": {
+    "name": {
+      "fa": "شبکه نسیم",
+      "en": "Nasim Channel"
+    },
+    "keywords": [
+      "نسیم",
+      "شبکه نسیم سیما",
+      "سرگرمی",
+      "طنز",
+      "سیما",
+      "صدا و سیما",
+      "تلویزیون",
+      "پخش زنده",
+      "nasim",
+      "nasim tv",
+      "irib nasim",
+      "tv"
+    ],
+    "added": "0.1.10"
   },
   "channel-tehran": {
     "name": {
@@ -1951,6 +2030,25 @@
     ],
     "added": "0.1.8"
   },
+  "shop-khanoumi": {
+    "name": {
+      "fa": "خانومی",
+      "en": "Khanoumi"
+    },
+    "keywords": [
+      "خانمی",
+      "لوازم آرایش",
+      "آرایشی و بهداشتی",
+      "زیبایی",
+      "خرید آنلاین",
+      "فروشگاه",
+      "khanoumi",
+      "khanomi",
+      "cosmetics",
+      "beauty"
+    ],
+    "added": "0.1.10"
+  },
   "shop-lioncomputer": {
     "name": {
       "fa": "لیون کامپیوتر",
@@ -1971,6 +2069,25 @@
       "hardware"
     ],
     "added": "0.1.0"
+  },
+  "shop-okala": {
+    "name": {
+      "fa": "اُکالا",
+      "en": "Okala"
+    },
+    "keywords": [
+      "اکالا",
+      "سوپرمارکت آنلاین",
+      "سوپرمارکت",
+      "مواد غذایی",
+      "خرید آنلاین",
+      "فروشگاه",
+      "okala",
+      "supermarket",
+      "grocery",
+      "online grocery"
+    ],
+    "added": "0.1.10"
   },
   "shop-sheypoor": {
     "name": {
