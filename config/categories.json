@@ -2,6 +2,7 @@
   { "prefix": "bank", "fa": "بانک", "en": "Banks" },
   { "prefix": "finance", "fa": "پرداخت", "en": "Payments" },
   { "prefix": "crypto", "fa": "رمزارز", "en": "Crypto" },
+  { "prefix": "insurance", "fa": "بیمه", "en": "Insurance" },
   { "prefix": "telecom", "fa": "اپراتور و اینترنت", "en": "Operators and internet" },
   { "prefix": "shop", "fa": "فروشگاه و نیازمندی‌ها", "en": "Shops and classifieds" },
   { "prefix": "shipping", "fa": "پست و ارسال", "en": "Shipping" },

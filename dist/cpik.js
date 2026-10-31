@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.1.10";
+window.CPIK_VERSION = "0.2.0";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -15,6 +15,11 @@ window.CPIK_CATEGORIES = [
     "prefix": "crypto",
     "fa": "رمزارز",
     "en": "Crypto"
+  },
+  {
+    "prefix": "insurance",
+    "fa": "بیمه",
+    "en": "Insurance"
   },
   {
     "prefix": "telecom",
@@ -664,7 +669,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.10",
     "codepoint": "e082",
-    "isNew": true
+    "isNew": false
   },
   "car-saipa": {
     "name": {
@@ -682,7 +687,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.10",
     "codepoint": "e083",
-    "isNew": true
+    "isNew": false
   },
   "channel-1": {
     "name": {
@@ -792,7 +797,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.10",
     "codepoint": "e084",
-    "isNew": true
+    "isNew": false
   },
   "channel-nasim": {
     "name": {
@@ -815,7 +820,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.10",
     "codepoint": "e085",
-    "isNew": true
+    "isNew": false
   },
   "channel-tehran": {
     "name": {
@@ -1118,6 +1123,34 @@ window.CPIK_DATA = {
     "codepoint": "e039",
     "isNew": false
   },
+  "finance-snapppay": {
+    "name": {
+      "fa": "اسنپ پی",
+      "en": "Snapp Pay"
+    },
+    "keywords": [
+      "اسنپ‌پی",
+      "اسنپپی",
+      "اسنپ",
+      "خرید اقساطی",
+      "پرداخت اقساطی",
+      "اقساطی",
+      "خرید قسطی",
+      "قسطی",
+      "پرداخت",
+      "snapppay",
+      "snappay",
+      "snap pay",
+      "snapp",
+      "bnpl",
+      "buy now pay later",
+      "installments",
+      "payment"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e088",
+    "isNew": true
+  },
   "finance-zarinpal": {
     "name": {
       "fa": "زرین‌پال",
@@ -1178,6 +1211,132 @@ window.CPIK_DATA = {
     "codepoint": "e01d",
     "isNew": false
   },
+  "insurance-asia": {
+    "name": {
+      "fa": "بیمه آسیا",
+      "en": "Asia Insurance"
+    },
+    "keywords": [
+      "آسیا",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "asia",
+      "bimeh asia",
+      "bime asia",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e089",
+    "isNew": true
+  },
+  "insurance-day": {
+    "name": {
+      "fa": "بیمه دی",
+      "en": "Day Insurance"
+    },
+    "keywords": [
+      "دی",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "day",
+      "dey",
+      "dey insurance",
+      "bimeh day",
+      "bimeh dey",
+      "bime day",
+      "bime dey",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e08a",
+    "isNew": true
+  },
+  "insurance-iran": {
+    "name": {
+      "fa": "بیمه ایران",
+      "en": "Iran Insurance"
+    },
+    "keywords": [
+      "ایران",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "iran",
+      "bimeh iran",
+      "bime iran",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e08b",
+    "isNew": true
+  },
+  "insurance-ma": {
+    "name": {
+      "fa": "بیمه ما",
+      "en": "Ma Insurance"
+    },
+    "keywords": [
+      "ما",
+      "ملت ایران",
+      "بیمه ملت ایران",
+      "بیمه ما ملت ایران",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "bimeh ma",
+      "bime ma",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e08c",
+    "isNew": true
+  },
+  "insurance-razi": {
+    "name": {
+      "fa": "بیمه رازی",
+      "en": "Razi Insurance"
+    },
+    "keywords": [
+      "رازی",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "razi",
+      "bimeh razi",
+      "bime razi",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e08d",
+    "isNew": true
+  },
+  "insurance-saman": {
+    "name": {
+      "fa": "بیمه سامان",
+      "en": "Saman Insurance"
+    },
+    "keywords": [
+      "سامان",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "saman",
+      "bimeh saman",
+      "bime saman",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e08e",
+    "isNew": true
+  },
   "landmark-azadi-tower": {
     "name": {
       "fa": "برج آزادی",
@@ -1200,6 +1359,101 @@ window.CPIK_DATA = {
     "codepoint": "e03d",
     "isNew": false
   },
+  "landmark-cyrus-tomb": {
+    "name": {
+      "fa": "آرامگاه کوروش",
+      "en": "Tomb of Cyrus"
+    },
+    "keywords": [
+      "مقبره کوروش",
+      "آرامگاه کوروش بزرگ",
+      "کوروش",
+      "کوروش بزرگ",
+      "کوروش کبیر",
+      "پاسارگاد",
+      "هخامنشی",
+      "ایران باستان",
+      "فارس",
+      "بنای تاریخی",
+      "tomb of cyrus",
+      "cyrus tomb",
+      "cyrus the great",
+      "cyrus",
+      "kourosh",
+      "koorosh",
+      "pasargadae",
+      "pasargad",
+      "achaemenid",
+      "fars",
+      "landmark"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e092",
+    "isNew": true
+  },
+  "landmark-damavand": {
+    "name": {
+      "fa": "دماوند",
+      "en": "Damavand"
+    },
+    "keywords": [
+      "کوه دماوند",
+      "قله دماوند",
+      "قله",
+      "کوه",
+      "البرز",
+      "رشته‌کوه البرز",
+      "رشته کوه البرز",
+      "بلندترین قله ایران",
+      "آتشفشان",
+      "مازندران",
+      "damavand",
+      "mount damavand",
+      "mt damavand",
+      "demavend",
+      "damawand",
+      "alborz",
+      "elburz",
+      "mazandaran",
+      "mountain",
+      "volcano",
+      "landmark"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e093",
+    "isNew": true
+  },
+  "landmark-hafez": {
+    "name": {
+      "fa": "آرامگاه حافظ",
+      "en": "Tomb of Hafez"
+    },
+    "keywords": [
+      "حافظیه",
+      "حافظ",
+      "حافظ شیرازی",
+      "مقبره حافظ",
+      "لسان‌الغیب",
+      "لسان الغیب",
+      "شاعر",
+      "شیراز",
+      "فارس",
+      "بنای تاریخی",
+      "tomb of hafez",
+      "hafez tomb",
+      "hafez",
+      "hafiz",
+      "hafezieh",
+      "hafeziyeh",
+      "shiraz",
+      "fars",
+      "poet",
+      "landmark"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e094",
+    "isNew": true
+  },
   "landmark-milad-tower": {
     "name": {
       "fa": "برج میلاد",
@@ -1220,6 +1474,107 @@ window.CPIK_DATA = {
     "added": "0.1.5",
     "codepoint": "e03e",
     "isNew": false
+  },
+  "landmark-persepolis": {
+    "name": {
+      "fa": "تخت جمشید",
+      "en": "Persepolis"
+    },
+    "keywords": [
+      "تخت‌جمشید",
+      "پارسه",
+      "ستون",
+      "سرستون",
+      "سرستون گاو",
+      "هخامنشی",
+      "ایران باستان",
+      "شیراز",
+      "مرودشت",
+      "فارس",
+      "بنای تاریخی",
+      "persepolis",
+      "takht-e jamshid",
+      "takht e jamshid",
+      "takhte jamshid",
+      "takht jamshid",
+      "parsa",
+      "achaemenid",
+      "shiraz",
+      "marvdasht",
+      "fars",
+      "landmark"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e095",
+    "isNew": true
+  },
+  "landmark-qabus": {
+    "name": {
+      "fa": "گنبد قابوس",
+      "en": "Gonbad-e Qabus"
+    },
+    "keywords": [
+      "برج قابوس",
+      "برج گنبد قابوس",
+      "قابوس",
+      "قابوس بن وشمگیر",
+      "قابوس وشمگیر",
+      "گنبد کاووس",
+      "گنبد کاوس",
+      "برج آجری",
+      "گلستان",
+      "بنای تاریخی",
+      "gonbad-e qabus",
+      "gonbad e qabus",
+      "gonbad qabus",
+      "gonbad-e kavus",
+      "gonbad e kavus",
+      "gonbad kavus",
+      "qabus",
+      "qaboos",
+      "kavus",
+      "qabus tower",
+      "tower of qabus",
+      "golestan",
+      "landmark"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e096",
+    "isNew": true
+  },
+  "landmark-siosepol": {
+    "name": {
+      "fa": "سی‌وسه‌پل",
+      "en": "Si-o-se-pol"
+    },
+    "keywords": [
+      "سی و سه پل",
+      "سی‌و‌سه‌پل",
+      "سی وسه پل",
+      "۳۳ پل",
+      "پل اللهوردی خان",
+      "پل الله‌وردی‌خان",
+      "پل الله وردی خان",
+      "زاینده‌رود",
+      "زاینده رود",
+      "اصفهان",
+      "بنای تاریخی",
+      "si-o-se-pol",
+      "si o se pol",
+      "siosepol",
+      "sio se pol",
+      "allahverdi khan bridge",
+      "33 bridges",
+      "33 arches",
+      "bridge",
+      "zayandeh rud",
+      "isfahan",
+      "esfahan",
+      "landmark"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e097",
+    "isNew": true
   },
   "map-alborz": {
     "name": {
@@ -2203,6 +2558,28 @@ window.CPIK_DATA = {
     "codepoint": "e02f",
     "isNew": false
   },
+  "shipping-postex": {
+    "name": {
+      "fa": "پستکس",
+      "en": "Postex"
+    },
+    "keywords": [
+      "پستکس",
+      "پست‌اکس",
+      "پست اکس",
+      "ارسال مرسوله",
+      "حمل و نقل",
+      "بسته",
+      "postex",
+      "post ex",
+      "shipping",
+      "delivery",
+      "courier"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e091",
+    "isNew": true
+  },
   "shipping-tipax": {
     "name": {
       "fa": "تیپاکس",
@@ -2369,7 +2746,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.10",
     "codepoint": "e086",
-    "isNew": true
+    "isNew": false
   },
   "shop-lioncomputer": {
     "name": {
@@ -2413,7 +2790,7 @@ window.CPIK_DATA = {
     ],
     "added": "0.1.10",
     "codepoint": "e087",
-    "isNew": true
+    "isNew": false
   },
   "shop-sheypoor": {
     "name": {
@@ -2606,6 +2983,82 @@ window.CPIK_DATA = {
     "codepoint": "e07d",
     "isNew": false
   },
+  "symbol-boteh": {
+    "name": {
+      "fa": "بته‌جقه",
+      "en": "Boteh"
+    },
+    "keywords": [
+      "بته",
+      "بته جقه",
+      "بته‌جغه",
+      "بته جغه",
+      "بوته‌جقه",
+      "بوته جقه",
+      "پیزلی",
+      "ترمه",
+      "نقش ایرانی",
+      "نماد",
+      "boteh",
+      "boteh jegheh",
+      "buta",
+      "bute",
+      "paisley",
+      "termeh"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e098",
+    "isNew": true
+  },
+  "symbol-carpet": {
+    "name": {
+      "fa": "فرش ایرانی",
+      "en": "Persian carpet"
+    },
+    "keywords": [
+      "فرش",
+      "قالی",
+      "قالی ایرانی",
+      "قالیچه",
+      "فرش دستباف",
+      "فرش دست‌باف",
+      "دستباف",
+      "نماد",
+      "persian rug",
+      "iranian carpet",
+      "carpet",
+      "rug",
+      "farsh",
+      "ghali"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e08f",
+    "isNew": true
+  },
+  "symbol-cheetah": {
+    "name": {
+      "fa": "یوز ایرانی",
+      "en": "Persian cheetah"
+    },
+    "keywords": [
+      "یوز",
+      "یوزپلنگ",
+      "یوزپلنگ ایرانی",
+      "یوز آسیایی",
+      "یوزپلنگ آسیایی",
+      "حیات وحش",
+      "نماد",
+      "asiatic cheetah",
+      "iranian cheetah",
+      "cheetah",
+      "yooz",
+      "yuz",
+      "wildlife"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e090",
+    "isNew": true
+  },
   "symbol-faravahar": {
     "name": {
       "fa": "فروهر",
@@ -2652,6 +3105,30 @@ window.CPIK_DATA = {
     "added": "0.1.8",
     "codepoint": "e072",
     "isNew": false
+  },
+  "symbol-shamseh": {
+    "name": {
+      "fa": "شمسه",
+      "en": "Shamseh"
+    },
+    "keywords": [
+      "خورشید",
+      "کاشی‌کاری",
+      "کاشیکاری",
+      "کاشی کاری",
+      "تذهیب",
+      "نقش ایرانی",
+      "نماد",
+      "shamseh",
+      "shamsa",
+      "rosette",
+      "sunburst",
+      "tilework",
+      "tazhib"
+    ],
+    "added": "0.2.0",
+    "codepoint": "e099",
+    "isNew": true
   },
   "telecom-asiatech": {
     "name": {

@@ -1,12 +1,12 @@
 /*!
  * cpik - CyClone Power Icon Kit
  * MIT licence for the kit. Every logo in it is a trademark of its owner.
- * Usage: <i class="cpik-cpik" aria-hidden="true"></i>
+ * Usage: <i class="cpik-cyclone-cpik" aria-hidden="true"></i>
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?c1c2d8273f269a3a2fe37318ec619fee") format("woff2"),
-url("./cpik.woff?c1c2d8273f269a3a2fe37318ec619fee") format("woff");
+    src: url("./cpik.woff2?dfda46405deaa83eaa49a9646d8be269") format("woff2"),
+url("./cpik.woff?dfda46405deaa83eaa49a9646d8be269") format("woff");
     font-display: block;
 }
 
@@ -569,25 +569,78 @@ url("./cpik.woff?c1c2d8273f269a3a2fe37318ec619fee") format("woff");
     content: "\e087";
 }
 
-/* Old class names of renamed icons */
-.cpik-irancell::before {
-    content: "\e01f";
+.cpik-finance-snapppay::before {
+    content: "\e088";
 }
-.cpik-rightel::before {
-    content: "\e030";
+
+.cpik-insurance-asia::before {
+    content: "\e089";
 }
-.cpik-mobile-communications-of-iran::before {
-    content: "\e022";
+
+.cpik-insurance-day::before {
+    content: "\e08a";
 }
-.cpik-cpik::before {
-    content: "\e01a";
+
+.cpik-insurance-iran::before {
+    content: "\e08b";
 }
-.cpik-post::before {
-    content: "\e02f";
+
+.cpik-insurance-ma::before {
+    content: "\e08c";
 }
-.cpik-tipax::before {
-    content: "\e035";
+
+.cpik-insurance-razi::before {
+    content: "\e08d";
 }
-.cpik-e-namad::before {
-    content: "\e01d";
+
+.cpik-insurance-saman::before {
+    content: "\e08e";
+}
+
+.cpik-symbol-carpet::before {
+    content: "\e08f";
+}
+
+.cpik-symbol-cheetah::before {
+    content: "\e090";
+}
+
+.cpik-shipping-postex::before {
+    content: "\e091";
+}
+
+.cpik-landmark-cyrus-tomb::before {
+    content: "\e092";
+}
+
+.cpik-landmark-damavand::before {
+    content: "\e093";
+}
+
+.cpik-landmark-hafez::before {
+    content: "\e094";
+}
+
+.cpik-landmark-persepolis::before {
+    content: "\e095";
+}
+
+.cpik-landmark-qabus::before {
+    content: "\e096";
+}
+
+.cpik-landmark-siosepol::before {
+    content: "\e097";
+}
+
+.cpik-symbol-boteh::before {
+    content: "\e098";
+}
+
+.cpik-symbol-shamseh::before {
+    content: "\e099";
+}
+
+.cpik-symbol-faravahar::before {
+    font-size: 1.5em;
 }

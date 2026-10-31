@@ -41,7 +41,7 @@ jobs:
         run: |
           version="${GITHUB_REF_NAME#v}"
           mkdir -p "$RUNNER_TEMP/cpik"
-          cp dist/cpik.css dist/cpik.woff2 dist/cpik.woff dist/cpik.json LICENSE "$RUNNER_TEMP/cpik/"
+          cp dist/cpik.css dist/cpik.min.css dist/cpik.woff2 dist/cpik.woff dist/cpik.json LICENSE "$RUNNER_TEMP/cpik/"
           (cd "$RUNNER_TEMP" && zip -r "cpik-$version.zip" cpik)
       - name: Publish the release
         env:

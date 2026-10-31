@@ -4,15 +4,15 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cpik-lockup-on-dark.svg"><img src="assets/cpik-lockup-on-light.svg" alt="CPIK" width="300"></picture></p>
 
-نسخه‌ی 0.1.10. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
+نسخه‌ی 0.2.0. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
 
 **برندهای ایرانی، در یک کیت آیکون.**
 
 کیت CPIK آیکون بانک‌ها، پلتفرم‌ها، سرویس‌ها و برندهای ایرانی را یک‌جا می‌دهد. یک فایل استایل را لینک کنید تا هر آیکون با یک نام کلاس در دسترس باشد؛ در هر اندازه‌ای واضح می‌ماند و مثل متن کنارش با CSS رنگ می‌گیرد. لوگوها متعلق به صاحبانشان است.
 
-<p align="center"><a href="assets/cpik-video-fa.mp4"><img src="assets/cpik-video-fa.jpg" alt="ویدیوی معرفی CPIK" width="720"></a></p>
+<p align="center"><img src="assets/cpik-video-fa.gif" alt="ویدیوی معرفی CPIK" width="720"></p>
 
-<p align="center">نگاهی ۲۹ ثانیه‌ای به CPIK. برای دیدن ویدیو روی تصویر بزنید.</p>
+<p align="center" dir="rtl">نگاهی ۳۰ ثانیه‌ای به CPIK. <a href="assets/cpik-video-fa.mp4?raw=true">دانلود ویدیو (MP4، ۲ مگابایت)</a></p>
 
 همه‌ی آیکون‌ها را در صفحه‌ی پیش‌نمایش ببینید و جستجو کنید: https://cpik.cyclone9.dev/
 
@@ -22,7 +22,7 @@
 
 ۱. فایل `cpik-<version>.zip` را از [آخرین نسخه‌ی منتشرشده](https://github.com/cyclone9/CPIK/releases/latest) دانلود کنید.
 
-۲. فایل‌های `cpik.css`، `cpik.woff2` و `cpik.woff` را کنار هم در یک پوشه از سایت بگذارید؛ مثلاً `assets/cpik/`.
+۲. فایل‌های `cpik.css`، `cpik.woff2` و `cpik.woff` را کنار هم در یک پوشه از سایت بگذارید؛ مثلاً `assets/cpik/`. برای فایل کم‌حجم‌تر، `cpik.min.css` را به‌جای `cpik.css` به کار ببرید.
 
 ۳. فایل استایل را در `<head>` صفحه لینک کنید:
 
@@ -53,7 +53,7 @@
 <div dir="ltr">
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.1.10/dist/cpik.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cyclone9/cpik@0.2.0/dist/cpik.min.css">
 ```
 
 </div>
@@ -119,7 +119,7 @@ npm install @cyclone9/cpik
 | `symbol-` | نمادهای شاخص |
 | `cyclone-` | سایکلون - CyClone |
 
-اگر نام آیکونی عوض شود، نام قدیمی آن هم در `cpik.css` کار می‌کند؛ مثلاً `cpik-irancell` همان آیکون `cpik-telecom-irancell` را نشان می‌دهد. فهرست همه‌ی آیکون‌ها با کدپوینتشان در `cpik.json` است.
+فهرست همه‌ی آیکون‌ها با کدپوینتشان در `cpik.json` است.
 
 آیکونی که می‌خواهید در کیت نیست؟ آن را از [فرم درخواست آیکون](https://github.com/cyclone9/CPIK/issues/new?template=icon-request.yml) بخواهید.
 

@@ -5,6 +5,7 @@
  *   3. fantasticon          cpik.woff2, cpik.woff, cpik.css, cpik.json, index.html
  *   4. cpik.js              names, keywords, categories and aliases for the preview page
  *   5. assets               fonts, favicons and link-preview image for the preview page
+ *   6. minify-css.js        cpik.min.css, made by CPWO from the finished cpik.css
  *
  * dist/ is rebuilt from scratch each time, so removed icons disappear.
  *
@@ -89,14 +90,12 @@ function writeMetadata(version) {
 }
 
 /*
- * A renamed icon keeps its old class name as an alias (config/aliases.json:
- * old name -> new name), so pages that already use the old class keep
- * showing the same glyph.
+ * config/aliases.json maps old icon names to new ones. They are not in
+ * cpik.css; only the preview uses them, so old #icon links keep opening.
  */
-function appendAliases(prefix) {
+function checkAliases() {
     const aliases = readJson('config/aliases.json');
     const codepoints = readJson('config/codepoints.json');
-    const rules = [];
 
     for (const [oldName, newName] of Object.entries(aliases)) {
         if (!Object.hasOwn(codepoints, newName)) {
@@ -106,14 +105,6 @@ function appendAliases(prefix) {
         if (Object.hasOwn(codepoints, oldName)) {
             throw new Error(`config/aliases.json: "${oldName}" is still an icon of its own`);
         }
-
-        rules.push(`.${prefix}-${oldName}::before {\n    content: "\\${
-            codepoints[newName].toString(16)}";\n}`);
-    }
-
-    if (rules.length) {
-        fs.appendFileSync(path.join(DIST, 'cpik.css'),
-            `\n/* Old class names of renamed icons */\n${rules.join('\n')}\n`, 'utf8');
     }
 }
 
@@ -166,13 +157,14 @@ async function main() {
     });
 
     writeMetadata(version);
-    appendAliases(config.prefix);
+    checkAliases();
     // Only what the preview page uses; the README's video, cover and lockups stay out of dist/.
     for (const item of ['fonts', 'favicon', 'cpik-social-preview.png']) {
         fs.cpSync(path.join(ROOT, 'assets', item), path.join(DIST, 'assets', item), { recursive: true });
     }
     fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
     bustCache(['cpik.css', 'cpik.js', 'assets/cpik-social-preview.png']);
+    run('minify-css.js');
 
     const files = fs.readdirSync(DIST).filter(file => !file.startsWith('.'));
 

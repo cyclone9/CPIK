@@ -6,7 +6,17 @@
 
 ## منتشرنشده
 
+## 0.2.0 - 2026-10-31
+
 - ویدیوی معرفی و تصویر پیش‌نمایش پیوند تازه شدند؛ نشانی تصویر پیش‌نمایش حالا با هر تغییر عوض می‌شود تا پیام‌رسان‌ها تصویر تازه را بگیرند. README به صفحه‌ی معرفی CPIK در https://cyclone9.dev/cpik پیوند دارد.
+- هشت آیکون تازه: بیمه ایران (`cpik-insurance-iran`)، بیمه آسیا (`cpik-insurance-asia`)، بیمه رازی (`cpik-insurance-razi`)، بیمه سامان (`cpik-insurance-saman`)، بیمه ما (`cpik-insurance-ma`) و بیمه دی (`cpik-insurance-day`) در دسته‌ی تازه‌ی «بیمه»، اسنپ پی (`cpik-finance-snapppay`) در «پرداخت»، و پستکس (`cpik-shipping-postex`) در «پست و ارسال».
+- ده آیکون تازه: سی‌وسه‌پل (`cpik-landmark-siosepol`)، آرامگاه کوروش (`cpik-landmark-cyrus-tomb`)، تخت جمشید (`cpik-landmark-persepolis`)، دماوند (`cpik-landmark-damavand`)، آرامگاه حافظ (`cpik-landmark-hafez`) و گنبد قابوس (`cpik-landmark-qabus`) در «بناهای شاخص»، و فرش ایرانی (`cpik-symbol-carpet`)، یوز ایرانی (`cpik-symbol-cheetah`)، بته‌جقه (`cpik-symbol-boteh`) و شمسه (`cpik-symbol-shamseh`) در «نمادهای شاخص».
+- آیکون‌های برج آزادی و برج میلاد از نو طراحی شدند تا با بقیه‌ی «بناهای شاخص» هم‌خوان باشند. نام کلاس‌ها تغییری نکرده است.
+- آیکون فروهر حالا ۱٫۵ برابر اندازه‌ی فونت نمایش داده می‌شود تا کنار آیکون‌های دیگر کوچک به نظر نرسد.
+- در پنل جزئیات صفحه‌ی پیش‌نمایش، اندازه‌ی آیکون تا ۲۵۶ پیکسل بالا می‌رود.
+- README حالا معرفی را به‌صورت GIF نشان می‌دهد و زیر آن پیوند دانلود ویدیوی MP4 آمده است.
+- تغییر ناسازگار: نام‌های قدیمی کلاس‌ها از `cpik.css` حذف شدند. به‌جای `cpik-irancell`، `cpik-rightel`، `cpik-mobile-communications-of-iran`، `cpik-cpik`، `cpik-post`، `cpik-tipax` و `cpik-e-namad` نام‌های تازه را به کار ببرید: `cpik-telecom-irancell`، `cpik-telecom-rightel`، `cpik-telecom-mci`، `cpik-cyclone-cpik`، `cpik-shipping-post`، `cpik-shipping-tipax` و `cpik-gov-e-namad`.
+- کیت حالا فایل فشرده‌ی `cpik.min.css` را هم دارد؛ این فایل در بسته‌ی npm، روی CDNها و در فایل zip هر انتشار هست.
 
 ## 0.1.10 - 2026-10-28
 

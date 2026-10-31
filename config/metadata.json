@@ -918,6 +918,32 @@
     ],
     "added": "0.1.3"
   },
+  "finance-snapppay": {
+    "name": {
+      "fa": "اسنپ پی",
+      "en": "Snapp Pay"
+    },
+    "keywords": [
+      "اسنپ‌پی",
+      "اسنپپی",
+      "اسنپ",
+      "خرید اقساطی",
+      "پرداخت اقساطی",
+      "اقساطی",
+      "خرید قسطی",
+      "قسطی",
+      "پرداخت",
+      "snapppay",
+      "snappay",
+      "snap pay",
+      "snapp",
+      "bnpl",
+      "buy now pay later",
+      "installments",
+      "payment"
+    ],
+    "added": "0.2.0"
+  },
   "finance-zarinpal": {
     "name": {
       "fa": "زرین‌پال",
@@ -972,6 +998,120 @@
     ],
     "added": "0.1.0"
   },
+  "insurance-asia": {
+    "name": {
+      "fa": "بیمه آسیا",
+      "en": "Asia Insurance"
+    },
+    "keywords": [
+      "آسیا",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "asia",
+      "bimeh asia",
+      "bime asia",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0"
+  },
+  "insurance-day": {
+    "name": {
+      "fa": "بیمه دی",
+      "en": "Day Insurance"
+    },
+    "keywords": [
+      "دی",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "day",
+      "dey",
+      "dey insurance",
+      "bimeh day",
+      "bimeh dey",
+      "bime day",
+      "bime dey",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0"
+  },
+  "insurance-iran": {
+    "name": {
+      "fa": "بیمه ایران",
+      "en": "Iran Insurance"
+    },
+    "keywords": [
+      "ایران",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "iran",
+      "bimeh iran",
+      "bime iran",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0"
+  },
+  "insurance-ma": {
+    "name": {
+      "fa": "بیمه ما",
+      "en": "Ma Insurance"
+    },
+    "keywords": [
+      "ما",
+      "ملت ایران",
+      "بیمه ملت ایران",
+      "بیمه ما ملت ایران",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "bimeh ma",
+      "bime ma",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0"
+  },
+  "insurance-razi": {
+    "name": {
+      "fa": "بیمه رازی",
+      "en": "Razi Insurance"
+    },
+    "keywords": [
+      "رازی",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "razi",
+      "bimeh razi",
+      "bime razi",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0"
+  },
+  "insurance-saman": {
+    "name": {
+      "fa": "بیمه سامان",
+      "en": "Saman Insurance"
+    },
+    "keywords": [
+      "سامان",
+      "بیمه",
+      "شرکت بیمه",
+      "بیمه‌نامه",
+      "saman",
+      "bimeh saman",
+      "bime saman",
+      "insurance",
+      "insurance company"
+    ],
+    "added": "0.2.0"
+  },
   "landmark-azadi-tower": {
     "name": {
       "fa": "برج آزادی",
@@ -992,6 +1132,95 @@
     ],
     "added": "0.1.5"
   },
+  "landmark-cyrus-tomb": {
+    "name": {
+      "fa": "آرامگاه کوروش",
+      "en": "Tomb of Cyrus"
+    },
+    "keywords": [
+      "مقبره کوروش",
+      "آرامگاه کوروش بزرگ",
+      "کوروش",
+      "کوروش بزرگ",
+      "کوروش کبیر",
+      "پاسارگاد",
+      "هخامنشی",
+      "ایران باستان",
+      "فارس",
+      "بنای تاریخی",
+      "tomb of cyrus",
+      "cyrus tomb",
+      "cyrus the great",
+      "cyrus",
+      "kourosh",
+      "koorosh",
+      "pasargadae",
+      "pasargad",
+      "achaemenid",
+      "fars",
+      "landmark"
+    ],
+    "added": "0.2.0"
+  },
+  "landmark-damavand": {
+    "name": {
+      "fa": "دماوند",
+      "en": "Damavand"
+    },
+    "keywords": [
+      "کوه دماوند",
+      "قله دماوند",
+      "قله",
+      "کوه",
+      "البرز",
+      "رشته‌کوه البرز",
+      "رشته کوه البرز",
+      "بلندترین قله ایران",
+      "آتشفشان",
+      "مازندران",
+      "damavand",
+      "mount damavand",
+      "mt damavand",
+      "demavend",
+      "damawand",
+      "alborz",
+      "elburz",
+      "mazandaran",
+      "mountain",
+      "volcano",
+      "landmark"
+    ],
+    "added": "0.2.0"
+  },
+  "landmark-hafez": {
+    "name": {
+      "fa": "آرامگاه حافظ",
+      "en": "Tomb of Hafez"
+    },
+    "keywords": [
+      "حافظیه",
+      "حافظ",
+      "حافظ شیرازی",
+      "مقبره حافظ",
+      "لسان‌الغیب",
+      "لسان الغیب",
+      "شاعر",
+      "شیراز",
+      "فارس",
+      "بنای تاریخی",
+      "tomb of hafez",
+      "hafez tomb",
+      "hafez",
+      "hafiz",
+      "hafezieh",
+      "hafeziyeh",
+      "shiraz",
+      "fars",
+      "poet",
+      "landmark"
+    ],
+    "added": "0.2.0"
+  },
   "landmark-milad-tower": {
     "name": {
       "fa": "برج میلاد",
@@ -1010,6 +1239,101 @@
       "landmark"
     ],
     "added": "0.1.5"
+  },
+  "landmark-persepolis": {
+    "name": {
+      "fa": "تخت جمشید",
+      "en": "Persepolis"
+    },
+    "keywords": [
+      "تخت‌جمشید",
+      "پارسه",
+      "ستون",
+      "سرستون",
+      "سرستون گاو",
+      "هخامنشی",
+      "ایران باستان",
+      "شیراز",
+      "مرودشت",
+      "فارس",
+      "بنای تاریخی",
+      "persepolis",
+      "takht-e jamshid",
+      "takht e jamshid",
+      "takhte jamshid",
+      "takht jamshid",
+      "parsa",
+      "achaemenid",
+      "shiraz",
+      "marvdasht",
+      "fars",
+      "landmark"
+    ],
+    "added": "0.2.0"
+  },
+  "landmark-qabus": {
+    "name": {
+      "fa": "گنبد قابوس",
+      "en": "Gonbad-e Qabus"
+    },
+    "keywords": [
+      "برج قابوس",
+      "برج گنبد قابوس",
+      "قابوس",
+      "قابوس بن وشمگیر",
+      "قابوس وشمگیر",
+      "گنبد کاووس",
+      "گنبد کاوس",
+      "برج آجری",
+      "گلستان",
+      "بنای تاریخی",
+      "gonbad-e qabus",
+      "gonbad e qabus",
+      "gonbad qabus",
+      "gonbad-e kavus",
+      "gonbad e kavus",
+      "gonbad kavus",
+      "qabus",
+      "qaboos",
+      "kavus",
+      "qabus tower",
+      "tower of qabus",
+      "golestan",
+      "landmark"
+    ],
+    "added": "0.2.0"
+  },
+  "landmark-siosepol": {
+    "name": {
+      "fa": "سی‌وسه‌پل",
+      "en": "Si-o-se-pol"
+    },
+    "keywords": [
+      "سی و سه پل",
+      "سی‌و‌سه‌پل",
+      "سی وسه پل",
+      "۳۳ پل",
+      "پل اللهوردی خان",
+      "پل الله‌وردی‌خان",
+      "پل الله وردی خان",
+      "زاینده‌رود",
+      "زاینده رود",
+      "اصفهان",
+      "بنای تاریخی",
+      "si-o-se-pol",
+      "si o se pol",
+      "siosepol",
+      "sio se pol",
+      "allahverdi khan bridge",
+      "33 bridges",
+      "33 arches",
+      "bridge",
+      "zayandeh rud",
+      "isfahan",
+      "esfahan",
+      "landmark"
+    ],
+    "added": "0.2.0"
   },
   "map-alborz": {
     "name": {
@@ -1897,6 +2221,26 @@
     ],
     "added": "0.1.0"
   },
+  "shipping-postex": {
+    "name": {
+      "fa": "پستکس",
+      "en": "Postex"
+    },
+    "keywords": [
+      "پستکس",
+      "پست‌اکس",
+      "پست اکس",
+      "ارسال مرسوله",
+      "حمل و نقل",
+      "بسته",
+      "postex",
+      "post ex",
+      "shipping",
+      "delivery",
+      "courier"
+    ],
+    "added": "0.2.0"
+  },
   "shipping-tipax": {
     "name": {
       "fa": "تیپاکس",
@@ -2262,6 +2606,76 @@
     ],
     "added": "0.1.8"
   },
+  "symbol-boteh": {
+    "name": {
+      "fa": "بته‌جقه",
+      "en": "Boteh"
+    },
+    "keywords": [
+      "بته",
+      "بته جقه",
+      "بته‌جغه",
+      "بته جغه",
+      "بوته‌جقه",
+      "بوته جقه",
+      "پیزلی",
+      "ترمه",
+      "نقش ایرانی",
+      "نماد",
+      "boteh",
+      "boteh jegheh",
+      "buta",
+      "bute",
+      "paisley",
+      "termeh"
+    ],
+    "added": "0.2.0"
+  },
+  "symbol-carpet": {
+    "name": {
+      "fa": "فرش ایرانی",
+      "en": "Persian carpet"
+    },
+    "keywords": [
+      "فرش",
+      "قالی",
+      "قالی ایرانی",
+      "قالیچه",
+      "فرش دستباف",
+      "فرش دست‌باف",
+      "دستباف",
+      "نماد",
+      "persian rug",
+      "iranian carpet",
+      "carpet",
+      "rug",
+      "farsh",
+      "ghali"
+    ],
+    "added": "0.2.0"
+  },
+  "symbol-cheetah": {
+    "name": {
+      "fa": "یوز ایرانی",
+      "en": "Persian cheetah"
+    },
+    "keywords": [
+      "یوز",
+      "یوزپلنگ",
+      "یوزپلنگ ایرانی",
+      "یوز آسیایی",
+      "یوزپلنگ آسیایی",
+      "حیات وحش",
+      "نماد",
+      "asiatic cheetah",
+      "iranian cheetah",
+      "cheetah",
+      "yooz",
+      "yuz",
+      "wildlife"
+    ],
+    "added": "0.2.0"
+  },
   "symbol-faravahar": {
     "name": {
       "fa": "فروهر",
@@ -2304,6 +2718,28 @@
       "griffin"
     ],
     "added": "0.1.8"
+  },
+  "symbol-shamseh": {
+    "name": {
+      "fa": "شمسه",
+      "en": "Shamseh"
+    },
+    "keywords": [
+      "خورشید",
+      "کاشی‌کاری",
+      "کاشیکاری",
+      "کاشی کاری",
+      "تذهیب",
+      "نقش ایرانی",
+      "نماد",
+      "shamseh",
+      "shamsa",
+      "rosette",
+      "sunburst",
+      "tilework",
+      "tazhib"
+    ],
+    "added": "0.2.0"
   },
   "telecom-asiatech": {
     "name": {
