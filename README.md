@@ -4,7 +4,7 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cpik-lockup-on-dark.svg"><img src="assets/cpik-lockup-on-light.svg" alt="CPIK" width="300"></picture></p>
 
-نسخه‌ی 0.2.0. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
+نسخه‌ی 0.2.1. تغییرات را در [CHANGELOG.md](CHANGELOG.md) ببینید.
 
 **برندهای ایرانی، در یک کیت آیکون.**
 

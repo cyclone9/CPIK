@@ -5,8 +5,8 @@
  */
 @font-face {
     font-family: "cpik";
-    src: url("./cpik.woff2?dfda46405deaa83eaa49a9646d8be269") format("woff2"),
-url("./cpik.woff?dfda46405deaa83eaa49a9646d8be269") format("woff");
+    src: url("./cpik.woff2?89cfbf07097c9e29db84d8014a659f76") format("woff2"),
+url("./cpik.woff?89cfbf07097c9e29db84d8014a659f76") format("woff");
     font-display: block;
 }
 
@@ -639,6 +639,10 @@ url("./cpik.woff?dfda46405deaa83eaa49a9646d8be269") format("woff");
 
 .cpik-symbol-shamseh::before {
     content: "\e099";
+}
+
+.cpik-cyclone-rooberoo::before {
+    content: "\e09a";
 }
 
 .cpik-symbol-faravahar::before {

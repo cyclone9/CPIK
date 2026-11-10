@@ -50,6 +50,8 @@ function writeMetadata(version) {
     const categories = readJson('config/categories.json');
     const codepoints = readJson('config/codepoints.json');
     const data = {};
+    const [major, minor] = version.split('.');
+    const newSince = `${major}.${minor}.0`;
 
     for (const icon of icons) {
         if (!Object.hasOwn(metadata, icon)) {
@@ -61,13 +63,14 @@ function writeMetadata(version) {
 
         const entry = metadata[icon] || { name: { fa: icon, en: icon }, keywords: [] };
 
-        // "New" means added in the version being built or in one still to come (icons added
-        // since the last release). Stored per icon rather than read from git tags, so a CI
-        // checkout without tag history builds the same dist/.
+        // "New" means added in the current minor line (X.Y.0 up to the version being built) or
+        // in one still to come, so a patch release keeps the badges of its minor release.
+        // Stored per icon rather than read from git tags, so a CI checkout without tag
+        // history builds the same dist/.
         data[icon] = {
             ...entry,
             codepoint: codepoints[icon].toString(16),
-            isNew: Boolean(entry.added) && compareVersions(entry.added, version) >= 0
+            isNew: Boolean(entry.added) && compareVersions(entry.added, newSince) >= 0
         };
     }
 

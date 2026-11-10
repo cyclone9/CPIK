@@ -859,6 +859,26 @@
     ],
     "added": "0.1.7"
   },
+  "cyclone-rooberoo": {
+    "name": {
+      "fa": "روبه‌رو",
+      "en": "RooBeRoo"
+    },
+    "keywords": [
+      "روبه‌رو",
+      "روبرو",
+      "بازی",
+      "پینگ پنگ",
+      "راکت و توپ",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "rooberoo",
+      "game",
+      "pong"
+    ],
+    "added": "0.2.1"
+  },
   "finance-asanpardakht": {
     "name": {
       "fa": "آسان پرداخت",

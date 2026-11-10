@@ -585,6 +585,17 @@
       white-space: nowrap;
     }
 
+    /* Left to right, equal-width digits and a fixed width, so the toolbar
+       does not shift when the count changes. */
+    .results-count {
+      display: inline-block;
+      min-width: 9ch;
+      direction: ltr;
+      unicode-bidi: isolate;
+      font-variant-numeric: tabular-nums;
+      text-align: left;
+    }
+
     /* Gallery */
     .gallery-section {
       padding-block: var(--gap) var(--block);
@@ -1203,11 +1214,16 @@
       margin: 0;
     }
 
-    /* The version sits on its own line under the copyright. */
-    .footer-version {
-      display: block;
-      margin-top: 0.2rem;
+    /* The CyClone link reads as part of the line: text colour, no underline. */
+    .site-footer a {
+      color: inherit;
+      text-decoration: none;
     }
+
+    .site-footer [data-version-output] {
+      white-space: nowrap;
+    }
+
 
     .back-to-top {
       position: fixed;
@@ -1560,7 +1576,7 @@
         &copy; <span id="copyright-years">2026</span>
         <a href="https://cyclone9.dev/cpik">CyClone</a>
         · <bdi dir="ltr">CPIK - CyClone Power Icon Kit</bdi>
-        <span class="footer-version" data-version-output></span>
+        · <span data-version-output="Version "></span>
       </p>
     </div>
   </footer>
@@ -1658,7 +1674,7 @@
     const digits = value => new Intl.NumberFormat('fa-IR').format(value);
 
     document.querySelectorAll('[data-version-output]').forEach(element => {
-      element.textContent = version ? `v${version}` : '';
+      element.textContent = version ? `${element.dataset.versionOutput || 'v'}${version}` : '';
     });
 
     /* The CDN example pins the version this page was built from. */
@@ -2072,7 +2088,15 @@
         visibleCount += matches;
       }
 
-      results.textContent = dictionary().results(digits(visibleCount), digits(icons.length));
+      // Shown as a short "visible / total" count; screen readers get the full sentence.
+      const count = document.createElement('span');
+      const sentence = document.createElement('span');
+      count.className = 'results-count';
+      count.setAttribute('aria-hidden', 'true');
+      count.textContent = `${digits(visibleCount)} / ${digits(icons.length)}`;
+      sentence.className = 'sr-only';
+      sentence.textContent = dictionary().results(digits(visibleCount), digits(icons.length));
+      results.replaceChildren(count, sentence);
       emptyMessage.hidden = visibleCount > 0;
       requestEmpty.href = requestUrl(searchInput.value);
       requestLink.href = requestUrl(searchInput.value);
@@ -2546,9 +2570,35 @@
       if (event.key === 'Escape' && !event.isComposing) {
         event.preventDefault();
         clearSearch();
+      } else if (event.key === 'Enter' && !event.isComposing) {
+        event.preventDefault();
+        showResults();
       }
     });
     searchClear.addEventListener('click', clearSearch);
+
+    /*
+     * On wide screens the toolbar stays on screen while the page scrolls, so a
+     * search can start far below the gallery. Enter (never typing) brings the
+     * top of the results just under the sticky bars when it is out of view.
+     * On phones the toolbar scrolls with the page and sits right above the
+     * results, so there Enter only closes the keyboard.
+     */
+    function showResults() {
+      const margin = 12;
+      const toolbarSticky = getComputedStyle(toolbar).position === 'sticky';
+      const ceiling = Math.max(siteHeader.getBoundingClientRect().bottom,
+        toolbarSticky ? toolbar.getBoundingClientRect().bottom : 0, 0) + margin;
+      const top = gallery.getBoundingClientRect().top;
+
+      if (toolbarSticky && (top < ceiling || top > window.innerHeight - margin)) {
+        window.scrollBy({ top: top - ceiling, behavior: 'instant' });
+      }
+
+      if (window.matchMedia('(pointer: coarse)').matches) {
+        searchInput.blur();
+      }
+    }
     categoryFilter.addEventListener('change', filterIcons);
 
     /* Section navigation and the back-to-top button follow the scroll. */

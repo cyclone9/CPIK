@@ -1,5 +1,5 @@
 /* CPIK preview data. Icons do not need this file. */
-window.CPIK_VERSION = "0.2.0";
+window.CPIK_VERSION = "0.2.1";
 window.CPIK_CATEGORIES = [
   {
     "prefix": "bank",
@@ -1057,6 +1057,28 @@ window.CPIK_DATA = {
     "added": "0.1.7",
     "codepoint": "e053",
     "isNew": false
+  },
+  "cyclone-rooberoo": {
+    "name": {
+      "fa": "روبه‌رو",
+      "en": "RooBeRoo"
+    },
+    "keywords": [
+      "روبه‌رو",
+      "روبرو",
+      "بازی",
+      "پینگ پنگ",
+      "راکت و توپ",
+      "محصولات سایکلون",
+      "سایکلون",
+      "cyclone",
+      "rooberoo",
+      "game",
+      "pong"
+    ],
+    "added": "0.2.1",
+    "codepoint": "e09a",
+    "isNew": true
   },
   "finance-asanpardakht": {
     "name": {
